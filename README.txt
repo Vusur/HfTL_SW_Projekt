@@ -1,4 +1,3 @@
-Projektstruktur
+Zentrales Repository für das Softwareporjekt.
 
-.gitignore  - hier können Dateien oder Ordner bei einem Repo Push exkludiert werden.
-.gitattribute - benötigen wir erstmal nicht 
+Eine genauere Beschreibung des Projektes folgt noch.
