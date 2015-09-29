@@ -1,0 +1,30 @@
+#####################
+## Beispiel Config
+#####################
+## Autor Tino Blau
+#####################
+
+
+# Bitte haltet Rücksprache mit mir, falls ihr bestimmte Dateien exkludieren wollt. Die Angaben hier sind eher FYI.
+# Die einfachste Möglichkeit ist, dass ihr die Dateien, die nicht in den GitHub sollen, einfach aus der Ordnerstruktur
+# entfernt und irgendwo anders abspeichert
+
+# spezielle Dateien excludieren
+# in der gesammten Ordnerstruktur werden alle Dateien mit dem Namen 'tbbeispiel.txt' nicht gepusht
+tbbeispiel.txt
+
+
+# dateien mit einer bestimmten Ednung exkludieren
+# alle Dateien mit '.java' (z.B. Main.java) als Endungen werden nicht gepusht
+*.java
+
+# ganze Ordner werden exkludiert
+# alle Ordner mit dem Namen 'bin' und somit dessen Inhalt werden nicht gepushed
+bin/
+
+#######################
+## Project Config
+#######################
+
+#EADME.txt
+

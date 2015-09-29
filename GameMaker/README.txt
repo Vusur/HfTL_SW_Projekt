@@ -1,0 +1,1 @@
+Hauptordner für das Projekt selbst. Hier kommen alle Dateien hin, die mit dem GameMaker Studio erzeugt wurden
