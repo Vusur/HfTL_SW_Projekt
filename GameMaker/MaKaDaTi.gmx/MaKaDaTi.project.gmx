@@ -7,9 +7,32 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_player</sprite>
+    <sprite>sprites\spr_block</sprite>
+    <sprite>sprites\spr_enemey</sprite>
+    <sprite>sprites\spr_warp</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <scripts name="scr_player">
+      <script>scripts\scr_collideMove.gml</script>
+      <script>scripts\scr_player_normal.gml</script>
+      <script>scripts\scr_getInputs.gml</script>
+    </scripts>
+  </scripts>
+  <objects name="objects">
+    <object>objects\obj_player</object>
+    <object>objects\obj_block</object>
+    <object>objects\obj_warp</object>
+  </objects>
+  <rooms name="rooms">
+    <rooms name="rm_sample">
+      <room>rooms\rm_normal</room>
+      <room>rooms\rm_doubleHight</room>
+      <room>rooms\rm_doubleWidth</room>
+      <room>rooms\rm_big</room>
+    </rooms>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
