@@ -10,8 +10,11 @@
     <sprite>sprites\spr_block</sprite>
     <sprite>sprites\spr_enemey</sprite>
     <sprite>sprites\spr_warp</sprite>
+    <sprite>sprites\sprite4</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bg_menu</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="scr_player">
@@ -24,8 +27,10 @@
     <object>objects\obj_player</object>
     <object>objects\obj_block</object>
     <object>objects\obj_warp</object>
+    <object>objects\obj_menuEntry</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_menu</room>
     <rooms name="rm_sample">
       <room>rooms\rm_normal</room>
       <room>rooms\rm_doubleHight</room>
