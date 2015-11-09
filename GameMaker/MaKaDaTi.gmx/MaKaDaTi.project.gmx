@@ -8,34 +8,70 @@
   <sprites name="sprites">
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_block</sprite>
-    <sprite>sprites\spr_enemey</sprite>
+    <sprite>sprites\spr_enemy</sprite>
     <sprite>sprites\spr_warp</sprite>
     <sprite>sprites\sprite4</sprite>
+    <sprites name="spr_entities">
+      <sprite>sprites\spr_doorOpen</sprite>
+      <sprite>sprites\spr_doorClosed</sprite>
+      <sprites name="spr_ent_deco">
+        <sprite>sprites\spr_bed</sprite>
+      </sprites>
+      <sprite>sprites\spr_key</sprite>
+      <sprite>sprites\spr_shelf</sprite>
+    </sprites>
+    <sprites name="spr_player_upgrades">
+      <sprite>sprites\sprite6</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_menu</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\scr_drawDirection.gml</script>
+    <script>scripts\scr_getInputs.gml</script>
     <scripts name="scr_player">
-      <script>scripts\scr_collideMove.gml</script>
+      <script>scripts\scr_player_getHit.gml</script>
+      <script>scripts\scr_collideAndMove.gml</script>
       <script>scripts\scr_player_normal.gml</script>
-      <script>scripts\scr_getInputs.gml</script>
     </scripts>
   </scripts>
+  <shaders name="shaders"/>
   <objects name="objects">
-    <object>objects\obj_player</object>
     <object>objects\obj_block</object>
-    <object>objects\obj_warp</object>
-    <object>objects\obj_menuEntry</object>
+    <objects name="obj_entities">
+      <object>objects\obj_bed</object>
+      <object>objects\obj_door</object>
+      <object>objects\obj_key</object>
+      <object>objects\obj_shelf</object>
+    </objects>
+    <objects name="obj_enemy">
+      <object>objects\obj_groundEnemy</object>
+    </objects>
+    <objects name="obj_playerAndPlayerPowerUps">
+      <object>objects\obj_player</object>
+      <objects name="obj_player_weapons">
+        <object>objects\obj_shortSword</object>
+      </objects>
+    </objects>
+    <objects name="obj_hidden">
+      <object>objects\obj_warp</object>
+      <object>objects\obj_menuEntry</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_menu</room>
+    <rooms name="rm_level">
+      <room>rooms\rm_theBegin</room>
+      <room>rooms\rm_needAKey</room>
+      <room>rooms\rm_toTheTop</room>
+    </rooms>
     <rooms name="rm_sample">
-      <room>rooms\rm_normal</room>
       <room>rooms\rm_doubleHight</room>
       <room>rooms\rm_doubleWidth</room>
       <room>rooms\rm_big</room>
+      <room>rooms\rm_normal</room>
     </rooms>
   </rooms>
   <help>
