@@ -9,6 +9,7 @@
     <sprites name="spr_blocks">
       <sprites name="spr_solidBlocks">
         <sprite>sprites\spr_stoneWall</sprite>
+        <sprite>sprites\spr_BookShelf</sprite>
       </sprites>
       <sprites name="spr_oneWayBlocks">
         <sprite>sprites\spr_shelf</sprite>
@@ -16,6 +17,7 @@
     </sprites>
     <sprites name="spr_decoration">
       <sprite>sprites\spr_bed</sprite>
+      <sprite>sprites\spr_table</sprite>
     </sprites>
     <sprites name="spr_entities">
       <sprite>sprites\spr_enemy</sprite>
@@ -46,6 +48,7 @@
       <object>objects\obj_block</object>
       <objects name="obj_solidBlocks">
         <object>objects\obj_stoneWall</object>
+        <object>objects\obj_bookShelf</object>
       </objects>
       <objects name="obj_oneWayBlock">
         <object>objects\obj_shelf</object>
@@ -53,6 +56,7 @@
     </objects>
     <objects name="obj_decoration">
       <object>objects\obj_bed</object>
+      <object>objects\obj_Tisch</object>
     </objects>
     <objects name="obj_enemy">
       <object>objects\obj_groundEnemy</object>
