@@ -31,9 +31,9 @@
 hsp = 0;
 vsp = 0;
 
-jumpspeed = 14;
-grav = 0.6;
-movespeed = 7;
+jumpspeed = 13;
+grav = 0.5;
+movespeed = 6;
 ply_state = state.normal;
 
 //states

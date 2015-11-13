@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>maxLightsize = 10;
+            <string>maxLightsize = 8;
 lightsize = maxLightsize;
 lightstrength = 1;
 </string>
@@ -50,10 +50,10 @@ lightstrength = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var z = choose(.2, -.2, 0);
+            <string>var z = choose(.1, -.1, 0);
 lightsize +=z;
 
-lightsize = clamp (lightsize, maxLightsize-3, maxLightsize+3);
+lightsize = clamp (lightsize, maxLightsize-1, maxLightsize+1);
 </string>
           </argument>
         </arguments>
