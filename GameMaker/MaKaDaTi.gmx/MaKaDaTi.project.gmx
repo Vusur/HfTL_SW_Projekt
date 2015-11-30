@@ -6,45 +6,50 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprites name="spr_blocks">
-      <sprites name="spr_solidBlocks">
-        <sprite>sprites\spr_stoneWall</sprite>
-        <sprite>sprites\spr_BookShelf</sprite>
-      </sprites>
-      <sprites name="spr_oneWayBlocks">
-        <sprite>sprites\spr_shelf</sprite>
+    <sprites name="spr_mainBlock">
+      <sprite>sprites\spr_stoneWall</sprite>
+      <sprite>sprites\spr_shelf</sprite>
+      <sprites name="spr_interactive">
+        <sprite>sprites\spr_flyingBook</sprite>
+        <sprite>sprites\spr_table</sprite>
+        <sprite>sprites\spr_Bookcase</sprite>
       </sprites>
     </sprites>
     <sprites name="spr_decoration">
-      <sprite>sprites\spr_bed</sprite>
-      <sprite>sprites\spr_table_tall</sprite>
-      <sprite>sprites\spr_lamp</sprite>
-      <sprite>sprites\spr_table_small</sprite>
-      <sprite>sprites\pr_chair</sprite>
-      <sprite>sprites\spr_window2</sprite>
-      <sprite>sprites\spr_window1</sprite>
+      <sprite>sprites\spr_kettle</sprite>
+      <sprite>sprites\spr_window</sprite>
+      <sprite>sprites\spr_chair</sprite>
+      <sprite>sprites\spr_carpet</sprite>
+      <sprites name="spr_decoration_light">
+        <sprite>sprites\spr_lamp</sprite>
+        <sprite>sprites\spr_torch</sprite>
+        <sprite>sprites\spr_candle</sprite>
+      </sprites>
     </sprites>
     <sprites name="spr_entities">
-      <sprite>sprites\spr_enemy</sprite>
+      <sprites name="spr_enemy">
+        <sprite>sprites\spr_enemy</sprite>
+      </sprites>
+      <sprites name="spr_player">
+        <sprite>sprites\spr_player</sprite>
+      </sprites>
     </sprites>
     <sprites name="spr_hiddenObj">
       <sprite>sprites\sprite4</sprite>
+      <sprite>sprites\spr_light</sprite>
     </sprites>
     <sprites name="spr_interactiveObj">
       <sprite>sprites\spr_key</sprite>
       <sprite>sprites\spr_door</sprite>
       <sprite>sprites\spr_spike</sprite>
-    </sprites>
-    <sprite>sprites\spr_player</sprite>
-    <sprites name="spr_ambiente">
-      <sprite>sprites\spr_light</sprite>
+      <sprite>sprites\spr_lock</sprite>
+      <sprite>sprites\spr_switch</sprite>
+      <sprite>sprites\spr_griddoor</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_menu</background>
-    <background>background\bg_game1</background>
-    <background>background\bg_game2</background>
-    <background>background\bg_game3</background>
+    <background>background\bg_main</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -53,38 +58,40 @@
   </scripts>
   <objects name="objects">
     <objects name="obj_Blocks">
-      <object>objects\obj_block</object>
       <objects name="obj_solidBlocks">
         <object>objects\obj_stoneWall</object>
         <object>objects\obj_bookShelf</object>
       </objects>
       <objects name="obj_oneWayBlock">
         <object>objects\obj_shelf</object>
+        <object>objects\obj_flyingBook</object>
+        <object>objects\obj_table</object>
       </objects>
     </objects>
     <objects name="obj_decoration">
-      <object>objects\obj_bed</object>
-      <object>objects\obj_Tisch</object>
       <object>objects\obj_lamp</object>
-      <object>objects\obj_window2</object>
-      <object>objects\obj_window1</object>
+      <object>objects\obj_kettle</object>
+      <object>objects\obj_window</object>
+      <object>objects\obj_chair</object>
     </objects>
     <objects name="obj_enemy">
       <object>objects\obj_groundEnemy</object>
     </objects>
-    <objects name="obj_hidden">
+    <objects name="obj_hiddenObj">
       <object>objects\obj_menuEntry</object>
+      <object>objects\obj_light</object>
+      <object>objects\obj_light_control</object>
+      <object>objects\obj_carpet</object>
     </objects>
     <objects name="obj_interactiveObj">
       <object>objects\obj_door</object>
       <object>objects\obj_key</object>
       <object>objects\obj_spike</object>
+      <object>objects\obj_lock</object>
+      <object>objects\obj_switch</object>
+      <object>objects\obj_griddoor</object>
     </objects>
     <object>objects\obj_player</object>
-    <objects name="obj_ambiente">
-      <object>objects\obj_light</object>
-      <object>objects\obj_light_control</object>
-    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_000menu</room>
