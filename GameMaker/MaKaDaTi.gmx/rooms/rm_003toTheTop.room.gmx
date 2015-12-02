@@ -288,6 +288,7 @@
     <instance objName="obj_shelf" x="1152" y="640" name="inst_7FB13964" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shelf" x="1088" y="512" name="inst_8EF05B35" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shelf" x="1152" y="512" name="inst_27F7ED9B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_pumpkin01" x="1408" y="192" name="inst_2F17A250" locked="0" code="" scaleX="0.217647060751915" scaleY="0.217647060751915" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

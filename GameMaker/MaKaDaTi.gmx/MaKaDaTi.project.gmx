@@ -29,6 +29,9 @@
     <sprites name="spr_entities">
       <sprites name="spr_enemy">
         <sprite>sprites\spr_enemy</sprite>
+        <sprite>sprites\spr_pumpkin01_left</sprite>
+        <sprite>sprites\spr_pumpkin01_waiting</sprite>
+        <sprite>sprites\spr_pumpkin01_right</sprite>
       </sprites>
       <sprites name="spr_player">
         <sprite>sprites\spr_player_run</sprite>
@@ -55,7 +58,9 @@
     <background>background\bg_menu</background>
     <background>background\bg_main</background>
   </backgrounds>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\rm004_path001</path>
+  </paths>
   <scripts name="scripts">
     <script>scripts\scr_getInputs.gml</script>
     <script>scripts\scr_debug.gml</script>
@@ -80,6 +85,7 @@
     </objects>
     <objects name="obj_enemy">
       <object>objects\obj_groundEnemy</object>
+      <object>objects\obj_pumpkin01</object>
     </objects>
     <objects name="obj_hiddenObj">
       <object>objects\obj_menuEntry</object>
