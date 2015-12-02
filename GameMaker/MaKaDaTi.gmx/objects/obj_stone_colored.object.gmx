@@ -25,9 +25,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Set speed
+            <string>/// Set movement
+/// Set rotation_speed
 image_speed = 0.2
 
+/// Set direction
+// 0 = Right | 180 = Left
+direction = 180
+if (var_player_direction == -1){
+direction = 180;
+} else {
+direction = 0;
+}
+
+// Set Speed
+speed = 8
 </string>
           </argument>
         </arguments>

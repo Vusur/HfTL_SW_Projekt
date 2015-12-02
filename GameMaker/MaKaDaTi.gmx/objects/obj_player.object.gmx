@@ -47,6 +47,29 @@ enum state{
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// set globalvar direction
+globalvar var_player_direction;
+var_player_direction = 0
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>
@@ -70,6 +93,7 @@ scr_getInputs();
 
 //draw the direction which the player faces
 if((key_right - key_left) != 0) image_xscale = key_right - key_left;
+var_player_direction = image_xscale;
 
 //fall
 if(vsp &lt; 10) vsp += grav;
@@ -127,7 +151,7 @@ scr_debug();
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="32">
+    <event eventtype="9" enumb="32">
       <action>
         <libid>1</libid>
         <id>201</id>
@@ -158,25 +182,24 @@ scr_debug();
       </action>
       <action>
         <libid>1</libid>
-        <id>102</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_set_motion</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
-        <whoName>obj_stone_colored</whoName>
-        <relative>-1</relative>
+        <whoName>self</whoName>
+        <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>4</string>
+            <kind>1</kind>
+            <string>/// Set var_player_direction
+
+var_player_direction = image_xscale
+</string>
           </argument>
         </arguments>
       </action>
