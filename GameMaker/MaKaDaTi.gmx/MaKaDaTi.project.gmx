@@ -31,7 +31,8 @@
         <sprite>sprites\spr_enemy</sprite>
       </sprites>
       <sprites name="spr_player">
-        <sprite>sprites\spr_player</sprite>
+        <sprite>sprites\spr_player_run</sprite>
+        <sprite>sprites\spr_player_idle</sprite>
       </sprites>
     </sprites>
     <sprites name="spr_hiddenObj">
