@@ -31,7 +31,6 @@
         <sprite>sprites\spr_enemy</sprite>
         <sprite>sprites\spr_pumpkin01_left</sprite>
         <sprite>sprites\spr_pumpkin01_waiting</sprite>
-        <sprite>sprites\spr_pumpkin01_right</sprite>
       </sprites>
       <sprites name="spr_player">
         <sprite>sprites\spr_player_run</sprite>

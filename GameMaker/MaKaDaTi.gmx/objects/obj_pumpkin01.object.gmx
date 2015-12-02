@@ -167,6 +167,17 @@ if(place_meeting(x+hsp, y, obj_stoneWall)){
 x += hsp;
 y += vsp;
 
+//Enemy Collision
+if (place_meeting(x,y,obj_player)){
+    if (obj_player.y &lt; y-50)
+    {
+        with (obj_player) vsp = -jumpspeed;
+        instance_destroy();
+    }else{
+        room_restart();
+    }
+}
+
 //if (hsp == 0) sprite_index = spr_pumpkin01_waiting;
 if (hsp == 0) image_xscale *= -1;
 </string>
