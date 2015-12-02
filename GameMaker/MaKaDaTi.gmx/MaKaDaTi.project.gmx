@@ -4,7 +4,10 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\pumpkin_splash001</sound>
+    <sound>sound\stone_throw001</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="spr_mainBlock">
       <sprite>sprites\spr_stoneWall</sprite>
