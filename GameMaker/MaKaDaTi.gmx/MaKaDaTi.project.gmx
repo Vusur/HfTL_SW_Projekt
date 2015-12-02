@@ -7,6 +7,11 @@
   <sounds name="sound">
     <sound>sound\pumpkin_splash001</sound>
     <sound>sound\stone_throw001</sound>
+    <sound>sound\sound2</sound>
+    <sound>sound\music001</sound>
+    <sound>sound\say_au001</sound>
+    <sound>sound\sound5</sound>
+    <sound>sound\bg_outside001</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="spr_mainBlock">
@@ -107,6 +112,10 @@
     <object>objects\object21</object>
     <objects name="obj_stone">
       <object>objects\obj_stone_colored</object>
+    </objects>
+    <objects name="obj_musics">
+      <object>objects\bgmusic</object>
+      <object>objects\obj_bg_outside001</object>
     </objects>
   </objects>
   <rooms name="rooms">
