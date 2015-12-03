@@ -137,10 +137,8 @@
       <room>rooms\rm_002needAKey</room>
       <room>rooms\rm_003toTheTop</room>
       <room>rooms\rm_004spikeySpike</room>
-<<<<<<< HEAD
       <room>rooms\rm_005pumpkin</room>
       <room>rooms\rm_006angryPumpkin</room>
-=======
       <room>rooms\rm_005angryPumpkin</room>
       <room>rooms\rm_006neu</room>
       <room>rooms\rm_007neu</room>
@@ -149,7 +147,6 @@
       <room>rooms\rm_010bigButtonWithTable</room>
       <room>rooms\rm_011BigButtonWithoutTable</room>
       <room>rooms\rm_012MariasLevel</room>
->>>>>>> origin/master
     </rooms>
     <room>rooms\rm_001sample</room>
     <rooms name="rm_sample">
