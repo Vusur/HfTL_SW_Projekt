@@ -10,7 +10,7 @@
     <sound>sound\sound2</sound>
     <sound>sound\music001</sound>
     <sound>sound\say_au001</sound>
-    <sound>sound\sound5</sound>
+    <sound>sound\stone_collision001</sound>
     <sound>sound\bg_outside001</sound>
   </sounds>
   <sprites name="sprites">

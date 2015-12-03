@@ -132,7 +132,7 @@ speed = 8
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>-1</sound>
+            <sound>stone_collision001</sound>
           </argument>
           <argument>
             <kind>3</kind>
