@@ -37,6 +37,7 @@ jumpspeed = 13;
 grav = 0.5;
 movespeed = 6;
 ply_state = state.normal;
+var_isrunning = 0;
 
 //states
 enum state{
@@ -130,6 +131,25 @@ if(place_meeting(x+hsp, y, obj_stoneWall)){
 //compute new position
 x += hsp;
 y += vsp;
+
+//play running sound
+if (hsp != 0 &amp;&amp; var_isrunning == 0){
+    var_isrunning = 1;
+    audio_play_sound(running001, 10, true);
+}
+
+if (hsp == 0 &amp;&amp; var_isrunning == 1){
+    audio_stop_sound(running001);
+    var_isrunning = 0;
+}
+
+//stop playing sound when jumping
+if (vsp != 0){
+    audio_stop_sound(running001);
+    var_isrunning = 0;
+}
+
+// Player Animation
 
 if(hsp != 0 &amp;&amp; place_meeting(x, y+1, obj_stoneWall) ){
     sprite_index = spr_player_run;

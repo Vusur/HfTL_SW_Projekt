@@ -11,6 +11,7 @@
     <sound>sound\say_au001</sound>
     <sound>sound\stone_collision001</sound>
     <sound>sound\bg_outside001</sound>
+    <sound>sound\running001</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="spr_mainBlock">
