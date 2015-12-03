@@ -7,7 +7,6 @@
   <sounds name="sound">
     <sound>sound\pumpkin_splash001</sound>
     <sound>sound\stone_throw001</sound>
-    <sound>sound\sound2</sound>
     <sound>sound\music001</sound>
     <sound>sound\say_au001</sound>
     <sound>sound\stone_collision001</sound>
@@ -119,7 +118,6 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_sample</room>
     <room>rooms\rm_000menu</room>
     <rooms name="rm_level">
       <room>rooms\rm_001theBegin</room>
@@ -128,6 +126,7 @@
       <room>rooms\rm_004spikeySpike</room>
       <room>rooms\rm_005angryPumpkin</room>
     </rooms>
+    <room>rooms\rm_001sample</room>
     <rooms name="rm_sample">
       <room>rooms\rm_doubleHight</room>
       <room>rooms\rm_doubleWidth</room>
