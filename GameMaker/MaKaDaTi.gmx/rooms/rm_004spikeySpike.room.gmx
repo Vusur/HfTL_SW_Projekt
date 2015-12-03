@@ -167,9 +167,9 @@
     <instance objName="obj_stoneWall" x="896" y="576" name="inst_2D4F1071" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="896" y="512" name="inst_B178D04C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="960" y="512" name="inst_8ED7579D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_shelf" x="671" y="502" name="inst_E37E9068" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_shelf" x="735" y="502" name="inst_1BA84F11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_shelf" x="799" y="502" name="inst_C8D126D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_shelf" x="704" y="512" name="inst_E37E9068" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_shelf" x="768" y="512" name="inst_1BA84F11" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_shelf" x="832" y="512" name="inst_C8D126D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="256" y="256" name="inst_5F0D76CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="320" y="256" name="inst_250C082D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="384" y="256" name="inst_C014FED7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -216,12 +216,11 @@
     <instance objName="obj_spike" x="1024" y="256" name="inst_55DBBCB9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spike" x="1280" y="832" name="inst_4994A56B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spike" x="1344" y="832" name="inst_F13C369B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bookShelf" x="816" y="717" name="inst_C08F1112" locked="0" code="" scaleX="1.50793647766113" scaleY="1.73958337306976" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="1600" y="896" name="inst_4E145904" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="448" y="832" name="inst_494B46F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="640" y="832" name="inst_BE8467F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_shelf" x="992" y="592" name="inst_49824DD6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_shelf" x="1056" y="592" name="inst_EEEA4BAE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_shelf" x="1088" y="608" name="inst_49824DD6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_shelf" x="1024" y="608" name="inst_EEEA4BAE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_light_control" x="32" y="32" name="inst_D0D721B1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_light" x="288" y="640" name="inst_E99E1933" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_light" x="736" y="128" name="inst_DB4C4B90" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -229,11 +228,12 @@
     <instance objName="obj_light" x="160" y="128" name="inst_CFD650D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_light" x="576" y="640" name="inst_2838CBE6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_light" x="1280" y="128" name="inst_259A9EB5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bookShelf" x="81" y="397" name="inst_3B56B4C4" locked="0" code="" scaleX="1.50793647766113" scaleY="1.73958337306976" colour="4294967295" rotation="0"/>
     <instance objName="obj_table" x="1088" y="740" name="inst_50BEAD9D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="0" y="0" name="inst_CE3800F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="1600" y="0" name="inst_5393BAC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="1600" y="832" name="inst_D91239C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bookShelf" x="788" y="691" name="inst_788115C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bookShelf" x="77" y="372" name="inst_BE4FCB20" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

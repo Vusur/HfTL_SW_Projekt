@@ -27,9 +27,15 @@
             <kind>1</kind>
             <string>image_speed = 0;
 depth = -10;
-
-if(!place_meeting(x+1, y, obj_stoneWall)) sprite_index = 1;
-if(!place_meeting(x-1, y, obj_stoneWall)) sprite_index = 2;
+if( !place_meeting(x+64, y+1, obj_stoneWall) &amp;&amp; !place_meeting(x-64, y+1, obj_stoneWall)){
+    instance_destroy();
+}
+else if(!place_meeting(x+64, y+1, obj_stoneWall)){
+    image_index = 2;
+}
+else if(!place_meeting(x-64, y+1, obj_stoneWall)){
+    image_index = 1;
+}
 </string>
           </argument>
         </arguments>

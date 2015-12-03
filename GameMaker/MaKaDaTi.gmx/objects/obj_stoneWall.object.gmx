@@ -25,9 +25,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!place_meeting(x, y-1, obj_stoneWall)){
-    instance_create(x, y + 6 - (obj_stoneWall.sprite_height / 2), obj_carpet)
+            <string>//true im creation setzen, falls bei einem Stein definitiv kein Teppich auf Stein
+//TODO
+noC = false;
+
+if(!noC){
+    if(
+    (!place_meeting(x, y-1, obj_stoneWall) ||
+    place_meeting(x, y-1, obj_bookShelf)||
+    place_meeting(x, y-1, obj_shelf)) &amp;&amp;
+    !place_meeting(x, y-1, obj_spike)
+    ){
+        instance_create(x, y + 12 - (obj_stoneWall.sprite_height / 2), obj_carpet)
+    }
 }
+
 </string>
           </argument>
         </arguments>

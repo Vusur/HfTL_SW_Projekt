@@ -28,8 +28,8 @@
             <string>event_inherited();
 
 sprSelf = spr_table;
-image_index = 2;
-//image_index = choose(0, 1, 2);
+
+ind = choose(0, 1, 2);
 </string>
           </argument>
         </arguments>
