@@ -68,6 +68,10 @@
   </backgrounds>
   <paths name="paths">
     <path>paths\rm004_path001</path>
+    <paths name="003">
+      <path>paths\pt_room_003_1</path>
+      <path>paths\pt_room_003_</path>
+    </paths>
   </paths>
   <scripts name="scripts">
     <script>scripts\scr_getInputs.gml</script>
@@ -98,6 +102,7 @@
     <objects name="obj_enemy">
       <object>objects\obj_groundEnemy</object>
       <object>objects\obj_pumpkin01</object>
+      <object>objects\obj_pumpkinPath</object>
     </objects>
     <objects name="obj_hiddenObj">
       <object>objects\obj_menuEntry</object>
