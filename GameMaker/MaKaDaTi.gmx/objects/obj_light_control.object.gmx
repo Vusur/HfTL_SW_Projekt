@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1000</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -51,11 +51,17 @@ surfscale = 1/8;
             <kind>1</kind>
             <string>surface_set_target(surf);
 
-draw_clear_alpha(c_black, 0.75);
+draw_clear_alpha(c_black, 0.2);
+
+//with(obj_blend){
+//    draw_set_blend_mode(bm_add);
+//    draw_sprite_ext(spr_blend, 0, x, y, spr_blend.x*1000, spr_blend.y*1000, 0, c_white, 0.5);
+//    draw_set_blend_mode(bm_normal);
+//}
 
 with(obj_light){
 
-    draw_set_blend_mode(bm_subtract);
+    draw_set_blend_mode(bm_inv_dest_alpha);
     draw_sprite_ext(spr_light, 0, x*other.surfscale, y*other.surfscale, lightsize*other.surfscale, lightsize*other.surfscale, 0, c_white, lightstrength);
     draw_set_blend_mode(bm_normal);
 }

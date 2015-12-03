@@ -33,9 +33,9 @@ image_speed = 0.2;
 hsp = 0;
 vsp = 0;
 
-jumpspeed = 13;
-grav = 0.5;
-movespeed = 6;
+jumpspeed = 10;
+grav = 0.4;
+movespeed = 5;
 ply_state = state.normal;
 
 //states
