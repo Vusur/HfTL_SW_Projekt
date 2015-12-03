@@ -51,6 +51,7 @@
     <sprites name="spr_hiddenObj">
       <sprite>sprites\sprite4</sprite>
       <sprite>sprites\spr_light</sprite>
+      <sprite>sprites\spr_blend</sprite>
     </sprites>
     <sprites name="spr_interactiveObj">
       <sprite>sprites\spr_key</sprite>
@@ -99,6 +100,7 @@
       <object>objects\obj_light</object>
       <object>objects\obj_light_control</object>
       <object>objects\obj_carpet</object>
+      <object>objects\obj_blend</object>
     </objects>
     <objects name="obj_interactiveObj">
       <object>objects\obj_door</object>
@@ -108,14 +110,15 @@
       <object>objects\obj_switch</object>
       <object>objects\obj_griddoor</object>
     </objects>
-    <object>objects\obj_player</object>
-    <object>objects\object21</object>
-    <objects name="obj_stone">
-      <object>objects\obj_stone_colored</object>
-    </objects>
     <objects name="obj_musics">
       <object>objects\bgmusic</object>
       <object>objects\obj_bg_outside001</object>
+    </objects>
+    <objects name="obj_player">
+      <object>objects\obj_player</object>
+      <objects name="obj_stone">
+        <object>objects\obj_stone_colored</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">

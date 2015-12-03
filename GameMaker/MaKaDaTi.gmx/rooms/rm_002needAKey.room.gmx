@@ -233,8 +233,7 @@
     <instance objName="obj_stoneWall" x="832" y="736" name="inst_00F23171" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="896" y="736" name="inst_4394821E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_kettle" x="695" y="703" name="inst_5DB9B4A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_flyingBook" x="416" y="736" name="inst_8224C43F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_flyingBook" x="416" y="640" name="inst_4D921843" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_flyingBook" x="416" y="640" name="inst_4D921843" locked="0" code="mspeed = 2;&#xA;range = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="self" x="640" y="704" name="inst_41237AB1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

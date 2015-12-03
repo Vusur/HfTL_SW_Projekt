@@ -37,11 +37,41 @@ mspeed = 12;
 //Richtung der bewegung
 //dir = 0; --horizontal
 //dir = 1; --vertical
-dir = 1;
+dir = 0;
 
 //Wie weit soll sich die Platform bewegen?
 //Eckt die Plattform an ein solides Objekt an, dann wechsel diese die Richtung
 range = 10;
+
+//richtung = 1; --rechts/runter
+//richtugn = -1; --links/hoch
+richtung = 1;
+
+alarm[0] = room.speed * range;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>richtung = richtung * -1;
+alarm[0] = room.speed * range;
 </string>
           </argument>
         </arguments>
@@ -65,6 +95,54 @@ range = 10;
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+
+
+
+
+
+if(false){
+move = true;
+hsp = 0;
+vsp = 0;
+//Bewegung nur, wenn der Spieler auf dem Buch steht
+//if(moveOnContact){
+//    if(!place_meeting(x, y-1, obj_player)){
+//        move = false;
+//    } 
+//}
+
+if(move){
+    if(dir == 0){
+        hsp= richtung * mspeed;
+    }
+    if(dir == 1){
+        vsp = richtung * mspeed;
+    }
+}
+
+//Kollision horizontal
+if(place_meeting(x+hsp, y, obj_stoneWall)){
+    while(!place_meeting(x+sign(hsp), y, obj_stoneWall)){
+        x+=sign(hsp);
+        hsp = 0;
+    }
+    richtung = richtung * -1;
+    alarm[0] = room.speed * range;
+}
+
+//Kollision horizontal
+if(place_meeting(x, y+vsp, obj_stoneWall)){
+    while(!place_meeting(x, y+sign(vsp), obj_stoneWall)){
+        y+=sign(vsp);
+        vsp = 0;
+    }
+    richtung = richtung * -1;
+    alarm[0] = room.speed * range;
+}
+
+x+= hsp;
+y+= vsp;
+}
 </string>
           </argument>
         </arguments>
