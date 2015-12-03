@@ -132,7 +132,8 @@
       <room>rooms\rm_002needAKey</room>
       <room>rooms\rm_003toTheTop</room>
       <room>rooms\rm_004spikeySpike</room>
-      <room>rooms\rm_005angryPumpkin</room>
+      <room>rooms\rm_005pumpkin</room>
+      <room>rooms\rm_006angryPumpkin</room>
     </rooms>
     <room>rooms\rm_001sample</room>
     <rooms name="rm_sample">
