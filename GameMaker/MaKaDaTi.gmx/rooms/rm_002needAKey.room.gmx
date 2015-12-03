@@ -142,7 +142,7 @@
     <instance objName="obj_stoneWall" x="256" y="96" name="inst_E3F9B160" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="256" y="160" name="inst_7E656293" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="320" y="96" name="inst_7C0CC59D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_door" x="1041" y="652" name="inst_299D1896" locked="0" code="tr_next = rm_003toTheTop;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door" x="1041" y="654" name="inst_299D1896" locked="0" code="tr_next = rm_003toTheTop;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="192" y="704" name="inst_095CE4C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="1536" y="800" name="inst_A6B4372C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="1472" y="800" name="inst_897CCB56" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

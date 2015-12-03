@@ -209,7 +209,7 @@
     <instance objName="obj_stoneWall" x="1536" y="256" name="inst_F1BCCE07" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="1536" y="320" name="inst_20BB9D7F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_key" x="1497" y="781" name="inst_17F3A35B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_door" x="1502" y="172" name="inst_E56D1F25" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door" x="1501" y="174" name="inst_E56D1F25" locked="0" code="/// Next Room&#xA;tr_next = rm_005angryPumpkin;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spike" x="448" y="256" name="inst_C13E4D6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spike" x="512" y="256" name="inst_175220EF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spike" x="960" y="256" name="inst_6451BDA1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -229,8 +229,8 @@
     <instance objName="obj_light" x="160" y="128" name="inst_CFD650D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_light" x="576" y="640" name="inst_2838CBE6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_light" x="1280" y="128" name="inst_259A9EB5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_pumpkin01" x="672" y="128" name="inst_28E3E95C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_pumpkin01" x="544" y="128" name="inst_1A315695" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_pumpkin01" x="1344" y="160" name="inst_28E3E95C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bookShelf" x="81" y="397" name="inst_3B56B4C4" locked="0" code="" scaleX="1.50793647766113" scaleY="1.73958337306976" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
