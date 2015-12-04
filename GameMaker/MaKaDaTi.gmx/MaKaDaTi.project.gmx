@@ -147,6 +147,7 @@
       <room>rooms\rm_010bigButtonWithTable</room>
       <room>rooms\rm_011BigButtonWithoutTable</room>
       <room>rooms\rm_012MariasLevel</room>
+      <room>rooms\rm_013Maria2</room>
     </rooms>
     <room>rooms\rm_001sample</room>
     <rooms name="rm_sample">
