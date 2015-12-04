@@ -96,7 +96,7 @@ var_health = 100;
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>pumpkin_splash001</sound>
+            <sound>spumpkin_splash001</sound>
           </argument>
           <argument>
             <kind>3</kind>

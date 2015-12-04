@@ -151,11 +151,17 @@ if (vsp != 0){
 
 // Player Animation
 
-if(hsp != 0 &amp;&amp; place_meeting(x, y+1, obj_stoneWall) ){
-    sprite_index = spr_player_run;
-} else {
-    sprite_index = spr_player_idle;
+if(place_meeting(x, y+1, obj_stoneWall)){
+    if (hsp != 0) {
+        sprite_index = spr_player_run;
+    } else {
+        sprite_index = spr_player_idle;
+    }
+} else  {
+    sprite_index = spr_player_jump;
 }
+
+
 
 //#############
 //### DEBUG ###
