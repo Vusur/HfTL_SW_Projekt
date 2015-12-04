@@ -81,6 +81,7 @@ image_speed = 0
 if(key_up){
     if(open == true) {
     audio_play_sound(snd_door_short, 10, false);
+    with (obj_spike) { instance_destroy();}
     room_goto(tr_next);
     }
 }
