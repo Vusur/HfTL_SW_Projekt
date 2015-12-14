@@ -60,9 +60,9 @@ draw_clear_alpha(c_black, 0.2);
 //}
 
 with(obj_light){
-
+    draw_sprite(spr, 0, x, y)
     draw_set_blend_mode(bm_inv_dest_alpha);
-    draw_sprite_ext(spr_light, 0, x*other.surfscale, y*other.surfscale, lightsize*other.surfscale, lightsize*other.surfscale, 0, c_white, lightstrength);
+    draw_sprite_ext(spr_light, 0, x*other.surfscale, y*other.surfscale, lightsize*other.surfscale, lightsize*other.surfscale, 0, c_white, 0.5);
     draw_set_blend_mode(bm_normal);
 }
 

@@ -101,6 +101,7 @@
       <objects name="obj_decoration_light">
         <object>objects\obj_lamp</object>
         <object>objects\obj_torch</object>
+        <object>objects\obj_light</object>
       </objects>
       <object>objects\obj_painting</object>
     </objects>
@@ -111,7 +112,6 @@
     </objects>
     <objects name="obj_hiddenObj">
       <object>objects\obj_menuEntry</object>
-      <object>objects\obj_light</object>
       <object>objects\obj_light_control</object>
       <object>objects\obj_carpet</object>
       <object>objects\obj_blend</object>
@@ -123,7 +123,6 @@
       <object>objects\obj_lock</object>
       <object>objects\obj_switch</object>
       <object>objects\obj_griddoor</object>
-      <object>objects\obj_stone_colored</object>
     </objects>
     <objects name="obj_musics">
       <object>objects\obj_bgmusic001</object>
@@ -131,6 +130,7 @@
     </objects>
     <objects name="obj_player">
       <object>objects\obj_player</object>
+      <object>objects\obj_stone_colored</object>
     </objects>
   </objects>
   <rooms name="rooms">

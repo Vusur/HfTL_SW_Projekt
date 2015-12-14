@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_light</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,6 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0.2;
+image_index = choose(0, 1, 2, 3, 4, 5); //Somit sind die Flammen unterschiedlich
+event_inherited();
+spr = spr_torch;
+maxLightsize = 4
+lightsize = maxLightsize
+
+
 </string>
           </argument>
         </arguments>
