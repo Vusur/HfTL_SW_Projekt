@@ -114,7 +114,7 @@
       <object>objects\obj_menuEntry</object>
       <object>objects\obj_light_control</object>
       <object>objects\obj_carpet</object>
-      <object>objects\obj_blend</object>
+      <object>objects\obj_fade</object>
     </objects>
     <objects name="obj_interactiveObj">
       <object>objects\obj_door</object>
@@ -158,12 +158,6 @@
       <room>rooms\rm_015Maria4</room>
     </rooms>
     <room>rooms\rm_001sample</room>
-    <rooms name="rm_sample">
-      <room>rooms\rm_doubleHight</room>
-      <room>rooms\rm_doubleWidth</room>
-      <room>rooms\rm_big</room>
-      <room>rooms\rm_normal</room>
-    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

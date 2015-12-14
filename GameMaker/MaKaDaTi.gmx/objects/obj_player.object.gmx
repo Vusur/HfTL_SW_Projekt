@@ -25,25 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///initialize player 
-
-image_speed = 0.2;
-
-// player variable
-hsp = 0;
-vsp = 0;
-
-jumpspeed = 13;
-grav = 0.5;
-movespeed = 6;
-ply_state = state.normal;
-var_isrunning = 0;
-
-//states
-enum state{
-    normal,
-    getHit
-}
+            <string>/// set globalvar direction
+globalvar var_player_direction;
+var_player_direction = 0
 </string>
           </argument>
         </arguments>
@@ -64,9 +48,53 @@ enum state{
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// set globalvar direction
-globalvar var_player_direction;
-var_player_direction = 0
+            <string>///initialize player 
+
+image_speed = 0.2;
+
+// player variable
+hsp = 0;
+vsp = 0;
+
+jumpspeed = 13;
+grav = 0.5;
+movespeed = 6;
+
+var_isrunning = 0;
+
+// can player hit and move?
+moveable = false;
+hitable = false;
+
+// the player has to stand still at the begining
+alarm[0] = room_speed;
+
+//create fade
+instance_create(x, y, obj_fade);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>moveable = true;
+hitable = true;
 </string>
           </argument>
         </arguments>
@@ -90,8 +118,10 @@ var_player_direction = 0
           <argument>
             <kind>1</kind>
             <string>///behavior of the player
+
 scr_getInputs();
 
+if(moveable){
 //draw the direction which the player faces
 if((key_right - key_left) != 0) image_xscale = key_right - key_left;
 var_player_direction = image_xscale;
@@ -127,7 +157,20 @@ if(place_meeting(x+hsp, y, obj_stoneWall)){
     hsp = 0;
 }
 
-
+//###############################################
+//### the player open the door and can't move ###
+//###############################################
+if(place_meeting(x, y, obj_door) &amp;&amp; key_up){
+    if(obj_door.open){
+        moveable = false;
+        obj_fade.fade_out = true;
+        obj_door.alarm[0] = room_speed;
+        audio_play_sound(snd_door_short, 10, false);
+        with (obj_spike) { instance_destroy();}
+        hsp = 0;
+        vsp = 0;
+    }
+}
 //compute new position
 x += hsp;
 y += vsp;
@@ -167,7 +210,7 @@ if(place_meeting(x, y+1, obj_stoneWall)){
 //### DEBUG ###
 //#############
 scr_debug();
-
+}
     
 
 
