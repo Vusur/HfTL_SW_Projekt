@@ -191,14 +191,18 @@ if (var_health &lt; 1) instance_destroy();
 //####################################
 
 ///zeichnet die Bewegung des Kürbisses
-
-if(hasRotation == 1){
-    if(sign(hsp) == 1) image_speed = -0.4;
-    else image_speed = 0.4;
+if(hsp != 0){
+    if(hasRotation == 1){
+        if(sign(hsp) == 1) image_speed = -0.4;
+        else image_speed = 0.4;
+    } else {
+        if(sign(hsp) == 1)  image_xscale = -1;
+        else    image_xscale = 1;   
+    }
 } else {
-    if(sign(hsp) == 1)  image_xscale = -1;
-    else    image_xscale = 1;   
+    spr_index = spr_pumpkin01_waiting;
 }
+
 </string>
           </argument>
         </arguments>

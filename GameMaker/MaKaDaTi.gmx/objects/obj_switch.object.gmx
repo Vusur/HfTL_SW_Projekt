@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>needTable = false;
 activated = false;
+place = y;
 
 </string>
           </argument>
@@ -52,9 +53,11 @@ activated = false;
             <kind>1</kind>
             <string>if(needTable){
     activated = false;
+    y = place;
 }
 if(place_meeting(x, y, obj_player) || place_meeting(x, y, obj_bookShelf)){
     activated = true;
+    y = place + 5;
 }
 </string>
           </argument>

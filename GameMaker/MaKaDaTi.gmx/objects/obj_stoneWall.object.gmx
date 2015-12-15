@@ -34,7 +34,8 @@ if(!noC){
     (!place_meeting(x, y-1, obj_stoneWall) ||
     place_meeting(x, y-1, obj_bookShelf)||
     place_meeting(x, y-1, obj_oneWay)) &amp;&amp;
-    !place_meeting(x, y-1, obj_spike)
+    !place_meeting(x, y-1, obj_spike) &amp;&amp;
+    !place_meeting(x, y-1, obj_switch)
     ){
         instance_create(x, y + 13 - (obj_stoneWall.sprite_height / 2), obj_carpet)
     }
