@@ -26,14 +26,21 @@
           <argument>
             <kind>1</kind>
             <string>/// initialize Variables
-image_speed=0.4
-dir = -1;
+dir = choose(-1, 1);
 movespeed = 3;
 grav = 0.2;
 hsp = 0; // horizontal speed
 vsp = 0; // vertical speed
-image_xscale = 1; // Roll-Richtung == Sprite (links)
 var_health = 100;
+
+hasRotation = choose(0, 1);
+if(hasRotation == 0){
+    image_xscale = dir;
+    image_speed = 0.4;
+    sprite_index = spr_pumpkin01_waiting
+} else {
+    sprite_index = spr_pumpkin01_left;
+}
 </string>
           </argument>
         </arguments>
@@ -179,8 +186,19 @@ if (place_meeting(x,y,obj_player)){
 //Health &lt; 1
 if (var_health &lt; 1) instance_destroy();
 
-//if (hsp == 0) sprite_index = spr_pumpkin01_waiting;
-if (hsp == 0) image_xscale *= -1;
+//####################################
+//### Bewegungsmuster der Kürbisse ###
+//####################################
+
+///zeichnet die Bewegung des Kürbisses
+
+if(hasRotation == 1){
+    if(sign(hsp) == 1) image_speed = -0.4;
+    else image_speed = 0.4;
+} else {
+    if(sign(hsp) == 1)  image_xscale = -1;
+    else    image_xscale = 1;   
+}
 </string>
           </argument>
         </arguments>
