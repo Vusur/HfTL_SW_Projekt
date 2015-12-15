@@ -127,26 +127,39 @@ var_health = 100;
 hsp = dir * movespeed;
 vsp += grav;
 
-//###################################
-//### collision with solid Blocks ###
-//###################################
+//##################################################
+//### collision with solid Blocks (only if solid)###
+//##################################################
 
-//vertical
+
+//vertical over solid
 if(place_meeting(x, y+vsp, obj_stoneWall)){
     while(!place_meeting(x, y+sign(vsp), obj_stoneWall)){
         y += sign(vsp);
     }
     vsp = 0;   
 }
-
-//horizontal
-if(place_meeting(x+hsp, y, obj_stoneWall)){
-    while(!place_meeting(x+sign(hsp), y, obj_stoneWall)){
-        x += sign(hsp);
+   
+//vertical over shelf
+else if(place_meeting(x, y+vsp, obj_shelf_pumpkin)){
+    while(!place_meeting(x, y+sign(vsp), obj_shelf_pumpkin)){
+        y += sign(vsp);
     }
-    hsp = 0;
-    dir *= -1;
+    vsp = 0;
 }
+
+//horizontal only if solid block
+if(!place_meeting(x+hsp, y, obj_oneWay)){
+//horizontal
+    if(place_meeting(x+hsp, y, obj_stoneWall)){
+        while(!place_meeting(x+sign(hsp), y, obj_stoneWall)){
+            x += sign(hsp);
+        }
+        hsp = 0;
+        dir *= -1;
+    }
+}
+
 
 //compute new position
 x += hsp;

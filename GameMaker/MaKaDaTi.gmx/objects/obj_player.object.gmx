@@ -204,13 +204,13 @@ if(place_meeting(x, y+1, obj_stoneWall)){
     sprite_index = spr_player_jump;
 }
 
-
+}
 
 //#############
 //### DEBUG ###
 //#############
 scr_debug();
-}
+
     
 
 
