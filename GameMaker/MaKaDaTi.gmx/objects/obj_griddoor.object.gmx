@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>image_speed = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -48,10 +49,18 @@
           <argument>
             <kind>1</kind>
             <string>if(trigger.activated){
-    sprite_index = -1;
-    mask_index = -1;
+    if(image_index &lt; 6){
+        image_speed = 0.5;
+    } else {
+        image_speed = 0;
+    }
+    mask_index = spr_window;
 } else {
-    sprite_index = spr_griddoor;
+    if(image_index &gt; 0){
+        image_speed = -0.5;
+    } else {
+        image_speed = 0;     
+    }
     mask_index = spr_griddoor;
 }
 </string>

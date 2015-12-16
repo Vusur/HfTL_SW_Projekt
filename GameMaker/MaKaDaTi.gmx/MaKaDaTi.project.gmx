@@ -75,10 +75,6 @@
   </backgrounds>
   <paths name="paths">
     <path>paths\rm004_path001</path>
-    <paths name="003">
-      <path>paths\pt_room_003_1</path>
-      <path>paths\pt_room_003_</path>
-    </paths>
     <path>paths\pt_example</path>
   </paths>
   <scripts name="scripts">

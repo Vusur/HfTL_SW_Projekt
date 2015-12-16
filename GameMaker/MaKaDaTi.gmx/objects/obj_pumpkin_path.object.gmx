@@ -29,7 +29,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>12</string>
+            <string>8</string>
           </argument>
           <argument>
             <kind>4</kind>
@@ -57,7 +57,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>///Dont Use This Pumpkin. Ask Creator for advise
+event_inherited();
 </string>
           </argument>
         </arguments>
