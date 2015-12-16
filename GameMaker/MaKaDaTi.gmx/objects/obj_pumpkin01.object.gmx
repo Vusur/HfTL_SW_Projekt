@@ -26,12 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>/// initialize Variables
+event_inherited();
 dir = choose(-1, 1);
 movespeed = 3;
 grav = 0.2;
 hsp = 0; // horizontal speed
 vsp = 0; // vertical speed
-var_health = 100;
+
 
 hasRotation = choose(0, 1);
 if(hasRotation == 0){
@@ -108,8 +109,7 @@ if(!place_meeting(x+hsp, y, obj_oneWay)){
 x += hsp;
 y += vsp;
 
-//Health &lt; 1
-if (var_health &lt; 1) instance_destroy();
+
 
 //####################################
 //### Bewegungsmuster der Kürbisse ###

@@ -63,7 +63,7 @@ move = hsp*obj_player.dir;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_pumpkin01">
+    <event eventtype="4" ename="obj_pumpkin">
       <action>
         <libid>1</libid>
         <id>532</id>
