@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-400</depth>
   <persistent>0</persistent>
-  <parentName>obj_pumpkin</parentName>
+  <parentName>obj_pumkin</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -63,9 +63,7 @@ if(hasRotation == 0){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
-
-/// Movement
+            <string>/// Movement
 
 hsp = dir * movespeed;
 vsp += grav;
@@ -134,7 +132,7 @@ if(hsp != 0){
       </action>
     </event>
   </events>
-  <PhysicsObject>0</PhysicsObject>
+  <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
@@ -145,5 +143,8 @@ if(hsp != 0){
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>170,170</point>
+    <point>170,170</point>
+  </PhysicsShapePoints>
 </object>

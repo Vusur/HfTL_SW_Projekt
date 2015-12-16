@@ -42,9 +42,10 @@ timer = true;
 
 var_isrunning = 0;
 
-// can player hit and move?
+// can player hit and move or has he get a hit by pumpkin??
 moveable = false;
 hitable = false;
+ishitted = false;
 
 hsp_plat = 0;
 vsp_plat = 0;
@@ -54,6 +55,29 @@ alarm[0] = room_speed;
 
 //create fade
 instance_create(x, y, obj_fade);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>room_restart();
 </string>
           </argument>
         </arguments>
@@ -125,9 +149,11 @@ hitable = true;
             <kind>1</kind>
             <string>///behavior of the player
 
-scr_getInputs();
 
-if(moveable){
+scr_getInputs(moveable);
+
+
+
 //draw the direction which the player faces
 if((key_right - key_left) != 0) image_xscale = key_right - key_left;
 var_player_direction = image_xscale;
@@ -156,7 +182,8 @@ if(place_meeting(x, y+vsp_final, obj_stoneWall)){
     while(!place_meeting(x, y+sign(vsp_final), obj_stoneWall)){
         y += sign(vsp_final);
     }
-    vsp_final = 0;   
+    vsp_final = 0; 
+    vsp = 0;  
 }
 
 //horizontal
@@ -165,6 +192,7 @@ if(place_meeting(x+hsp_final, y, obj_stoneWall)){
         x += sign(hsp_final);
     }
     hsp_final = 0;
+    hsp = 0;
 }
 
 //###############################################
@@ -177,14 +205,19 @@ if(place_meeting(x, y, obj_door) &amp;&amp; key_up){
         obj_door.alarm[0] = room_speed;
         audio_play_sound(snd_door_short, 10, false);
         with (obj_spike) { instance_destroy();}
+        hsp_final = 0;
         hsp = 0;
         vsp = 0;
+        vsp_final = 0;
+        jumpspeed = 0;
     }
 }
 
-//compute new position
-x += hsp_final;
-y += vsp_final;
+//compute new position and draw
+
+    x += hsp_final;
+    y += vsp_final;
+
 
 
 //play running sound
@@ -216,7 +249,7 @@ if(place_meeting(x, y+1, obj_stoneWall)){
     sprite_index = spr_player_jump;
 }
 
-}
+
 
 //#######################
 //### Throw the stone ###

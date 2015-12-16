@@ -308,7 +308,7 @@
     <instance objName="obj_stoneWall" x="1440" y="224" name="inst_123799F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_key" x="1433" y="167" name="inst_EC4337CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pumpkin01" x="531" y="238" name="inst_79AECEBB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_pumpkinPath" x="1088" y="460" name="inst_739521D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_pumpkin_path" x="1088" y="460" name="inst_739521D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spike" x="608" y="800" name="inst_B118C03B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spike" x="1504" y="800" name="inst_751D12AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spike" x="1440" y="800" name="inst_F9B24C89" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

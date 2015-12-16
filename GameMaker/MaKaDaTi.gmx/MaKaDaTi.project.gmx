@@ -110,9 +110,10 @@
       <object>objects\obj_painting</object>
     </objects>
     <objects name="obj_enemy">
-      <object>objects\obj_groundEnemy</object>
+      <object>objects\obj_pumpkin</object>
       <object>objects\obj_pumpkin01</object>
-      <object>objects\obj_pumpkinPath</object>
+      <object>objects\obj_pumpkin_path</object>
+      <object>objects\obj_pumpkin_shoot</object>
     </objects>
     <objects name="obj_hiddenObj">
       <object>objects\obj_menuEntry</object>

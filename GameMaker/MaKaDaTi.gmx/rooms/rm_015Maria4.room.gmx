@@ -318,8 +318,8 @@
     <instance objName="obj_key" x="385" y="688" name="inst_AAA1A762" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shelf" x="96" y="160" name="inst_E8E2DE88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_key" x="75" y="144" name="inst_8C2764FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_pumpkinPath" x="928" y="781" name="inst_E6657BD9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_pumpkinPath" x="1376" y="781" name="inst_36FDB61D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_pumpkin_path" x="928" y="781" name="inst_E6657BD9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_pumpkin_path" x="1376" y="781" name="inst_36FDB61D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pumpkin01" x="1408" y="461" name="inst_EE7033F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_torch" x="287" y="160" name="inst_CCEFADE2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_torch" x="825" y="128" name="inst_87CEF303" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
