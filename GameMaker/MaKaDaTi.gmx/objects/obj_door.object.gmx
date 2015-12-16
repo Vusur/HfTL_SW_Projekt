@@ -58,6 +58,7 @@ noInput = false;
           <argument>
             <kind>1</kind>
             <string>with(obj_spike) instance_destroy();
+with(obj_player_dead) instance_destroy();
 if(tr_next == -1) room_goto_next();
 else room_goto(tr_next);
 </string>

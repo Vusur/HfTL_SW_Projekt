@@ -44,6 +44,7 @@
         <sprite>sprites\spr_player_run</sprite>
         <sprite>sprites\spr_player_idle</sprite>
         <sprite>sprites\spr_player_jump</sprite>
+        <sprite>sprites\spr_player_dead_mask</sprite>
       </sprites>
       <sprites name="spr_stone">
         <sprite>sprites\stone_colored</sprite>
@@ -140,6 +141,7 @@
     <objects name="obj_player">
       <object>objects\obj_player</object>
       <object>objects\obj_stone_colored</object>
+      <object>objects\obj_player_dead</object>
     </objects>
   </objects>
   <rooms name="rooms">
