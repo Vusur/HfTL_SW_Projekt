@@ -63,7 +63,6 @@
       <sprite>sprites\spr_key</sprite>
       <sprite>sprites\spr_door</sprite>
       <sprite>sprites\spr_spike</sprite>
-      <sprite>sprites\spr_spike_blood</sprite>
       <sprite>sprites\spr_lock</sprite>
       <sprite>sprites\spr_switch</sprite>
       <sprite>sprites\spr_griddoor</sprite>

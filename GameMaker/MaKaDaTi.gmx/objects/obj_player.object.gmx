@@ -204,12 +204,11 @@ if(place_meeting(x, y, obj_door) &amp;&amp; key_up){
         obj_fade.fade_out = true;
         obj_door.alarm[0] = room_speed;
         audio_play_sound(snd_door_short, 10, false);
-        with (obj_spike) { instance_destroy();}
+        //dont move!
         hsp_final = 0;
         hsp = 0;
         vsp = 0;
         vsp_final = 0;
-        jumpspeed = 0;
     }
 }
 

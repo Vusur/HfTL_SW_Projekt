@@ -57,7 +57,8 @@ noInput = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(tr_next == -1) room_goto_next();
+            <string>with(obj_spike) instance_destroy();
+if(tr_next == -1) room_goto_next();
 else room_goto(tr_next);
 </string>
           </argument>
