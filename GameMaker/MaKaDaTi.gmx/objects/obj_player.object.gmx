@@ -46,6 +46,9 @@ var_isrunning = 0;
 moveable = false;
 hitable = false;
 
+hsp_plat = 0;
+vsp_plat = 0;
+
 // the player has to stand still at the begining
 alarm[0] = room_speed;
 
@@ -140,24 +143,28 @@ if(place_meeting(x, y+1, obj_stoneWall)){
 //move
 hsp = movespeed * (key_right - key_left);
 
+var hsp_final = hsp + hsp_plat;
+var vsp_final = vsp + vsp_plat;
+hsp_plat = 0;
+vsp_plat = 0;
 //###################################
 //### collision with solid Blocks ###
 //###################################
 
 //vertical
-if(place_meeting(x, y+vsp, obj_stoneWall)){
-    while(!place_meeting(x, y+sign(vsp), obj_stoneWall)){
-        y += sign(vsp);
+if(place_meeting(x, y+vsp_final, obj_stoneWall)){
+    while(!place_meeting(x, y+sign(vsp_final), obj_stoneWall)){
+        y += sign(vsp_final);
     }
-    vsp = 0;   
+    vsp_final = 0;   
 }
 
 //horizontal
-if(place_meeting(x+hsp, y, obj_stoneWall)){
-    while(!place_meeting(x+sign(hsp), y, obj_stoneWall)){
-        x += sign(hsp);
+if(place_meeting(x+hsp_final, y, obj_stoneWall)){
+    while(!place_meeting(x+sign(hsp_final), y, obj_stoneWall)){
+        x += sign(hsp_final);
     }
-    hsp = 0;
+    hsp_final = 0;
 }
 
 //###############################################
@@ -174,9 +181,11 @@ if(place_meeting(x, y, obj_door) &amp;&amp; key_up){
         vsp = 0;
     }
 }
+
 //compute new position
-x += hsp;
-y += vsp;
+x += hsp_final;
+y += vsp_final;
+
 
 //play running sound
 if (hsp != 0 &amp;&amp; var_isrunning == 0){

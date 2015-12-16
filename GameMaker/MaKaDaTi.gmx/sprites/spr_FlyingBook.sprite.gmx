@@ -10,7 +10,7 @@
   <bbox_left>0</bbox_left>
   <bbox_right>99</bbox_right>
   <bbox_top>0</bbox_top>
-  <bbox_bottom>24</bbox_bottom>
+  <bbox_bottom>18</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -18,7 +18,7 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>100</width>
-  <height>25</height>
+  <height>19</height>
   <frames>
     <frame index="0">images\spr_flyingBook_0.png</frame>
   </frames>

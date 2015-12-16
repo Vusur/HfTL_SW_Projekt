@@ -28,32 +28,28 @@
             <string>event_inherited();
 
 sprSelf = spr_flyingBook;
+
 //Soll sich die Platform nur bewegen, wenn der Spieler sie berührt?
 moveOnContact = false;
 
-//Bewegungsgeschwindigkeit
-mspeed = 12;
+standOnPlatform = false;
 
-//Richtung der bewegung
-//dir = 0; --horizontal
-//dir = 1; --vertical
-dir = 0;
+xnew = x;
+ynew = y;
+xold = x;
+yold = y;
 
-//Wie weit soll sich die Platform bewegen?
-//Eckt die Plattform an ein solides Objekt an, dann wechsel diese die Richtung
-range = 10;
 
-//richtung = 1; --rechts/runter
-//richtugn = -1; --links/hoch
-richtung = 1;
 
-alarm[0] = room.speed * range;
+
+
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -70,8 +66,8 @@ alarm[0] = room.speed * range;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>richtung = richtung * -1;
-alarm[0] = room.speed * range;
+            <string>xold = x;
+yold = y;
 </string>
           </argument>
         </arguments>
@@ -94,55 +90,21 @@ alarm[0] = room.speed * range;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>scr_getInputs();
 
-
-
-
-
-if(false){
-move = true;
-hsp = 0;
-vsp = 0;
-//Bewegung nur, wenn der Spieler auf dem Buch steht
-//if(moveOnContact){
-//    if(!place_meeting(x, y-1, obj_player)){
-//        move = false;
-//    } 
-//}
-
-if(move){
-    if(dir == 0){
-        hsp= richtung * mspeed;
-    }
-    if(dir == 1){
-        vsp = richtung * mspeed;
-    }
+if(instance_exists(obj_player)){
+    if( (round(obj_player.y + (obj_player.sprite_height / 2)) &gt; y) || key_down) mask_index = -1;
+    else{
+        mask_index = sprSelf;
+        if(place_meeting(x, y-1, obj_player)){
+            var xdiff = x - xold;
+            var ydiff = y - yold;
+            obj_player.hsp_plat = xdiff;
+            obj_player.vsp_plat = ydiff;
+        }
+    }  
 }
 
-//Kollision horizontal
-if(place_meeting(x+hsp, y, obj_stoneWall)){
-    while(!place_meeting(x+sign(hsp), y, obj_stoneWall)){
-        x+=sign(hsp);
-        hsp = 0;
-    }
-    richtung = richtung * -1;
-    alarm[0] = room.speed * range;
-}
-
-//Kollision horizontal
-if(place_meeting(x, y+vsp, obj_stoneWall)){
-    while(!place_meeting(x, y+sign(vsp), obj_stoneWall)){
-        y+=sign(vsp);
-        vsp = 0;
-    }
-    richtung = richtung * -1;
-    alarm[0] = room.speed * range;
-}
-
-x+= hsp;
-y+= vsp;
-}
 </string>
           </argument>
         </arguments>
