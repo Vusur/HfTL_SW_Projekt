@@ -70,6 +70,9 @@
       <sprite>sprites\spr_switch</sprite>
       <sprite>sprites\spr_griddoor</sprite>
     </sprites>
+    <sprites name="spr_menu">
+      <sprite>sprites\sprite31</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_menu</background>
@@ -141,6 +144,9 @@
       <object>objects\obj_player</object>
       <object>objects\obj_stone_colored</object>
       <object>objects\obj_player_dead</object>
+    </objects>
+    <objects name="obj_menu">
+      <object>objects\obj_start</object>
     </objects>
   </objects>
   <rooms name="rooms">

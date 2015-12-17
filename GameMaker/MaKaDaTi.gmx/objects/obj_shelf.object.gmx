@@ -27,9 +27,13 @@
             <kind>1</kind>
             <string>event_inherited();
 sprSelf = spr_shelf;
-ind = choose(0);
 
-var inst = instance_create(x, y, obj_shelf_pumpkin);
+//erhöhe die Wahrscheinlichkeit, dass ein leeres Regal erscheint.
+var spr = choose(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+if(spr &gt; 2) ind = 0
+else ind = spr+1;
+
+var inst = instance_create(x, y+2, obj_shelf_pumpkin);
 with(inst){
     inst.depth = depth+2;
 }
