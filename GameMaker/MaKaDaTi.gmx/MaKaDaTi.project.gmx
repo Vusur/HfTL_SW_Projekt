@@ -40,6 +40,7 @@
         <sprite>sprites\spr_pumpkin01_left</sprite>
         <sprite>sprites\spr_pumpkin01_waiting</sprite>
         <sprite>sprites\spr_pumpkin_shoot</sprite>
+        <sprite>sprites\spr_pumpkin_ammo</sprite>
       </sprites>
       <sprites name="spr_player">
         <sprite>sprites\spr_player_run</sprite>
@@ -111,6 +112,7 @@
       <object>objects\obj_pumpkin01</object>
       <object>objects\obj_pumpkin_path</object>
       <object>objects\obj_pumpkin_shoot</object>
+      <object>objects\obj_pumpkin_ammo</object>
     </objects>
     <objects name="obj_hiddenObj">
       <object>objects\obj_menuEntry</object>
