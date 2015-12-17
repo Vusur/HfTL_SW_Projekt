@@ -21,5 +21,6 @@
   <height>19</height>
   <frames>
     <frame index="0">images\spr_flyingBook_0.png</frame>
+    <frame index="1">images\spr_flyingBook_1.png</frame>
   </frames>
 </sprite>

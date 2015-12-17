@@ -91,9 +91,10 @@
       </objects>
       <objects name="obj_oneWayBlock">
         <object>objects\obj_shelf</object>
-        <object>objects\obj_flyingBook</object>
+        <object>objects\obj_flyingBook_on</object>
         <object>objects\obj_table</object>
         <object>objects\obj_oneWay</object>
+        <object>objects\obj_flyingBook_off</object>
       </objects>
     </objects>
     <objects name="obj_decoration">
