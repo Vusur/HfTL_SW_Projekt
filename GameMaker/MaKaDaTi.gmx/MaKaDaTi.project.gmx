@@ -76,8 +76,7 @@
     <background>background\bg_main</background>
   </backgrounds>
   <paths name="paths">
-    <path>paths\rm004_path001</path>
-    <path>paths\pt_example</path>
+    <path>paths\pt_pumpkin</path>
   </paths>
   <scripts name="scripts">
     <script>scripts\scr_getInputs.gml</script>
