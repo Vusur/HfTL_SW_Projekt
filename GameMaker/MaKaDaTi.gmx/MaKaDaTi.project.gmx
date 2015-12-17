@@ -13,6 +13,14 @@
     <sound>sound\bg_outside001</sound>
     <sound>sound\running001</sound>
     <sound>sound\snd_door_short</sound>
+    <sound>sound\snd_player_say_ah001</sound>
+    <sound>sound\snd_open_lock001</sound>
+    <sound>sound\snd_catch_key001</sound>
+    <sound>sound\snd_player_gameover001</sound>
+    <sound>sound\snd_evil_hehehe001</sound>
+    <sound>sound\snd_pumpkin_focus001</sound>
+    <sound>sound\snd_musicbox001</sound>
+    <sound>sound\snd_say_grr001</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="spr_mainBlock">

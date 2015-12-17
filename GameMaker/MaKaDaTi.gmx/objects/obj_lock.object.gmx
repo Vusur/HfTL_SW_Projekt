@@ -101,7 +101,6 @@ alarm[1] = room_speed = 1.5;
           <argument>
             <kind>1</kind>
             <string>if(open){
-    
     if(!fall){
         if(dir == -1){
             image_angle -= 5;
