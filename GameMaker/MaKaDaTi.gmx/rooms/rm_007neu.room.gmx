@@ -214,7 +214,6 @@
     <instance objName="obj_spike" x="960" y="608" name="inst_E9610676" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="obj_spike" x="896" y="608" name="inst_C7500D1F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="obj_spike" x="768" y="608" name="inst_B74BF79C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
-    <instance objName="obj_spike" x="1152" y="608" name="inst_8361DCF0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="obj_stoneWall" x="1216" y="832" name="inst_7A198528" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="1152" y="832" name="inst_AB2FDE01" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="1216" y="768" name="inst_81AB430B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
