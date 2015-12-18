@@ -124,6 +124,7 @@
             <string>if(!instance_exists(obj_key)){
     with(obj_lock){
         alarm[0] = room_speed;
+        alarm[2] = room_speed * 0.35;
     }
 }
 </string>

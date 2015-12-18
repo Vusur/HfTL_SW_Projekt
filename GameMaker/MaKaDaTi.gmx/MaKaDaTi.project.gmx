@@ -49,12 +49,14 @@
         <sprite>sprites\spr_pumpkin01_waiting</sprite>
         <sprite>sprites\spr_pumpkin_shoot</sprite>
         <sprite>sprites\spr_pumpkin_ammo</sprite>
+        <sprite>sprites\spr_pumpkin_destroyed</sprite>
       </sprites>
       <sprites name="spr_player">
         <sprite>sprites\spr_player_run</sprite>
         <sprite>sprites\spr_player_idle</sprite>
         <sprite>sprites\spr_player_jump</sprite>
         <sprite>sprites\spr_player_dead_mask</sprite>
+        <sprite>sprites\spr_player_push</sprite>
       </sprites>
       <sprites name="spr_stone">
         <sprite>sprites\stone_colored</sprite>
@@ -124,6 +126,7 @@
       <object>objects\obj_pumpkin_path</object>
       <object>objects\obj_pumpkin_shoot</object>
       <object>objects\obj_pumpkin_ammo</object>
+      <object>objects\obj_pumpkin_destroyed</object>
     </objects>
     <objects name="obj_hiddenObj">
       <object>objects\obj_menuEntry</object>
