@@ -122,7 +122,7 @@ movespeed = 8;
             <string>//is paused?
 if(global.pause){
     image_speed = 0;
-    audio_stop_sound(snd_player_gameover001, 10, false);
+    audio_stop_sound(snd_player_gameover001);
     exit;
 }
 x += dir * movespeed

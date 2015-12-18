@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-3000</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -26,6 +26,119 @@
           <argument>
             <kind>1</kind>
             <string>global.pause = false;
+
+entry = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_getInputs(true);
+
+//choose entry
+if(key_down &amp;&amp; entry  &lt; 3){
+    entry += 1;
+} else if (key_up &amp;&amp; entry &gt; 1){
+    entry -= 1;
+}
+
+//compute Entry
+
+//### Continue
+if(entry == 1 &amp;&amp; key_enter) {
+    global.pause = false;
+}
+//### Restart
+if(entry == 2 &amp;&amp; key_enter){
+    global.pause = false;
+    room_restart();
+}
+    
+//### Save and Exit
+if(entry == 3 &amp;&amp; key_enter){
+    global.pause = false;
+    room_goto(rm_000menu);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(global.pause){
+    
+    //### erzeuge, dass der Bildschirm abdunkelt
+    draw_set_colour(c_black)
+    draw_set_alpha(0.5);
+    draw_rectangle(view_xview[0], view_yview[0], view_xview[0] + view_wview[0], view_yview[0] + view_hview[0], false);
+    
+    //## draw button
+    draw_set_colour(c_gray);
+    draw_set_alpha(0.5);
+    
+    draw_rectangle(750, 200, 1050, 250, true)
+    draw_rectangle(750, 300, 1050, 350, false)
+    
+    //draw Menue text
+    draw_set_colour(c_white);
+    draw_set_font(fn_pause); 
+    draw_set_alpha(1);    
+    draw_text((view_xview[0] + view_wview[0]) / 2, 100, "Pause");
+    draw_text((view_xview[0] + view_wview[0]) / 2, 200, "Weiter");
+    draw_text((view_xview[0] + view_wview[0]) / 2, 300, "Neustart");
+    draw_text((view_xview[0] + view_wview[0]) / 2, 400, "Speichern und Beenden");
+    
+     //### Continue
+    if(entry == 1){
+        //draw_set_alpha(0.4)
+        
+    }
+    
+    //### Restart
+     
+    if(entry == 2){
+       
+    }
+    
+    //### Quit and Save
+    
+    if(entry == 3){
+        
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -52,6 +165,7 @@
     global.pause = false;
 } else {
     global.pause = true;
+    entry = 1;
 }
 </string>
           </argument>

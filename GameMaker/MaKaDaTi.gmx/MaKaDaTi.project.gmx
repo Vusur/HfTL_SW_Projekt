@@ -96,6 +96,9 @@
     <script>scripts\scr_getInputs.gml</script>
     <script>scripts\scr_debug.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fn_pause</font>
+  </fonts>
   <objects name="objects">
     <objects name="obj_Blocks">
       <objects name="obj_solidBlocks">
@@ -139,11 +142,6 @@
         <object>objects\obj_carpet</object>
         <object>objects\obj_collision_bookcase</object>
       </objects>
-      <object>objects\obj_gameInit</object>
-      <objects name="obj_menu">
-        <object>objects\obj_menuEntry</object>
-        <object>objects\obj_pause</object>
-      </objects>
     </objects>
     <objects name="obj_interactiveObj">
       <object>objects\obj_door</object>
@@ -153,6 +151,12 @@
       <object>objects\obj_switch</object>
       <object>objects\obj_griddoor</object>
     </objects>
+    <objects name="obj_menu">
+      <object>objects\obj_start</object>
+      <object>objects\obj_gameInit</object>
+      <object>objects\obj_pause</object>
+      <object>objects\obj_menuEntry</object>
+    </objects>
     <objects name="obj_musics">
       <object>objects\obj_bgmusic001</object>
       <object>objects\obj_bg_outside001</object>
@@ -161,9 +165,6 @@
       <object>objects\obj_player</object>
       <object>objects\obj_stone_colored</object>
       <object>objects\obj_player_dead</object>
-    </objects>
-    <objects name="obj_menu">
-      <object>objects\obj_start</object>
     </objects>
   </objects>
   <rooms name="rooms">
