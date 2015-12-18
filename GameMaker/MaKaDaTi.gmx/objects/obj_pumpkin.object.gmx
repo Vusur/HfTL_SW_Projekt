@@ -112,7 +112,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(x, y, obj_pumpkin_destroyed);
+            <string>instance_create(x, y-5, obj_pumpkin_destroyed);
 </string>
           </argument>
         </arguments>

@@ -28,7 +28,7 @@
             <string>scr_getInputs(true)
 
 if(key_enter){
-    room_goto(target_rm);
+    room_goto(rm_000init);
 }
 </string>
           </argument>

@@ -172,7 +172,7 @@
     <rooms name="rm_level">
       <room>rooms\rm_000init</room>
       <room>rooms\rm_001theBegin</room>
-      <room>rooms\rm_0021Bookshelf</room>
+      <room>rooms\rm_021Bookshelf</room>
       <room>rooms\rm_002needAKey</room>
       <room>rooms\rm_003toTheTop</room>
       <room>rooms\rm_004spikeySpike</room>

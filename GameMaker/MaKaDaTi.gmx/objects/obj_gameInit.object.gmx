@@ -26,7 +26,16 @@
           <argument>
             <kind>1</kind>
             <string>//initialisiert persistente Objekte
+
+//delete all persistent Objects
+if(instance_exists(obj_pause)) {with(obj_pause) {instance_destroy()};}
+if(instance_exists(obj_light_control)) {with(obj_light_control) {instance_destroy()};}
+if(instance_exists(obj_bgmusic001)) {with(obj_bgmusic001) {instance_destroy()};}
+
+
 instance_create(x, y, obj_pause);
+instance_create(x, y, obj_light_control);
+instance_create(x, y, obj_bgmusic001);
 room_goto(rm_001theBegin);
 </string>
           </argument>

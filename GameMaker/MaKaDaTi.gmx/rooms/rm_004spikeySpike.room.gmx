@@ -221,7 +221,6 @@
     <instance objName="obj_stoneWall" x="640" y="832" name="inst_BE8467F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shelf" x="1088" y="608" name="inst_49824DD6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shelf" x="1024" y="608" name="inst_EEEA4BAE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_light_control" x="32" y="32" name="inst_D0D721B1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_table" x="1088" y="740" name="inst_50BEAD9D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="0" y="0" name="inst_CE3800F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="1600" y="0" name="inst_5393BAC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
