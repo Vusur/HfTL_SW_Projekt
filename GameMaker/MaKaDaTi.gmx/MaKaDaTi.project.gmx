@@ -130,7 +130,6 @@
       <object>objects\obj_pumpkin_destroyed</object>
     </objects>
     <objects name="obj_hiddenObj">
-      <object>objects\obj_menuEntry</object>
       <objects name="obj_hidden_light">
         <object>objects\obj_light_control</object>
         <object>objects\obj_fade</object>
@@ -139,6 +138,11 @@
         <object>objects\obj_shelf_pumpkin</object>
         <object>objects\obj_carpet</object>
         <object>objects\obj_collision_bookcase</object>
+      </objects>
+      <object>objects\obj_gameInit</object>
+      <objects name="obj_menu">
+        <object>objects\obj_menuEntry</object>
+        <object>objects\obj_pause</object>
       </objects>
     </objects>
     <objects name="obj_interactiveObj">
@@ -165,17 +169,14 @@
   <rooms name="rooms">
     <room>rooms\rm_000menu</room>
     <rooms name="rm_level">
+      <room>rooms\rm_000init</room>
       <room>rooms\rm_001theBegin</room>
-      <room>rooms\rm_002needAKey</room>
       <room>rooms\rm_0021Bookshelf</room>
+      <room>rooms\rm_002needAKey</room>
       <room>rooms\rm_003toTheTop</room>
       <room>rooms\rm_004spikeySpike</room>
       <room>rooms\rm_005pumpkin</room>
-      <room>rooms\rm_jg009</room>
       <room>rooms\rm_006angryPumpkin</room>
-      <room>rooms\rm_jg007</room>
-      <room>rooms\rm_jg008</room>
-      <room>rooms\rm_jg010</room>
       <room>rooms\rm_006neu</room>
       <room>rooms\rm_007neu</room>
       <room>rooms\rm_008neu</room>
@@ -186,8 +187,13 @@
       <room>rooms\rm_013Maria2</room>
       <room>rooms\rm_014Maria3</room>
       <room>rooms\rm_015Maria4</room>
+      <room>rooms\rm_jg007</room>
+      <room>rooms\rm_jg008</room>
+      <room>rooms\rm_jg009</room>
+      <room>rooms\rm_jg010</room>
     </rooms>
     <room>rooms\rm_001sample</room>
+    <room>rooms\room23</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

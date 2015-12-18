@@ -78,7 +78,13 @@ instance_create(x, y, obj_fade);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(place_meeting(x, y, obj_spike)) {
+            <string>//is paused?
+if(global.pause){
+    image_speed = 0;
+    alarm[2] = room_speed;
+    exit;
+}
+if(place_meeting(x, y, obj_spike)) {
     inst = instance_create(x, y, obj_player_dead)
     with(inst){
     image_angle = obj_player.image_angle;
@@ -107,7 +113,13 @@ room_restart();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>timer = true;
+            <string>//is paused?
+if(global.pause){
+    image_speed = 0;
+    audio_stop_sound(running001);
+    exit;
+}
+timer = true;
 </string>
           </argument>
         </arguments>
@@ -130,7 +142,14 @@ room_restart();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>moveable = true;
+            <string>//is paused?
+if(global.pause){
+    image_speed = 0;
+    audio_stop_sound(running001);
+    exit;
+}
+
+moveable = true;
 hitable = true;
 </string>
           </argument>
@@ -179,6 +198,12 @@ hitable = true;
             <kind>1</kind>
             <string>///behavior of the player
 
+//is paused?
+if(global.pause){
+    image_speed = 0;
+    audio_stop_sound(running001);
+    exit;
+}
 
 scr_getInputs(moveable);
 
@@ -341,7 +366,13 @@ scr_debug();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(!ishitted){
+            <string>//is paused?
+if(global.pause){
+    image_speed = 0;
+    audio_stop_sound(running001);
+    exit;
+}
+if(!ishitted){
     alarm[2] = room_speed;
     ishitted = true;
 }

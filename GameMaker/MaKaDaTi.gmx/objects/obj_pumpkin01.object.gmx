@@ -65,7 +65,14 @@ if(hasRotation == 0){
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-
+//is paused?
+if(global.pause){
+    image_speed = 0;
+    exit;
+} else {
+    if(hasRotation == 0) image_speed = 0.4;
+    else image_speed = 1;
+}
 /// Movement
 
 hsp = dir * movespeed;

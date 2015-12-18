@@ -95,7 +95,12 @@ alarm[0] = room_speed*1.5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(shoot){
+            <string>if(global.pause){
+    alarm[1] = room_speed;
+    exit;
+}
+
+if(shoot){
     shoot = false;
     image_index = 0;
 }
@@ -165,7 +170,13 @@ alarm[0] = room_speed*1.5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(shoot){
+            <string>if(global.pause){
+    alarm[0] = 1;
+    audio_stop_sound(snd_pumpkin_focus001);
+    exit;
+}
+
+if(shoot){
     if(image_index = 1){
         image_index = 2;
         alarm[0] = room_speed * 1.2;
@@ -222,6 +233,11 @@ if(!shoot){
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+
+if(global.pause){
+    exit;
+}
+
 var distance = sqrt( sqr(obj_player.x - x) + sqr(obj_player.y - y) )
 
 if(distance &lt; 450){

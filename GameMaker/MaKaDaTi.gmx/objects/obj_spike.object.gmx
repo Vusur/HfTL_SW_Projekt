@@ -49,7 +49,13 @@ image_speed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Collision between Player and Spikes
+            <string>//is paused?
+if(global.pause){
+    image_speed = 0;
+    audio_stop_sound(snd_player_gameover001);
+    exit;
+}
+//Collision between Player and Spikes
 if (place_meeting(x,y,obj_player) &amp;&amp; !obj_player.ishitted){
     //change Sprite to bloody
     image_index = 0;

@@ -119,7 +119,13 @@ movespeed = 8;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x += dir * movespeed
+            <string>//is paused?
+if(global.pause){
+    image_speed = 0;
+    audio_stop_sound(snd_player_gameover001, 10, false);
+    exit;
+}
+x += dir * movespeed
 
 if(place_meeting(x, y, obj_stoneWall)){
     instance_destroy();
@@ -132,6 +138,7 @@ if(place_meeting(x, y, obj_player) &amp;&amp; !obj_player.ishitted){
             moveable = false;
             sprite_index = spr_player_idle;
             image_angle = choose(-90, 90);
+            audio_play_sound(snd_player_gameover001, 10, false);
             alarm[2] = room_speed * 2;
         }
     instance_destroy();
