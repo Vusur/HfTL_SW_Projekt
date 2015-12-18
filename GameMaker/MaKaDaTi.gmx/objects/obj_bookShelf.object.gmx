@@ -87,7 +87,7 @@ if(place_meeting(x, y+t, obj_collision_bookcase)){
     t = 0;
 }
 
-//Bewege das Regal nur, wenn der SPieler auf dem Boden steht
+//Bewege das Regal nur, wenn der SPieler auf dem Boden steht 
 var playerGround = false;
 with(obj_player){
     if(place_meeting(x, y+1, obj_stoneWall)){
