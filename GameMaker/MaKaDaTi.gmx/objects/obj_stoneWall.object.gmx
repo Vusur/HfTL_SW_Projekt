@@ -40,6 +40,8 @@ if(!noC){
     }
 }
 
+instance_create(x, y, obj_collision_bookcase);
+
 </string>
           </argument>
         </arguments>

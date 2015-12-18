@@ -70,6 +70,7 @@
       <sprites name="spr_hidden_automaticCreation">
         <sprite>sprites\spr_path_pumpkin</sprite>
         <sprite>sprites\spr_carpet</sprite>
+        <sprite>sprites\spr_collision_bookcase</sprite>
       </sprites>
     </sprites>
     <sprites name="spr_interactiveObj">
@@ -137,6 +138,7 @@
       <objects name="obj_hidden_automaticCreation">
         <object>objects\obj_shelf_pumpkin</object>
         <object>objects\obj_carpet</object>
+        <object>objects\obj_collision_bookcase</object>
       </objects>
     </objects>
     <objects name="obj_interactiveObj">

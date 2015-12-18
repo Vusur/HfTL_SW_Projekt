@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>mspeed = 3;
+            <string>mspeed = 1;
 grav = 0.6;
 
 m = 0;
@@ -72,22 +72,32 @@ m = dir * mspeed;
 if( t &lt; 10 ) t += grav;
 
 //Kollision mit Wand, vertikal
-if(place_meeting(x+m, y, obj_stoneWall)){
-    while(!place_meeting(x+sign(m), y, obj_stoneWall)){
+if(place_meeting(x+m, y, obj_collision_bookcase)){
+    while(!place_meeting(x+sign(m), y, obj_collision_bookcase)){
         x += sign(m);
     }
     m = 0;
 }
 
 //Kollision mit der Wand, horizontal
-if(place_meeting(x, y+t, obj_stoneWall)){
-    while(!place_meeting(x, y+sign(t), obj_stoneWall)){
+if(place_meeting(x, y+t, obj_collision_bookcase)){
+    while(!place_meeting(x, y+sign(t), obj_collision_bookcase)){
         y += sign(t);
     }
     t = 0;
 }
 
-x+=m;
+//Bewege das Regal nur, wenn der SPieler auf dem Boden steht
+var playerGround = false;
+with(obj_player){
+    if(place_meeting(x, y+1, obj_stoneWall)){
+        playerGround = true;
+    }
+}
+
+if(playerGround){
+    x+=m;
+}
 y+=t;
 </string>
           </argument>
