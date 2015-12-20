@@ -271,7 +271,7 @@
     <instance objName="obj_stoneWall" x="800" y="160" name="inst_188AD1A5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="672" y="352" name="inst_AFCD6A98" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="736" y="352" name="inst_62CB7B69" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_griddoor" x="355" y="98" name="inst_D7C362A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_griddoor" x="355" y="98" name="inst_D7C362A8" locked="0" code="trigger = inst_526A7578;&#xA;needTable = false;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_switch" x="544" y="188" name="inst_526A7578" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_kettle" x="189" y="736" name="inst_5FA8DB5A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_torch" x="480" y="384" name="inst_835C077A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

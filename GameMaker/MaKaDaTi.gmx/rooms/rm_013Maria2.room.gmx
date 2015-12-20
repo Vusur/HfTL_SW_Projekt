@@ -276,7 +276,7 @@
     <instance objName="obj_key" x="286" y="815" name="inst_D0A56225" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pumpkin_path" x="180" y="334" name="inst_3B5B1A27" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spike" x="256" y="608" name="inst_1CAE4324" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_griddoor" x="1216" y="743" name="inst_33D42B38" locked="0" code="trigger = inst_6A1FDDFA;&#xA;needTable = false;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_griddoor" x="1216" y="743" name="inst_33D42B38" locked="0" code="trigger = inst_6A1FDDFA;&#xA;needTable = false;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="1184" y="678" name="inst_F6F59A51" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="1248" y="678" name="inst_C1ABA1F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_window" x="640" y="384" name="inst_D4BD2632" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

@@ -274,12 +274,12 @@
     <instance objName="obj_switch" x="160" y="188" name="inst_E50A110A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_switch" x="1440" y="187" name="inst_184071A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_switch" x="947" y="825" name="inst_8195F8E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_griddoor" x="288" y="736" name="inst_B2EE56C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_griddoor" x="1312" y="736" name="inst_5BE6762F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_griddoor" x="480" y="128" name="inst_6F226CDA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_griddoor" x="288" y="736" name="inst_B2EE56C5" locked="0" code="trigger = inst_184071A4&#xA;needTable = false;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_griddoor" x="1312" y="736" name="inst_5BE6762F" locked="0" code="trigger = inst_E50A110A&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_griddoor" x="480" y="128" name="inst_6F226CDA" locked="0" code="trigger = inst_8195F8E0&#xA;needTable = false;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="480" y="64" name="inst_AF886D86" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="1120" y="64" name="inst_E64CEBEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_griddoor" x="1120" y="128" name="inst_B3977A57" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_griddoor" x="1120" y="128" name="inst_B3977A57" locked="0" code="trigger = inst_8C9EAAEF&#xA;needTable = false;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spike" x="416" y="320" name="inst_90D0F301" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spike" x="1184" y="320" name="inst_C1809373" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spike" x="1504" y="576" name="inst_9BE25548" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
