@@ -82,7 +82,7 @@
       <sprite>sprites\spr_griddoor</sprite>
     </sprites>
     <sprites name="spr_menu">
-      <sprite>sprites\sprite31</sprite>
+      <sprite>sprites\spr_menu_highlight</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -152,7 +152,6 @@
       <object>objects\obj_griddoor</object>
     </objects>
     <objects name="obj_menu">
-      <object>objects\obj_start</object>
       <object>objects\obj_gameInit</object>
       <object>objects\obj_pause</object>
       <object>objects\obj_menuEntry</object>
