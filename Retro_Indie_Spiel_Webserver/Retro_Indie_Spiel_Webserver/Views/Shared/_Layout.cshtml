@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+
+</head>
+<body style="background-image:url('/Pictures/Baustein.jpg');text-align:center;">
+    <style>
+        .textBox {
+            border-radius: 5px;
+            background: #261804;
+            color: white;
+            word-break: break-word;
+        }
+    </style>
+    <div class="container body-content">
+        @RenderBody()
+        <footer style="margin-top:50px;margin-bottom: 65px;">
+            <p style="width: 15em;margin-left: auto;margin-right: auto;" class="textBox">&copy; @DateTime.Now.Year - INDIE RETRO GAME</p>
+        </footer>
+        <div style="background-image:url('/Pictures/stacheln.png');width: 100%;height: 100px;display: inline;
+                    position: fixed;bottom: 0px;left: 0px;background-repeat: repeat-x;background-size: contain;"></div>
+    </div>
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
