@@ -9,6 +9,7 @@
         height: 100px;
         margin: 10px;
     }
+
     .kuerbis {
         background-image: url('/Pictures/Kürbis_OhneGesicht.png');
         background-size: cover;
@@ -16,8 +17,9 @@
         height: 50px;
         margin: 10px;
     }
-    .screenshots{
-        height:250px;
+
+    .screenshots {
+        height: 250px;
         width: 100%;
     }
 </style>
@@ -30,7 +32,17 @@
 <a class="textBox" href="~/Pictures/Bücherregal_rundlich mit Büchern.png" download="Pumpkin_Nightmare" style="margin-top:25px;padding: 10px;color: #337ab7;">
     Download
 </a>
+<br/>
+<table id="highscores" align="center">
+    <thead>
+        <tr>#</tr>
+        <tr>Name</tr>
+        <tr>Punkte</tr>
+    </thead>
+    <tbody>
 
+    </tbody>
+</table>
 
 <table align="center" style="border:none;margin-top:100px;">
     <tr>
@@ -90,7 +102,7 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-</div>  
+</div>
 <script>
 
     function kuerbisOhneGesicht(ele) {
@@ -107,6 +119,21 @@
             kuerbisMitGesicht(this);
         }).mouseout(function () {
             kuerbisOhneGesicht(this);
+        });
+
+        $.ajax({
+            type: "GET",
+            url: "/Highscores/List",
+            success: function (result) {
+                $.each(result, function (i, item) {
+                    if (i === 10) {
+                        return;
+                    }
+                    $("#highscores > tbody:last-child").append("<tr><td>" + result[i].Position + "</td><td>" + result[i].Name + "</td><td>" + result[i].Score + "</td></tr>");
+                });
+            }
+        }).error(function (req, textStatus, errorThrown) {
+            alert("Highscores konnten nicht geladen werden. Error: " + req.status + " " + errorThrown);
         });
     });
 
