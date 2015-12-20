@@ -176,7 +176,7 @@ namespace Retro_Indie_Spiel_Webserver.Controllers
                 else
                 {
                     user = users.First();
-                    var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, false, shouldLockout: false);
+                    var result = await SignInManager.PasswordSignInAsync(model.Name, model.Password, false, shouldLockout: false);
                     switch (result)
                     {
                         case SignInStatus.Success:
