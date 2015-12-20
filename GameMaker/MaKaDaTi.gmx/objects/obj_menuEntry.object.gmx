@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>entry = 0;
 image_speed = 0;
+
+startRoom = rm_001theBegin;
 </string>
           </argument>
         </arguments>
@@ -61,10 +63,82 @@ if(key_down &amp;&amp; entry  &lt; 4){
 //draw Highlight
 image_index = entry;
 
-
-if(key_enter){
-    room_goto(rm_000init);
+//neues Spiel starten
+if(entry == 0 &amp;&amp; key_enter){
+    room_goto(rm_001theBegin);
 }
+
+//Spiel laden, falls was vorhanden
+if(entry == 1 &amp;&amp; key_enter){
+    if(file_exists("__genSave.sav")){
+        var loadfile = file_text_open_read("__genSave.sav");
+        startRoom = file_text_read_real(loadfile);
+        room_goto(startRoom);
+    }
+}
+//Optionen aufrufen
+
+//Credits aufrufen
+
+//Spiel beenden
+if(entry == 4 &amp;&amp; key_enter){
+    game_end();
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//create persistent Objects
+instance_create(x, y, obj_pause);
+instance_create(x, y, obj_light_control);
+instance_create(x, y, obj_bgmusic001);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//initialisiert persistente Objekte
+
+//delete all persistent Objects
+if(instance_exists(obj_pause)) {with(obj_pause) {instance_destroy()};}
+if(instance_exists(obj_light_control)) {with(obj_light_control) {instance_destroy()};}
+if(instance_exists(obj_bgmusic001)) {with(obj_bgmusic001) {instance_destroy()};}
 </string>
           </argument>
         </arguments>

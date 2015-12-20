@@ -77,6 +77,14 @@ if(entry == 2 &amp;&amp; key_enter){
 if(entry == 3 &amp;&amp; key_enter){
     global.pause = false;
     entry = 0;
+    
+    //save the Game
+    if(file_exists("__genSave.sav")) file_delete("__genSave.sav");
+    var savefile = file_text_open_write("__genSave.sav");
+    var rm = room;
+    file_text_write_real(savefile, rm);
+    file_text_close(savefile);
+    
     room_goto(rm_000menu);
 }
 </string>

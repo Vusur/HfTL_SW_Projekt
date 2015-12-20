@@ -169,7 +169,6 @@
   <rooms name="rooms">
     <room>rooms\rm_000menu</room>
     <rooms name="rm_level">
-      <room>rooms\rm_000init</room>
       <room>rooms\rm_001theBegin</room>
       <room>rooms\rm_021Bookshelf</room>
       <room>rooms\rm_002needAKey</room>

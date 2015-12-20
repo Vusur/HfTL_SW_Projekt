@@ -36,7 +36,7 @@ if(instance_exists(obj_bgmusic001)) {with(obj_bgmusic001) {instance_destroy()};}
 instance_create(x, y, obj_pause);
 instance_create(x, y, obj_light_control);
 instance_create(x, y, obj_bgmusic001);
-room_goto(rm_001theBegin);
+room_goto(obj_);
 </string>
           </argument>
         </arguments>
