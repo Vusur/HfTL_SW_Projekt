@@ -141,7 +141,7 @@ namespace Retro_Indie_Spiel_Webserver.Controllers
         //
         // POST: /Account/Register
         [AllowAnonymous]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<ActionResult> Index(RegisterViewModel model)
         {
 
             if (ModelState.IsValid)
