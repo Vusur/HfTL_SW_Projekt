@@ -150,7 +150,7 @@ namespace Retro_Indie_Spiel_Webserver.Controllers
                 string hash = ApplicationDbContext.GetMd5Hash(MD5.Create(), source);
                 if (hash != model.md5Hash)
                 {
-                    return new HttpUnauthorizedResult();
+                    return Content("401 Wrong Hash");
                 }
                 var users = UserManager.Users.Where(u => u.Email == model.Email && u.UserName == model.Name);
                 ApplicationUser user;
