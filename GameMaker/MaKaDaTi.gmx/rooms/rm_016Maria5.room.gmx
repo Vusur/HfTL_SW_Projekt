@@ -311,6 +311,9 @@
     <instance objName="obj_torch" x="480" y="128" name="inst_3133306D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_key" x="1512" y="823" name="inst_4549025E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_key" x="1500" y="165" name="inst_95B4E157" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_flyingBook_on" x="1152" y="608" name="inst_8F1F55A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_flyingBook_on" x="1152" y="608" name="inst_EBAB591D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_flyingBook_on" x="1088" y="352" name="inst_73099632" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
