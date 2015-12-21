@@ -98,6 +98,7 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\fn_pause</font>
+    <font>fonts\fn_header</font>
   </fonts>
   <objects name="objects">
     <objects name="obj_Blocks">
