@@ -94,7 +94,6 @@ if(!selected){
     if(entry == 0 || entry == 1){
         //local variables
         var maxsubentry = 3 //subentry 0, 1, 2, 3
-        var fileexists = false;
         var maxsubsubentry; //subsubentry 
         if(entry == 0) maxsubsubentry = 1;  //0, 1
         else maxsubsubentry = 2;            //0, 1, 2
@@ -104,23 +103,23 @@ if(!selected){
         }       
         else if(key_enter &amp;&amp; !subselected){ //choose savefile with subentry 0, 1, 2
                     
-            if( file_exists(save[subentry])) fileexists = true; //check, if save exists
+
             subselected = true; //toogle submenu for 3rd if statement
             subsubentry = 0;    //set position of Highlight
             
         } else if(key_enter){   //compute subsubentry 0 or 1
             
             if(subsubentry == 2){ //delete save and return
-                if(fileexists) file_delete(save[subentry]);
+                if(file_exists(save[subentry])) file_delete(save[subentry]);
                 subselected = false;
             } else if (subsubentry == 1){ //cancle subsubentry
                 subselected = false;
             } else if(subsubentry == 0){ //start and overwrite or load
                 if(entry == 0){ //start and overwrite
-                    if(fileexists) file_delete(save[subentry]);
+                    if(file_exists(save[subentry])) file_delete(save[subentry]);
                     startRoom = rm_001theBegin;
                 } else if(entry == 1){ //load if exist, else start new game
-                    if(fileexists){
+                    if(file_exists(save[subentry])){
                        var loadfile = file_text_open_read(save[subentry]);
                        startRoom = file_text_read_real(loadfile);
                        file_text_close(loadfile);                       
