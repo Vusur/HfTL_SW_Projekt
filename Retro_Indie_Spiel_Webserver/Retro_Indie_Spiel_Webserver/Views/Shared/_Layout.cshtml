@@ -18,16 +18,60 @@
             color: white;
             word-break: break-word;
         }
+
+        .subline {
+            margin-left: auto;
+            margin-right: auto;
+            padding: 8px;
+            font-size: medium;
+        }
+
+        .kuerbis {
+            background-image: url('/Pictures/Kürbis_OhneGesicht.png');
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            margin-bottom: -5px;
+        }
+
+        .screenshots {
+            height: 250px;
+            width: 100%;
+        }
+
+        a {
+            color: rgb(89, 160, 220) !important;
+        }
     </style>
     <div class="container body-content">
         @RenderBody()
-        <footer style="margin-top:50px;margin-bottom: 65px;">
-            <p style="width: 15em;margin-left: auto;margin-right: auto;" class="textBox">&copy; @DateTime.Now.Year - INDIE RETRO GAME</p>
+        <footer style="margin-top:25px;margin-bottom: 65px;">
+            <p style="width: 15em;margin-left: auto;margin-right: auto;" class="textBox">
+                &copy; @DateTime.Now.Year - INDIE RETRO GAME
+            </p>
         </footer>
         <div style="background-image:url('/Pictures/stacheln.png');width: 100%;height: 100px;display: inline;
                     position: fixed;bottom: 0px;left: 0px;background-repeat: repeat-x;background-size: contain;"></div>
     </div>
+    <script>
+        function kuerbisOhneGesicht(ele) {
+            $(ele).css('background-image', 'url("/Pictures/Kürbis_OhneGesicht.png")')
+        }
 
+
+        function kuerbisMitGesicht(ele) {
+            $(ele).css('background-image', 'url("/Pictures/Kürbis_MitGesicht.png")')
+        }
+
+        $(function () {
+            $('.kuerbis').mouseover(function () {
+                kuerbisMitGesicht(this);
+            }).mouseout(function () {
+                kuerbisOhneGesicht(this);
+            });
+        });
+    </script>
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>

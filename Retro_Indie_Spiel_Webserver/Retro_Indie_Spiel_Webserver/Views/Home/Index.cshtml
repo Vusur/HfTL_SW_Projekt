@@ -2,32 +2,11 @@
     ViewBag.Title = "Pumpkin Nightmare";
 
 }
-<style>
-    .kuerbis {
-        background-image: url('/Pictures/Kürbis_OhneGesicht.png');
-        background-size: cover;
-        width: 50px;
-        height: 50px;
-        margin: 10px;
-    }
-
-    .screenshots {
-        height: 250px;
-        width: 100%;
-    }
-</style>
 
 <div><label class="kuerbis"></label><h1 style="display:inline;">Pumpkin Nightmare</h1><label class="kuerbis"></label></div>
 
-<a href="~/Pictures/Bücherregal_rundlich mit Büchern.png" download="Pumpkin_Nightmare">
-    <img src="~/Pictures/Kronleuchter_Bild3.png" style="width:200px;margin-top:50px;margin-bottom: 20px;" title="Pumpkin Nightmare Download" alt="Kronleuchter" /><br />
-</a>
-<a class="textBox" href="~/Pictures/Bücherregal_rundlich mit Büchern.png" download="Pumpkin_Nightmare" style="margin-top:25px;padding: 10px;color: #337ab7;">
-    Download
-</a>
-<br/>
-<div class="textBox" style="margin-left:auto;margin-right:auto;width: 75%;padding: 4px;margin-top: 50px;">    
-    <div style="padding: 0px 5px 5px 5px;border: 3px solid #AC9528;border-radius: 2px;">
+<div class="textBox" style="margin-left:auto;margin-right:auto;width: 75%;padding: 4px;margin-top: 50px;">
+    <div style="padding: 0px 5px 5px 5px;border: 3px ridge #AC9528;border-radius: 2px;">
         <h3 style="margin-bottom: 10px;margin-top: 10px;">TOP 10 Highscores</h3>
         <table id="highscores" align="center" style="width: 100%;">
             <thead style="border-bottom: 1px solid;">
@@ -41,10 +20,19 @@
         </table>
     </div>
 </div>
+
+<a href="~/Pictures/Bücherregal_rundlich mit Büchern.png" download="Pumpkin_Nightmare">
+    <img src="~/Pictures/Kronleuchter_Bild3.png" style="width:200px;margin-top:50px;margin-bottom: 20px;" title="Pumpkin Nightmare Download" alt="Kronleuchter" /><br />
+</a>
+<a class="textBox" href="~/Pictures/Bücherregal_rundlich mit Büchern.png" download="Pumpkin_Nightmare" style="margin-top:25px;padding: 10px;color: #337ab7;">
+   Spiel Download
+</a>
+<br/>
+
 <table align="center" style="border:none;margin-top:50px;">
     <tr>
         <td>
-            <img alt="Spielfigur" src="~/Pictures/Bewegung2.png" style="width:200px;margin-right: -40px;margin-left: -40px;" />
+            <img alt="Spielfigur" src="~/Pictures/Junge_schiebt.png" style="width:200px;margin-right: -66px;margin-left: -40px;" />
         </td>
         <td class="textBox">
             Das kostenlose Spiel Pumpkin Nightmare wurde in einem Projekt an
@@ -100,24 +88,14 @@
         </a>
     </div>
 </div>
+
+<p class="textBox subline" style="width: 6em;margin-top: 30px;">
+    <a href="/Home/Impressum">Impressum</a>
+</p>
+
 <script>
-
-    function kuerbisOhneGesicht(ele) {
-        $(ele).css('background-image', 'url("/Pictures/Kürbis_OhneGesicht.png")')
-    }
-
-
-    function kuerbisMitGesicht(ele) {
-        $(ele).css('background-image', 'url("/Pictures/Kürbis_MitGesicht.png")')
-    }
-
     $(function () {
-        $('.kuerbis').mouseover(function () {
-            kuerbisMitGesicht(this);
-        }).mouseout(function () {
-            kuerbisOhneGesicht(this);
-        });
-
+        // Ajax abfrage für die Highscore Liste
         $.ajax({
             type: "GET",
             url: "/Highscores/List",

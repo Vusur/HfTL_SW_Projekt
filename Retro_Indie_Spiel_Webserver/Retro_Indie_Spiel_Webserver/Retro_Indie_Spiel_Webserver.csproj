@@ -206,6 +206,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Pictures\Junge_schiebt.png" />
     <Content Include="Pictures\Baustein.jpg" />
     <Content Include="Pictures\Bewegung2.png" />
     <Content Include="Pictures\Bücherregal_rundlich mit Büchern.png" />
@@ -248,6 +249,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Impressum.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

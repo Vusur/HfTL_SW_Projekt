@@ -12,5 +12,10 @@ namespace Retro_Indie_Spiel_Webserver.Controllers
         {
             return View();
         }
+
+        public ActionResult Impressum()
+        {
+            return View();
+        }
     }
 }
