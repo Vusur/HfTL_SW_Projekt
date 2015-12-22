@@ -15,13 +15,8 @@ namespace Retro_Indie_Spiel_Webserver.Tests.Controllers
         [TestMethod]
         public void Index()
         {
-            // Arrange
-            HomeController controller = new HomeController();
-
-            // Act
-            ViewResult result = controller.Index() as ViewResult;
-
-            // Assert
+            HomeController controller = new HomeController();            
+            ViewResult result = controller.Index() as ViewResult;            
             Assert.IsNotNull(result);
         }                
     }

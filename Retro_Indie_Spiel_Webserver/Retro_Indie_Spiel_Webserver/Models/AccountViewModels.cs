@@ -3,41 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Retro_Indie_Spiel_Webserver.Models
 {
-    public class ExternalLoginConfirmationViewModel
-    {
-        [Required]
-        [Display(Name = "E-Mail")]
-        public string Email { get; set; }
-    }
-
-    public class ExternalLoginListViewModel
-    {
-        public string ReturnUrl { get; set; }
-    }
-
-    public class SendCodeViewModel
-    {
-        public string SelectedProvider { get; set; }
-        public ICollection<System.Web.Mvc.SelectListItem> Providers { get; set; }
-        public string ReturnUrl { get; set; }
-        public bool RememberMe { get; set; }
-    }
-
-    public class VerifyCodeViewModel
-    {
-        [Required]
-        public string Provider { get; set; }
-
-        [Required]
-        [Display(Name = "Code")]
-        public string Code { get; set; }
-        public string ReturnUrl { get; set; }
-
-        [Display(Name = "Diesen Browser merken?")]
-        public bool RememberBrowser { get; set; }
-
-        public bool RememberMe { get; set; }
-    }
+      
 
     public class ForgotViewModel
     {
@@ -46,23 +12,7 @@ namespace Retro_Indie_Spiel_Webserver.Models
         public string Email { get; set; }
     }
 
-    public class LoginViewModel
-    {
-        [Required]
-        [Display(Name = "E-Mail")]
-        [EmailAddress]
-        public string Email { get; set; }
-
-        [Required]
-        [DataType(DataType.Password)]
-        [Display(Name = "Kennwort")]
-        public string Password { get; set; }
-
-        [Display(Name = "Speichern?")]
-        public bool RememberMe { get; set; }
-    }
-
-    public class RegisterViewModel
+    public class AccountIndexViewModel
     {
         [Required]
         [EmailAddress]
