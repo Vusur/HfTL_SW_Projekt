@@ -3,13 +3,6 @@
 
 }
 <style>
-    .fackeln {
-        background-size: cover;
-        width: 58px;
-        height: 100px;
-        margin: 10px;
-    }
-
     .kuerbis {
         background-image: url('/Pictures/Kürbis_OhneGesicht.png');
         background-size: cover;
@@ -33,18 +26,22 @@
     Download
 </a>
 <br/>
-<table id="highscores" align="center">
-    <thead>
-        <tr>#</tr>
-        <tr>Name</tr>
-        <tr>Punkte</tr>
-    </thead>
-    <tbody>
-
-    </tbody>
-</table>
-
-<table align="center" style="border:none;margin-top:100px;">
+<div class="textBox" style="margin-left:auto;margin-right:auto;width: 75%;padding: 4px;margin-top: 50px;">    
+    <div style="padding: 0px 5px 5px 5px;border: 3px solid #AC9528;border-radius: 2px;">
+        <h3 style="margin-bottom: 10px;margin-top: 10px;">TOP 10 Highscores</h3>
+        <table id="highscores" align="center" style="width: 100%;">
+            <thead style="border-bottom: 1px solid;">
+                <tr>
+                    <td>#</td>
+                    <td>Name</td>
+                    <td>Punkte</td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+<table align="center" style="border:none;margin-top:50px;">
     <tr>
         <td>
             <img alt="Spielfigur" src="~/Pictures/Bewegung2.png" style="width:200px;margin-right: -40px;margin-left: -40px;" />
@@ -136,29 +133,4 @@
             alert("Highscores konnten nicht geladen werden. Error: " + req.status + " " + errorThrown);
         });
     });
-
-
-    var urlPrefix = 'url("/Pictures/Wandfackeln';
-    var urlSuffix = '.png")';
-    var number = 1;
-    var oldNumber = 3;
-    var min = 1;
-    var max = 4;
-    var fackeln = $('.fackeln');
-    var url = urlPrefix + number + urlSuffix;
-    fackeln.css("background-image", url);
-    fackelRunner();
-    function fackelRunner() {
-        setTimeout(function () {
-            number = parseInt((Math.random() * (max - min)) + min);
-            if (number === oldNumber) {
-                number = parseInt((Math.random() * (max - min)) + min);
-            }
-            fackelRunner();
-            url = urlPrefix + number + urlSuffix;
-            fackeln.css("background-image", url);
-            oldNumber = number;
-            number++;
-        }, 15000);
-    }
 </script>
