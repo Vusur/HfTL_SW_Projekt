@@ -90,6 +90,7 @@ if(!selected){
         selected = true;
         subselected = false
         subentry = 0;
+        scr_loadini();
     }
     
 } else {//compute selected
@@ -145,9 +146,6 @@ if(!selected){
         var maxsubentry = 5;
         //set option //drawing
         
-        if(subentry != 5){ //setting HV evry time when we dont have subentry 5 selected
-            ende = 0;
-        }
         if(subentry == 0){ //controls          
             if(tempControls == 0 &amp;&amp; key_right_s) tempControls = 1; //controler          
             else if(tempControls == 1 &amp;&amp; key_left_s) tempControls = 0; //keyboard
@@ -174,15 +172,13 @@ if(!selected){
              
              if(key_right_s)     ende = 1; //dont save
              else if(key_left_s) ende = 0; //save
-//              if(!subselect &amp;&amp; key_enter){
-//                  subselect = true;
-//                  maxsubsubentry = 1 //0, 1
-//               } else if(key_enter) {
-//                  if(subsubentry == 0){
-//                      selected = false;
-//                  } else if(subsubentry == 1){
-                    
-//                  }
+             
+             if(key_enter &amp;&amp; ende == 1){
+                selected = false;
+             } else if(key_enter &amp;&amp; ende == 0){
+                scr_gameIni(tempControls, tempSounds, tempFullscreen, tempBrightness, tempFrames);
+                selected = false;
+             }
         }        
     }
     
@@ -340,8 +336,8 @@ if(selected){ //begin submenu
         draw_text(xbegin, ybegin+200, "FPS Anzeige:")
         
         draw_set_halign(fa_left);
-        draw_text(475, 575, " Starten ");
-        draw_text(700, 575, "Abbrechen");
+        draw_text(450, 575, "Übernehmen");
+        draw_text(725, 575, "Abbrechen");
         draw_set_halign(fa_center);
         
         //set new fontstyle
@@ -386,10 +382,10 @@ if(selected){ //begin submenu
         else if(subentry == 5){
             var info ="";
             if(ende==0){     
-                draw_sprite(spr_indicator, 0, 450, 575+16);
+                draw_sprite(spr_indicator, 0, 425, 575+16);
                 info = "Einstellungen übernehmen"
             }else if(ende==1){
-                draw_sprite(spr_indicator, 0, 675, 575+16);
+                draw_sprite(spr_indicator, 0, 700, 575+16);
                 info = "Zurück zum Hauptmenü"
             }
             scr_informationText(info);
@@ -405,31 +401,38 @@ if(selected){ //begin submenu
     //### Beenden ###
     //###############
     if(entry == 4){
+    
         //set new fontstyle
         draw_set_font(fn_header);
             
-        //draw header
-        var head = "Spiel beenden";
-        var xbegin = (view_xview[0] + view_wview[0]) / 2;  //center of the view x
-        var ybegin = (view_yview[0] + 100);                //center of the view y            
-        draw_text_colour(xbegin,  ybegin , head, c_red, c_red, c_orange, c_orange, 0.7);
+        //draw header      
+        draw_text_colour(((view_xview[0] + view_wview[0]) / 2),  (view_yview[0] + 125) , "Spiel beenden", c_black, c_black, c_red, c_red, 0.75);
         
         //set new fontstyle
         draw_set_font(fn_pause);
-        draw_set_colour(c_white);
-        draw_set_alpha(0.5);
+        draw_set_alpha(0.7);
+        draw_set_colour(c_black);
+        draw_set_halign(fa_center);
         
-        draw_text(xbegin, ybegin + 100, "Willst du endlich aufwachen?");       
-        draw_text(xbegin-100, ybegin + 200, "Nein");
-        draw_text(xbegin+100, ybegin + 200, "Ja");
+
+        var xbegin = ((view_xview[0] + view_wview[0]) / 2);  //center of the view x
+        var ybegin = ((view_yview[0] + view_hview[0]) / 2) - 100; //center of the view y
         
-        ybegin += 195;
+        //Draw menu
+        draw_text(xbegin, ybegin-60, "Was für ein schlimmer Albtraum!");
+        draw_text(xbegin, ybegin, "Willst du endlich aufwachen?");       
+        
+        draw_set_halign(fa_left);
+        draw_text(575, 575, "Nein");
+        draw_text(750, 575, "Ja");
+        draw_set_halign(fa_center);
+        
+        //set highlight
         if(subsubentry == 0){
-            xbegin -= 150;
+            draw_sprite(spr_indicator, 0, 550, 575+16);
         } else{
-            xbegin += 50;
-        }
-        draw_rectangle(xbegin, ybegin, xbegin + 100, ybegin + 45, true);       
+            draw_sprite(spr_indicator, 0, 725, 575+16);
+        }     
     }
 }
 
@@ -437,6 +440,7 @@ if(selected){ //begin submenu
 draw_set_alpha(1);
 draw_set_colour(c_white);
 draw_set_font(-1);
+draw_set_halign(fa_left)
 </string>
           </argument>
         </arguments>

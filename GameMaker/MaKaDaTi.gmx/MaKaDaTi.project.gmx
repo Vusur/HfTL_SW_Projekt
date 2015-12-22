@@ -102,6 +102,8 @@
       <script>scripts\scr_base.gml</script>
       <script>scripts\scr_load_start.gml</script>
       <script>scripts\scr_informationText.gml</script>
+      <script>scripts\scr_gameIni.gml</script>
+      <script>scripts\scr_loadini.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
