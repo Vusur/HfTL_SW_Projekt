@@ -37,12 +37,12 @@ namespace Retro_Indie_Spiel_Webserver.Controllers
                 string hash = ApplicationDbContext.GetMd5Hash(MD5.Create(), source);
                 if (hash != highscoreViewModel.md5Hash)
                 {
-                    return new HttpUnauthorizedResult();
+                    return Content("401 Unauthorized");
                 }
                 ApplicationUser User = db.Users.Where(e => e.UserName == highscoreViewModel.Name).First();
                 if( User == null)
                 {
-                    return HttpNotFound();
+                    return Content("404 Not Found");
                 }
                 HighscoreModel highscoreModel = new HighscoreModel
                 {
