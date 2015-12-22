@@ -30,18 +30,23 @@ subentry = 0; //entry for submenu
 subsubentry = 0; //entry for subsubmenu
 
 image_speed = 0;
-alpha = 0.7;
+//alpha = 0.7;
 
 startRoom = rm_001theBegin;
 
 selected = false; //toggle entry for the menu and call submenu
 subselected = false; //toogle subentry for subsubentry
 
-askAgain = false;
 
 save[0] = "__genSave1.sav" //Save Name 1
 save[1] = "__genSave2.sav" //Save Name 2
 save[2] = "__genSave3.sav" //Save Name 3
+
+tempControls = 0;
+tempSounds = 0;
+tempBrightness = 0;
+tempFullscreen = 0;
+tempFrames = 0;
 
 
 instance_create(x, y, obj_gameInit);
@@ -132,9 +137,53 @@ if(!selected){
         }                                                         
     }
     
-    //options
+    //###############
+    //### options ###
+    //###############
     if(entry == 2){
-    
+        var maxsubentry = 5;
+        var ende = 0 //HV for save and cancle
+        //set option //drawing
+        
+        if(subentry != 5){ //setting HV evry time when we dont have subentry 5 selected
+            ende = 0;
+        }
+        if(subentry == 0){ //controls          
+            if(tempControls == 0 &amp;&amp; key_right_s) tempControls = 1; //controler          
+            else if(tempControls == 1 &amp;&amp; key_left_s) tempControls = 0; //keyboard
+            
+        } else if (subentry == 1){ // sounds
+            if(tempSounds == 0 &amp;&amp; key_right_s) tempSounds = 1; //on          
+            else if(tempSounds == 1 &amp;&amp; key_left_s) tempSounds = 0; //off
+
+        } else if (subentry == 2){ // fullscreen
+            if(tempFullscreen == 0 &amp;&amp; key_right_s) tempFullscreen = 1; //on          
+            else if(tempFullscreen == 1 &amp;&amp; key_left_s) tempFullscreen = 0; //off
+
+        } else if (subentry == 3){ // brightness
+            
+            // 0 == hell; 1 == normal; 2 == dunkel; 3 == debug (sehr hell)
+            if(tempBrightness &lt; 3 &amp;&amp; key_right_s) tempBrightness += 1;            
+            if(tempBrightness &gt; 0 &amp;&amp; key_left_s) tempBrightness -= 1;
+ 
+        } else if (subentry == 4){ // frames
+             if(tempFrames == 0 &amp;&amp; key_right_s) tempFrames = 1; //on          
+             else if(tempFrames == 1 &amp;&amp; key_left_s) tempFrames = 0; //off
+             
+        } else if (subentry == 5){ //save or cancle
+             
+             if(key_right_s)     ende = 1; //dont save
+             else if(key_left_s) ende = 0; //save
+//              if(!subselect &amp;&amp; key_enter){
+//                  subselect = true;
+//                  maxsubsubentry = 1 //0, 1
+//               } else if(key_enter) {
+//                  if(subsubentry == 0){
+//                      selected = false;
+//                  } else if(subsubentry == 1){
+                    
+//                  }
+        }        
     }
     
     //credits
@@ -166,36 +215,6 @@ if(!selected){
 
     }
 }
-
-//neues Spiel starten
-    //if(entry == 0 &amp;&amp; key_enter){
-    //    selected = true;
-    //    room_goto(rm_001theBegin);
-    //}
-
-    //Spiel laden, falls was vorhanden
-    //if(entry == 1 &amp;&amp; key_enter){
-    //    selected = true;
-    //    if(file_exists("__genSave.sav")){
-    //        var loadfile = file_text_open_read("__genSave.sav");
-    //        startRoom = file_text_read_real(loadfile);
-    //       room_goto(startRoom);
-    //    }
-    //}
-    
-    //Optionen aufrufen
-    //if(entry == 2 &amp;&amp; key_enter){
-    //    selected = true;
-    //}
-
-    //Credits aufrufen
-
-    //Spiel beenden
-    //if(entry == 4 &amp;&amp; key_enter){
-    //    selected = true;
-    //    game_end();
-    //}
-
 </string>
           </argument>
         </arguments>
@@ -378,7 +397,91 @@ if(selected){ //begin submenu
         }
     }
     
-    //optionen
+    //################
+    //### optionen ###
+    //################
+    
+    if(entry == 2){
+        //set new fontstyle
+        draw_set_font(fn_header);
+            
+        //draw header
+        var head = "Einstellungen"
+        var xbegin = (view_xview[0] + view_wview[0]) / 2;  //center of the view x
+        var ybegin = view_yview[0] + 100;      //center of the view y
+        draw_text_colour(xbegin,  ybegin , head, c_red, c_red, c_orange, c_orange, 0.7);
+        
+        //set new fontstyle
+        draw_set_font(fn_pause);
+        draw_set_alpha(0.7);
+        draw_set_colour(c_white);
+        draw_set_halign(fa_right);
+        xbegin -= 25;
+        ybegin += 100;
+        
+        //Draw entrys
+        draw_text(xbegin, ybegin, "Steuerung:")        
+        draw_text(xbegin, ybegin+100, "Sound:")       
+        draw_text(xbegin, ybegin+200, "Vollbild:")
+        draw_text(xbegin, ybegin+300, "Helligkeit:")    
+        draw_text(xbegin, ybegin+400, "FPS Anzeige:")
+        
+        draw_set_halign(fa_right);
+        draw_text(xbegin, ybegin+500, "Übernehmen");
+        draw_set_halign(fa_left);
+        draw_text(xbegin+50, ybegin+500, "Abbrechen");
+        
+        //set new fontstyle
+        draw_set_halign(fa_left);
+        draw_set_alpha(0.5);
+        xbegin += 50;
+        var text = ""
+        
+        //controls
+        if(tempControls == 0)       text = "Tastatur";
+        else if (tempControls == 1) text = "GamePad";
+        draw_text(xbegin, ybegin, text);
+        
+        //sounds
+        if(tempSounds == 0)         text = "Eingeschaltet";
+        else if (tempSounds == 1)   text = "Ausgeschaltet";
+        draw_text(xbegin, ybegin + 100, text);
+        
+        //fullscreen
+        if(tempFullscreen == 0)       text = "Eingeschaltet";
+        else if (tempFullscreen == 1) text = "Ausgeschaltet";
+        draw_text(xbegin, ybegin+200, text);
+        
+        //brightness
+        if(tempBrightness == 0)       text = "Hell";
+        else if (tempBrightness == 1) text = "Normal";
+        else if (tempBrightness == 2) text = "Dunkel";
+        else if (tempBrightness == 3) text = "Debug";
+        draw_text(xbegin, ybegin+300, text);
+        
+        //frames
+        if(tempFrames == 0)         text = "Eingeschaltet";
+        else if (tempFrames == 1)   text = "Ausgeschaltet";
+        draw_text(xbegin, ybegin+400, text);
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     //credits
     
