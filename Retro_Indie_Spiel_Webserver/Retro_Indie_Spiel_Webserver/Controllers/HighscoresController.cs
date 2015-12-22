@@ -15,7 +15,8 @@ namespace Retro_Indie_Spiel_Webserver.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Highscores
+        // GET: /Highscores/List
+        // Liefert die Json der gesamten Highscores
         public ActionResult List()
         {
             var highscores = db.Highscores.Include(e => e.User).OrderByDescending(e => e.Score).ToList();
@@ -29,6 +30,8 @@ namespace Retro_Indie_Spiel_Webserver.Controllers
             return Json(list, JsonRequestBehavior.AllowGet);
         }
 
+        // GET: /Highscores
+        // Schreibt einen Eintrag in die Highscoreliste
         public ActionResult Index([Bind(Include = "Name,Score,md5Hash")] HighscoreViewModel highscoreViewModel)
         {
             if (ModelState.IsValid)
@@ -67,63 +70,6 @@ namespace Retro_Indie_Spiel_Webserver.Controllers
                 }
             }
             return Content("Error: " + errorList);
-        }
-
-        // GET: Highscores/Edit/5
-        public ActionResult Edit(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            HighscoreModel highscoreModel = db.Highscores.Find(id);
-            if (highscoreModel == null)
-            {
-                return HttpNotFound();
-            }
-            return View(highscoreModel);
-        }
-
-        // POST: Highscores/Edit/5
-        // Aktivieren Sie zum Schutz vor übermäßigem Senden von Angriffen die spezifischen Eigenschaften, mit denen eine Bindung erfolgen soll. Weitere Informationen 
-        // finden Sie unter http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserId,Score")] HighscoreModel highscoreModel)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(highscoreModel).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(highscoreModel);
-        }
-
-        // GET: Highscores/Delete/5
-        public ActionResult Delete(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            HighscoreModel highscoreModel = db.Highscores.Find(id);
-            if (highscoreModel == null)
-            {
-                return HttpNotFound();
-            }
-            return View(highscoreModel);
-        }
-
-        // POST: Highscores/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
-        {
-            HighscoreModel highscoreModel = db.Highscores.Find(id);
-            db.Highscores.Remove(highscoreModel);
-            db.SaveChanges();
-            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)

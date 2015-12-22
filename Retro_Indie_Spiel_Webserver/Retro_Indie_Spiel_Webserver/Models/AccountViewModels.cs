@@ -24,7 +24,7 @@ namespace Retro_Indie_Spiel_Webserver.Models
         public string Name { get; set; }
 
         [Required]
-        //[StringLength(100, ErrorMessage = "\"{0}\" muss mindestens {2} Zeichen lang sein.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "\"{0}\" muss mindestens {2} Zeichen lang sein.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Kennwort")]
         public string Password { get; set; }

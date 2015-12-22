@@ -13,17 +13,7 @@ using Microsoft.Owin.Security;
 using Retro_Indie_Spiel_Webserver.Models;
 
 namespace Retro_Indie_Spiel_Webserver
-{
-    public class EmailService : IIdentityMessageService
-    {
-        public Task SendAsync(IdentityMessage message)
-        {
-            // Hier den E-Mail-Dienst einfügen, um eine E-Mail-Nachricht zu senden.
-            return Task.FromResult(0);
-        }
-    }
-
- 
+{ 
     // Konfigurieren des in dieser Anwendung verwendeten Anwendungsbenutzer-Managers. UserManager wird in ASP.NET Identity definiert und von der Anwendung verwendet.
     public class ApplicationUserManager : UserManager<ApplicationUser>
     {
@@ -59,13 +49,6 @@ namespace Retro_Indie_Spiel_Webserver
 
             // Registrieren von Anbietern für zweistufige Authentifizierung. Diese Anwendung verwendet telefonische und E-Mail-Nachrichten zum Empfangen eines Codes zum Überprüfen des Benutzers.
             // Sie können Ihren eigenen Anbieter erstellen und hier einfügen.
-        
-            manager.RegisterTwoFactorProvider("E-Mail-Code", new EmailTokenProvider<ApplicationUser>
-            {
-                Subject = "Sicherheitscode",
-                BodyFormat = "Ihr Sicherheitscode lautet {0}"
-            });
-            manager.EmailService = new EmailService();
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {
