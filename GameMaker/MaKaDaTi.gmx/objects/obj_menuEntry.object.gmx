@@ -111,7 +111,6 @@ if(!selected){
             
             if(subsubentry == 2){ //delete save and return
                 if(file_exists(save[subentry])) file_delete(save[subentry]);
-                subselected = false;
             } else if (subsubentry == 1){ //cancle subsubentry
                 subselected = false;
             } else if(subsubentry == 0){ //start and overwrite or load
@@ -145,7 +144,10 @@ if(!selected){
     
     //spiel beenden
     if(entry == 4){
-    
+        if(!subselected) subselected = true; // toggle subsubmenu
+        var maxsubsubentry = 1;
+        if(subsubentry == 1 &amp;&amp; key_enter) game_end();   //close game
+        else if(key_enter) selected = false;           //cancle action
     }
     
     //choose entry from submenu
@@ -359,17 +361,20 @@ if(selected){ //begin submenu
             }
             
             //draw information
+            var info ="";
             if(subsubentry == 0 &amp;&amp; text !=  "Neues Spiel"){
-                text = "Der alte Spielstand wird überschrieben";
+                if(entry == 1) info = "Das Spiel wird geladen";
+                else info = "Der alte Spielstand wird überschrieben";
             }else if(subsubentry == 0) {
-                text = "Beginne ein neues Spiel";
+                if(entry == 1) info = "Ein neues Spiel starten";
+                else info = "Beginne ein neues Spiel";
+            } else if (subsubentry == 1){
+                info = "Zurück zur Auswahl";
             } else {
-                text = "Zurück zur Auswahl";
+                if(text == "Neues Spiel") info = "Kein Spielstand zum löschen vorhanden";
+                else info = "Der Spielstand wird unwiderruflich gelöscht";
             }
-            draw_text((view_xview[0] + view_wview[0]) / 2, (view_yview[0] + 400), text);
-        
-        //} else if(entry == 1){ //draw subsubmenu for entry 1 (spiel laden)
-        
+            draw_text((view_xview[0] + view_wview[0]) / 2, (view_yview[0] + 400), info);
         }
     }
     
@@ -377,13 +382,42 @@ if(selected){ //begin submenu
     
     //credits
     
-    //beenden
-
+    //###############
+    //### Beenden ###
+    //###############
+    if(entry == 4){
+        //set new fontstyle
+        draw_set_font(fn_header);
+            
+        //draw header
+        var head = "Spiel beenden";
+        var xbegin = (view_xview[0] + view_wview[0]) / 2;  //center of the view x
+        var ybegin = (view_yview[0] + 100);                //center of the view y            
+        draw_text_colour(xbegin,  ybegin , head, c_red, c_red, c_orange, c_orange, 0.7);
+        
+        //set new fontstyle
+        draw_set_font(fn_pause);
+        draw_set_colour(c_white);
+        draw_set_alpha(0.5);
+        
+        draw_text(xbegin, ybegin + 100, "Willst du endlich aufwachen?");       
+        draw_text(xbegin-100, ybegin + 200, "Nein");
+        draw_text(xbegin+100, ybegin + 200, "Ja");
+        
+        ybegin += 195;
+        if(subsubentry == 0){
+            xbegin -= 150;
+        } else{
+            xbegin += 50;
+        }
+        draw_rectangle(xbegin, ybegin, xbegin + 100, ybegin + 45, true);       
+    }
 }
 
 //set back to default
 draw_set_alpha(1);
 draw_set_colour(c_white);
+draw_set_font(-1);
 </string>
           </argument>
         </arguments>
