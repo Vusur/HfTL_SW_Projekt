@@ -38,6 +38,35 @@ scr_loadini();
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(global.sounds == 0){
+    //sound_global_volume(1);
+    audio_master_gain(1);
+} else {
+    //sound_global_volume(0);
+    audio_master_gain(0);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -55,12 +84,18 @@ scr_loadini();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(true){
+            <string>if(global.frams == 0){
     draw_set_font(fn_pause);
     draw_set_colour(c_white);
     draw_set_alpha(1);
+    draw_set_halign(fa_left);
     draw_text(view_xview[0] + 50, view_yview[0] + 50, "FPS: " + string(fps));
 }
+
+draw_set_font(-1);
+draw_set_colour(c_white);
+draw_set_alpha(1);
+draw_set_halign(fa_left);
 </string>
           </argument>
         </arguments>

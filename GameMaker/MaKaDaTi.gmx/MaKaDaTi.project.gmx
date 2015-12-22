@@ -104,6 +104,7 @@
       <script>scripts\scr_informationText.gml</script>
       <script>scripts\scr_gameIni.gml</script>
       <script>scripts\scr_loadini.gml</script>
+      <script>scripts\scr_setRes.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -178,10 +179,10 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm__0__init_Dont_Touch</room>
     <room>rooms\rm_000menu</room>
     <rooms name="rm_level">
       <room>rooms\rm_001theBegin</room>
-      <room>rooms\rm_021Bookshelf</room>
       <room>rooms\rm_002needAKey</room>
       <room>rooms\rm_003toTheTop</room>
       <room>rooms\rm_004spikeySpike</room>
@@ -202,13 +203,13 @@
       <room>rooms\rm_018Maria7</room>
       <room>rooms\rm_019Maria8</room>
       <room>rooms\rm_020Maria9</room>
+      <room>rooms\rm_021Bookshelf</room>
       <room>rooms\rm_jg007</room>
       <room>rooms\rm_jg008</room>
       <room>rooms\rm_jg009</room>
       <room>rooms\rm_jg010</room>
     </rooms>
     <room>rooms\rm_001sample</room>
-    <room>rooms\room23</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

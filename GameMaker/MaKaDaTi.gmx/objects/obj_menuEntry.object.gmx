@@ -48,9 +48,7 @@ tempSounds = 0;
 tempBrightness = 0;
 tempFullscreen = 0;
 tempFrames = 0;
-
-
-instance_create(x, y, obj_gameInit);
+tempRes = 0;
 </string>
           </argument>
         </arguments>
@@ -143,32 +141,40 @@ if(!selected){
     //### options ###
     //###############
     if(entry == 2){
-        var maxsubentry = 5;
+        var maxsubentry = 6;
         //set option //drawing
         
-        if(subentry == 0){ //controls          
+        if (subentry == 0){
+            // 0 == 768*1024;   1 == 800x600
+            // 2 == 1024x768;   3 == 1280x720;   
+            // 3 == 1280x800    5 == 1280x1024
+            // 6 == 1366x768;   7 == 1440x900
+            // 8 == 1600x900;   9 == 1920x1080
+            if(tempRes &lt; 9 &amp;&amp; key_right_s) tempRes += 1;            
+            if(tempRes &gt; 0 &amp;&amp; key_left_s) tempRes -= 1;
+            
+        } else if (subentry == 1){ // fullscreen
+            if(tempFullscreen == 0 &amp;&amp; key_right_s) tempFullscreen = 1; //on          
+            else if(tempFullscreen == 1 &amp;&amp; key_left_s) tempFullscreen = 0; //off
+        
+        } else if(subentry == 2){ //controls          
             if(tempControls == 0 &amp;&amp; key_right_s) tempControls = 1; //controler          
             else if(tempControls == 1 &amp;&amp; key_left_s) tempControls = 0; //keyboard
             
-        } else if (subentry == 1){ // sounds
+        } else if (subentry == 3){ // sounds
             if(tempSounds == 0 &amp;&amp; key_right_s) tempSounds = 1; //on          
             else if(tempSounds == 1 &amp;&amp; key_left_s) tempSounds = 0; //off
-
-        } else if (subentry == 2){ // fullscreen
-            if(tempFullscreen == 0 &amp;&amp; key_right_s) tempFullscreen = 1; //on          
-            else if(tempFullscreen == 1 &amp;&amp; key_left_s) tempFullscreen = 0; //off
-
-        } else if (subentry == 3){ // brightness
             
+        } else if (subentry == 4){ // brightness           
             // 0 == hell; 1 == normal; 2 == dunkel; 3 == debug (sehr hell)
             if(tempBrightness &lt; 3 &amp;&amp; key_right_s) tempBrightness += 1;            
             if(tempBrightness &gt; 0 &amp;&amp; key_left_s) tempBrightness -= 1;
  
-        } else if (subentry == 4){ // frames
+        } else if (subentry == 5){ // frames
              if(tempFrames == 0 &amp;&amp; key_right_s) tempFrames = 1; //on          
              else if(tempFrames == 1 &amp;&amp; key_left_s) tempFrames = 0; //off
              
-        } else if (subentry == 5){ //save or cancle
+        } else if (subentry == 6){ //save or cancle
              
              if(key_right_s)     ende = 1; //dont save
              else if(key_left_s) ende = 0; //save
@@ -176,8 +182,10 @@ if(!selected){
              if(key_enter &amp;&amp; ende == 1){
                 selected = false;
              } else if(key_enter &amp;&amp; ende == 0){
-                scr_gameIni(tempControls, tempSounds, tempFullscreen, tempBrightness, tempFrames);
+                scr_gameIni(tempControls, tempSounds, tempFullscreen, tempBrightness, tempFrames, tempRes);
                 selected = false;
+                //need for resolution
+                room_goto(rm__0__init_Dont_Touch);
              }
         }        
     }
@@ -211,6 +219,9 @@ if(!selected){
 
     }
 }
+
+if(key_esc &amp;&amp; subselected) subselected = false;
+else if(key_esc &amp;&amp; selected) selected = false;
 </string>
           </argument>
         </arguments>
@@ -329,11 +340,12 @@ if(selected){ //begin submenu
         var ybegin = view_yview[0] + 225;      //center of the view y
         
         //Draw entrys
-        draw_text(xbegin, ybegin, "Steuerung:")        
-        draw_text(xbegin, ybegin+50, "Sound:")       
-        draw_text(xbegin, ybegin+100, "Vollbild:")
-        draw_text(xbegin, ybegin+150, "Helligkeit:")    
-        draw_text(xbegin, ybegin+200, "FPS Anzeige:")
+        draw_text(xbegin, ybegin, "Auflösung:")
+        draw_text(xbegin, ybegin+50, "Vollbild:")
+        draw_text(xbegin, ybegin+100, "Steuerung:")        
+        draw_text(xbegin, ybegin+150, "Sound:")             
+        draw_text(xbegin, ybegin+200, "Helligkeit:")    
+        draw_text(xbegin, ybegin+250, "FPS Anzeige:")
         
         draw_set_halign(fa_left);
         draw_text(450, 575, "Übernehmen");
@@ -346,40 +358,54 @@ if(selected){ //begin submenu
         xbegin += 25;
         var text = ""
         
-        //controls
-        if(tempControls == 0)       text = "Tastatur";
-        else if (tempControls == 1) text = "GamePad";
+        //resolution
+        if(tempRes == 0)       text = "768x1024";
+        else if (tempRes == 1) text = "800x600";
+        else if (tempRes == 2) text = "1024x768";
+        else if (tempRes == 3) text = "1280x720";
+        else if (tempRes == 4) text = "1280x800";
+        else if (tempRes == 5) text = "1280x1024";
+        else if (tempRes == 6) text = "1366x768";
+        else if (tempRes == 7) text = "1440x900";
+        else if (tempRes == 8) text = "1600x900";
+        else if (tempRes == 9) text = "1920x1080";
         draw_text(xbegin, ybegin, text);
-        
-        //sounds
-        if(tempSounds == 0)         text = "Eingeschaltet";
-        else if (tempSounds == 1)   text = "Ausgeschaltet";
-        draw_text(xbegin, ybegin + 50, text);
         
         //fullscreen
         if(tempFullscreen == 0)       text = "Eingeschaltet";
         else if (tempFullscreen == 1) text = "Ausgeschaltet";
-        draw_text(xbegin, ybegin+100, text);
+        draw_text(xbegin, ybegin + 50, text);
+        
+        //controls
+        if(tempControls == 0)       text = "Tastatur";
+        else if (tempControls == 1) text = "GamePad";
+        draw_text(xbegin, ybegin + 100, text);
+        
+        //sounds
+        if(tempSounds == 0)         text = "Eingeschaltet";
+        else if (tempSounds == 1)   text = "Ausgeschaltet";
+        draw_text(xbegin, ybegin + 150, text);
         
         //brightness
         if(tempBrightness == 0)       text = "Hell";
         else if (tempBrightness == 1) text = "Normal";
         else if (tempBrightness == 2) text = "Dunkel";
         else if (tempBrightness == 3) text = "Debug";
-        draw_text(xbegin, ybegin+150, text);
+        draw_text(xbegin, ybegin + 200, text);
         
         //frames
         if(tempFrames == 0)         text = "Eingeschaltet";
         else if (tempFrames == 1)   text = "Ausgeschaltet";
-        draw_text(xbegin, ybegin+200, text);
+        draw_text(xbegin, ybegin+250, text);
         
         //draw Highlight and info
         if(subentry == 0) draw_sprite(spr_indicator, 0, xbegin-243, ybegin+16);
-        else if(subentry == 1) draw_sprite(spr_indicator, 0, xbegin-157, ybegin+16+50);
-        else if(subentry == 2) draw_sprite(spr_indicator, 0, xbegin-207, ybegin+16+100);
-        else if(subentry == 3) draw_sprite(spr_indicator, 0, xbegin-243, ybegin+16+150);
-        else if(subentry == 4) draw_sprite(spr_indicator, 0, xbegin-262, ybegin+16+200);
-        else if(subentry == 5){
+        else if(subentry == 1) draw_sprite(spr_indicator, 0, xbegin-207, ybegin+16+50);
+        else if(subentry == 2) draw_sprite(spr_indicator, 0, xbegin-243, ybegin+16+100);
+        else if(subentry == 3) draw_sprite(spr_indicator, 0, xbegin-157, ybegin+16+150);
+        else if(subentry == 4) draw_sprite(spr_indicator, 0, xbegin-243, ybegin+16+200);
+        else if(subentry == 5) draw_sprite(spr_indicator, 0, xbegin-262, ybegin+16+250);
+        else if(subentry == 6){
             var info ="";
             if(ende==0){     
                 draw_sprite(spr_indicator, 0, 425, 575+16);
@@ -435,6 +461,8 @@ if(selected){ //begin submenu
         }     
     }
 }
+
+
 
 //set back to default
 draw_set_alpha(1);

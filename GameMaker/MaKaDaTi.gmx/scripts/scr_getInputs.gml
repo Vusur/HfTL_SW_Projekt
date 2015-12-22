@@ -5,6 +5,7 @@ if(argument0 = true){
     key_down = keyboard_check_pressed(vk_down);
     key_enter = keyboard_check_pressed(vk_enter);
     key_space = keyboard_check_pressed(vk_space);
+    key_esc = keyboard_check_pressed(vk_escape);
     
     key_left_s = keyboard_check_pressed(vk_left);
     key_right_s = keyboard_check_pressed(vk_right);
@@ -16,7 +17,7 @@ if(argument0 = true){
     key_down = 0;
     key_enter = 0;
     key_space = 0;
-    
+    key_esc = 0;
     key_left_s = 0;
     key_right_s = 0;
 }
