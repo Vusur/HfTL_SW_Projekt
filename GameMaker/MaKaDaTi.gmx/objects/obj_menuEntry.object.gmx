@@ -36,6 +36,7 @@ startRoom = rm_001theBegin;
 
 selected = false; //toggle entry for the menu and call submenu
 subselected = false; //toogle subentry for subsubentry
+ende = 0;
 
 
 save[0] = "__genSave1.sav" //Save Name 1
@@ -142,7 +143,6 @@ if(!selected){
     //###############
     if(entry == 2){
         var maxsubentry = 5;
-        var ende = 0 //HV for save and cancle
         //set option //drawing
         
         if(subentry != 5){ //setting HV evry time when we dont have subentry 5 selected
@@ -296,105 +296,19 @@ draw_sprite(spr_menu_highlight, entry, x, y);
 
 ///draw the selection
 if(selected){ //begin submenu
-    // erzeuge, dass der Bildschirm abdunkelt
-    draw_set_colour(c_black)
-    draw_set_alpha(0.7);
-    draw_rectangle(view_xview[0], view_yview[0], view_xview[0] + view_wview[0], view_yview[0] + view_hview[0], false);
     
     //set font style to center
     draw_set_halign(fa_center);
-
     
+    //create menu base
+    scr_base();
+           
     //##################################
     //### neues Spiel or Spiel laden ###
     //##################################
-    if(entry == 0 || entry == 1){
-        
-        //set new fontstyle
-        draw_set_font(fn_header);
-            
-        //draw header
-        var head ="";
-        if(entry == 0) head = "Neues Spiel starten";
-        else head = "Ein Spiel laden";
-        draw_text_colour(((view_xview[0] + view_wview[0]) / 2),  (view_yview[0] + 100) , head, c_red, c_red, c_orange, c_orange, 0.7);
-        
-        
-        // draw submenu for both
-        if(!subselected){         
-            
-            //set new font style
-            draw_set_font(fn_pause);
-            draw_set_colour(c_white);
-            draw_set_alpha(0.5);
-            
-            //draw subentrys
-            var pos; //hilfsvariable
-            var text
-            for(pos = 0; pos &lt; 4; pos ++){
-                if(pos == 3){
-                    text = "Abbrechen"
-                } else if(file_exists(save[pos])){  
-                    text = "weiter";  //platzhalter
-                }  else {
-                    text = "Neues Spiel"
-                }
-                var xbegin = (view_xview[0] + view_wview[0]) / 2;  //center of the view x
-                var ybegin = (view_yview[0] + ((2+pos)*100))       //center of the view y
-                draw_text(xbegin,  ybegin, text);
-                if(pos == subentry){
-                    draw_rectangle(xbegin-200, ybegin-5, xbegin+200, ybegin+45, true);
-                }
-            }
-            
-        
-        } else{ //draw sububmenu for entry 0 or 1 (spiel starten oder laden)
-            //set font style
-            draw_set_font(fn_pause);
-            draw_set_colour(c_white);
-            draw_set_alpha(0.5);         
-            var xbegin = (view_xview[0] + view_wview[0]) / 2;  //center of the view x
-            var ybegin = (view_yview[0] + 200);                //center of the view y
-            var text = "Neues Spiel";
-            if(file_exists(save[subentry])) text = "Weiter +-+";
-            draw_text(xbegin, ybegin, text);
-            if(entry == 0){ //draw subsub starten
-                draw_text(xbegin - 125, ybegin + 100, " Starten ");
-                draw_text(xbegin + 150, ybegin + 100, "Abbrechen");
-            
-                ybegin += 95 
-                if(subsubentry == 0) xbegin -= 225;
-                else xbegin += 50;
-                draw_rectangle(xbegin, ybegin, xbegin + 200, ybegin + 45, true);
-                
-            } else if (entry == 1){ //draw subsubmenu laden
-                draw_text(xbegin - 225, ybegin + 100, " Starten ");
-                draw_text(xbegin + 0  , ybegin + 100, "Abbrechen");
-                draw_text(xbegin + 225, ybegin + 100, " Löschen ");
-                
-                ybegin += 95 
-                if(subsubentry == 0) xbegin -= 325;
-                else if (subsubentry == 1) xbegin -= 100;
-                else xbegin += 125;
-                draw_rectangle(xbegin, ybegin, xbegin + 200, ybegin + 45, true);                               
-            }
-            
-            //draw information
-            var info ="";
-            if(subsubentry == 0 &amp;&amp; text !=  "Neues Spiel"){
-                if(entry == 1) info = "Das Spiel wird geladen";
-                else info = "Der alte Spielstand wird überschrieben";
-            }else if(subsubentry == 0) {
-                if(entry == 1) info = "Ein neues Spiel starten";
-                else info = "Beginne ein neues Spiel";
-            } else if (subsubentry == 1){
-                info = "Zurück zur Auswahl";
-            } else {
-                if(text == "Neues Spiel") info = "Kein Spielstand zum löschen vorhanden";
-                else info = "Der Spielstand wird unwiderruflich gelöscht";
-            }
-            draw_text((view_xview[0] + view_wview[0]) / 2, (view_yview[0] + 400), info);
-        }
+    if(entry == 0 || entry == 1){        
+        //draw entrys
+        scr_load_start(entry);       
     }
     
     //################
@@ -405,36 +319,35 @@ if(selected){ //begin submenu
         //set new fontstyle
         draw_set_font(fn_header);
             
-        //draw header
-        var head = "Einstellungen"
-        var xbegin = (view_xview[0] + view_wview[0]) / 2;  //center of the view x
-        var ybegin = view_yview[0] + 100;      //center of the view y
-        draw_text_colour(xbegin,  ybegin , head, c_red, c_red, c_orange, c_orange, 0.7);
+        //draw header      
+        draw_text_colour(((view_xview[0] + view_wview[0]) / 2),  (view_yview[0] + 125) , "Einstellungen", c_black, c_black, c_red, c_red, 0.75);
         
         //set new fontstyle
         draw_set_font(fn_pause);
         draw_set_alpha(0.7);
-        draw_set_colour(c_white);
+        draw_set_colour(c_black);
         draw_set_halign(fa_right);
-        xbegin -= 25;
-        ybegin += 100;
+        
+
+        var xbegin = ((view_xview[0] + view_wview[0]) / 2) -50;  //center of the view x
+        var ybegin = view_yview[0] + 225;      //center of the view y
         
         //Draw entrys
         draw_text(xbegin, ybegin, "Steuerung:")        
-        draw_text(xbegin, ybegin+100, "Sound:")       
-        draw_text(xbegin, ybegin+200, "Vollbild:")
-        draw_text(xbegin, ybegin+300, "Helligkeit:")    
-        draw_text(xbegin, ybegin+400, "FPS Anzeige:")
+        draw_text(xbegin, ybegin+50, "Sound:")       
+        draw_text(xbegin, ybegin+100, "Vollbild:")
+        draw_text(xbegin, ybegin+150, "Helligkeit:")    
+        draw_text(xbegin, ybegin+200, "FPS Anzeige:")
         
-        draw_set_halign(fa_right);
-        draw_text(xbegin, ybegin+500, "Übernehmen");
         draw_set_halign(fa_left);
-        draw_text(xbegin+50, ybegin+500, "Abbrechen");
+        draw_text(475, 575, " Starten ");
+        draw_text(700, 575, "Abbrechen");
+        draw_set_halign(fa_center);
         
         //set new fontstyle
         draw_set_halign(fa_left);
         draw_set_alpha(0.5);
-        xbegin += 50;
+        xbegin += 25;
         var text = ""
         
         //controls
@@ -445,43 +358,46 @@ if(selected){ //begin submenu
         //sounds
         if(tempSounds == 0)         text = "Eingeschaltet";
         else if (tempSounds == 1)   text = "Ausgeschaltet";
-        draw_text(xbegin, ybegin + 100, text);
+        draw_text(xbegin, ybegin + 50, text);
         
         //fullscreen
         if(tempFullscreen == 0)       text = "Eingeschaltet";
         else if (tempFullscreen == 1) text = "Ausgeschaltet";
-        draw_text(xbegin, ybegin+200, text);
+        draw_text(xbegin, ybegin+100, text);
         
         //brightness
         if(tempBrightness == 0)       text = "Hell";
         else if (tempBrightness == 1) text = "Normal";
         else if (tempBrightness == 2) text = "Dunkel";
         else if (tempBrightness == 3) text = "Debug";
-        draw_text(xbegin, ybegin+300, text);
+        draw_text(xbegin, ybegin+150, text);
         
         //frames
         if(tempFrames == 0)         text = "Eingeschaltet";
         else if (tempFrames == 1)   text = "Ausgeschaltet";
-        draw_text(xbegin, ybegin+400, text);
+        draw_text(xbegin, ybegin+200, text);
+        
+        //draw Highlight and info
+        if(subentry == 0) draw_sprite(spr_indicator, 0, xbegin-243, ybegin+16);
+        else if(subentry == 1) draw_sprite(spr_indicator, 0, xbegin-157, ybegin+16+50);
+        else if(subentry == 2) draw_sprite(spr_indicator, 0, xbegin-207, ybegin+16+100);
+        else if(subentry == 3) draw_sprite(spr_indicator, 0, xbegin-243, ybegin+16+150);
+        else if(subentry == 4) draw_sprite(spr_indicator, 0, xbegin-262, ybegin+16+200);
+        else if(subentry == 5){
+            var info ="";
+            if(ende==0){     
+                draw_sprite(spr_indicator, 0, 450, 575+16);
+                info = "Einstellungen übernehmen"
+            }else if(ende==1){
+                draw_sprite(spr_indicator, 0, 675, 575+16);
+                info = "Zurück zum Hauptmenü"
+            }
+            scr_informationText(info);
+        }
 
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+      
     
     //credits
     

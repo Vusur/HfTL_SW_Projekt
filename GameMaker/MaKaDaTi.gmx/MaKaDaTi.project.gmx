@@ -83,6 +83,9 @@
     </sprites>
     <sprites name="spr_menu">
       <sprite>sprites\spr_menu_highlight</sprite>
+      <sprite>sprites\spr_pergament</sprite>
+      <sprite>sprites\spr_indicator</sprite>
+      <sprite>sprites\spr_del</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -95,6 +98,11 @@
   <scripts name="scripts">
     <script>scripts\scr_getInputs.gml</script>
     <script>scripts\scr_debug.gml</script>
+    <scripts name="scr_menü">
+      <script>scripts\scr_base.gml</script>
+      <script>scripts\scr_load_start.gml</script>
+      <script>scripts\scr_informationText.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fn_pause</font>
