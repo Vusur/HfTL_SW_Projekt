@@ -57,9 +57,10 @@ ind = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(ind == 0) ind = 1;
-else ind = 0;
-
+            <string>if(!global.pause){
+    if(ind == 0) ind = 1;
+    else ind = 0;
+}
 alarm[0] = room_speed*1.5;;
 
 </string>

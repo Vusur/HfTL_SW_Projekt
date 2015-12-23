@@ -106,6 +106,7 @@
       <script>scripts\scr_loadini.gml</script>
       <script>scripts\scr_setRes.gml</script>
     </scripts>
+    <script>scripts\scr_destroyPersistent.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fn_pause</font>

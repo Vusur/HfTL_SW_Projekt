@@ -96,7 +96,7 @@ if(entry == 3 &amp;&amp; key_enter){
     var rm = room;
     file_text_write_real(savefile, rm);
     file_text_close(savefile);
-    
+    scr_destroyPersistent();
     room_goto(rm_000menu);
 }
 </string>
