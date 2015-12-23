@@ -292,7 +292,7 @@
     <instance objName="obj_flyingBook_on" x="480" y="672" name="inst_F6A9E165" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_flyingBook_on" x="672" y="448" name="inst_18058EA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_flyingBook_on" x="672" y="581" name="inst_FB02B198" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_shelf" x="96" y="640" name="inst_0F08E888" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_shelf" x="96" y="658" name="inst_0F08E888" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shelf" x="128" y="512" name="inst_96B8E7E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shelf" x="128" y="256" name="inst_66C55A77" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shelf" x="96" y="384" name="inst_01439908" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
