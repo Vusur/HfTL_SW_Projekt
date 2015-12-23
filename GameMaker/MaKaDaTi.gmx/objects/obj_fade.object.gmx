@@ -29,6 +29,10 @@
 fade_out = false;
 alpha = 1;
 
+rmCompute = false;
+nr = "";
+name = ""
+
 
 </string>
           </argument>
@@ -93,8 +97,12 @@ if(fade_out &amp;&amp; alpha &lt; 1){
         draw_set_font(fn_room);
         draw_set_colour(c_white);
         draw_set_halign(fa_center);
-        var text = room_get_name(room);
-        draw_text((view_xview[0] + view_wview[0])/2 , (view_yview[0] + view_hview[0]) /2, text);
+        
+        if(!rmCompute) scr_formatRoomName(room_get_name(room));
+        var text1 = "Raum " + nr;
+        var text2 = name;
+        draw_text((view_xview[0] + view_wview[0])/2 , ((view_yview[0] + view_hview[0]) /2)-50, text1);
+        draw_text((view_xview[0] + view_wview[0])/2 , ((view_yview[0] + view_hview[0]) /2)+50, text2);
     }
 }
 draw_set_alpha(1);

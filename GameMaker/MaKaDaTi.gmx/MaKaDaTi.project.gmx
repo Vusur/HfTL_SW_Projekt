@@ -107,6 +107,7 @@
       <script>scripts\scr_setRes.gml</script>
     </scripts>
     <script>scripts\scr_destroyPersistent.gml</script>
+    <script>scripts\scr_formatRoomName.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fn_pause</font>
@@ -184,34 +185,36 @@
     <room>rooms\rm__0__init_Dont_Touch</room>
     <room>rooms\rm_000menu</room>
     <rooms name="rm_level">
-      <room>rooms\rm_001_Der_Anfang</room>
-      <room>rooms\rm_002_Ein_Schluessel_zum_Erfolg</room>
-      <room>rooms\rm_003_Ganz_nach_oben</room>
-      <room>rooms\rm_004_Stachelige_Angelegenheit</room>
-      <room>rooms\rm_005_Wiedersehen_mit_einem_Freund</room>
-      <room>rooms\rm_006_Der_Rache_des_Kuerbiss</room>
-      <room>rooms\rm_006neu</room>
-      <room>rooms\rm_007neu</room>
-      <room>rooms\rm_008neu</room>
-      <room>rooms\rm_009neu</room>
-      <room>rooms\rm_010bigButtonWithTable</room>
-      <room>rooms\rm_011BigButtonWithoutTable</room>
-      <room>rooms\rm_012MariasLevel</room>
-      <room>rooms\rm_013Maria2</room>
-      <room>rooms\rm_014Maria3</room>
-      <room>rooms\rm_015Maria4</room>
-      <room>rooms\rm_016Maria5</room>
-      <room>rooms\rm_017Maria6</room>
-      <room>rooms\rm_018Maria7</room>
-      <room>rooms\rm_019Maria8</room>
-      <room>rooms\rm_020Maria9</room>
-      <room>rooms\rm_021Bookshelf</room>
-      <room>rooms\rm_jg007</room>
-      <room>rooms\rm_jg008</room>
-      <room>rooms\rm_jg009</room>
-      <room>rooms\rm_jg010</room>
+      <room>rooms\rm_001_Der_Anfang__TB</room>
+      <room>rooms\rm_002_Ein_Schluessel_zum_Erfolg__TB</room>
+      <room>rooms\rm_003_Ganz_nach_oben__TB</room>
+      <room>rooms\rm_004_Stachelige_Angelegenheit__TB</room>
+      <room>rooms\rm_005_Wiedersehen_mit_einem_Freund__</room>
+      <room>rooms\rm_006_Die_Rache_des_Kuerbiss__</room>
+      <room>rooms\rm_007_Sie_kommen__DS</room>
+      <room>rooms\rm_008_Das_warten__DS</room>
+      <room>rooms\rm_009_1000_Stacheln__DS</room>
+      <room>rooms\rm_010_Eine_Ueberraschung__MK</room>
+      <room>rooms\rm_011_Durch_die_Wand__MK</room>
+      <room>rooms\rm_012_Schalter__MK</room>
+      <room>rooms\rm_013_Ein_Labyrinth__MK</room>
+      <room>rooms\rm_014_Kein_Entrinnen__MK</room>
+      <room>rooms\rm_015_Die_Pyramide__MK</room>
+      <room>rooms\rm_016_Schalter_Wahnsinn__MK</room>
+      <room>rooms\rm_017_TODO__MK</room>
+      <room>rooms\rm_018_Buecherfahrstuhl__MK</room>
+      <room>rooms\rm_019_Ein_starker_Junge__</room>
+      <room>rooms\rm_020_Kuerbissregen__JG</room>
+      <room>rooms\rm_021_Die_Falle_JG</room>
+      <room>rooms\rm_022_Die_Suche_nach_dem_Schluessel_JG</room>
     </rooms>
     <room>rooms\rm_001sample</room>
+    <rooms name="rm_z_TODO_ROOMS">
+      <room>rooms\rm_008neu</room>
+      <room>rooms\rm_010bigButtonWithTable</room>
+      <room>rooms\rm_011BigButtonWithoutTable</room>
+      <room>rooms\rm_jg009</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

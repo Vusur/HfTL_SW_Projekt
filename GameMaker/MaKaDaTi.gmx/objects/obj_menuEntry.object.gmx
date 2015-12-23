@@ -32,7 +32,7 @@ subsubentry = 0; //entry for subsubmenu
 image_speed = 0;
 //alpha = 0.7;
 
-startRoom = rm_001theBegin;
+startRoom = rm_001_Der_Anfang__TB;
 
 selected = false; //toggle entry for the menu and call submenu
 subselected = false; //toogle subentry for subsubentry
@@ -121,14 +121,14 @@ if(!selected){
             } else if(subsubentry == 0){ //start and overwrite or load
                 if(entry == 0){ //start and overwrite
                     if(file_exists(save[subentry])) file_delete(save[subentry]);
-                    startRoom = rm_001theBegin;
+                    startRoom = rm_001_Der_Anfang__TB;
                 } else if(entry == 1){ //load if exist, else start new game
                     if(file_exists(save[subentry])){
                        var loadfile = file_text_open_read(save[subentry]);
                        startRoom = file_text_read_real(loadfile);
                        file_text_close(loadfile);                       
                     } else {
-                        startRoom = rm_001theBegin;
+                        startRoom = rm_001_Der_Anfang__TB;
                     }                  
                 }
                 global.save = save[subentry];
