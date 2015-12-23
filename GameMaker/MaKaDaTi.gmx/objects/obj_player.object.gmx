@@ -258,7 +258,7 @@ if(place_meeting(x, y, obj_door) &amp;&amp; key_up){
     if(obj_door.open){
         moveable = false;
         obj_fade.fade_out = true;
-        obj_door.alarm[0] = room_speed;
+        obj_door.alarm[0] = room_speed*2;
         audio_play_sound(snd_door_short, 10, false);
         //dont move!
         hsp_final = 0;

@@ -53,12 +53,12 @@ alpha = 1;
           <argument>
             <kind>1</kind>
             <string>if(fade_in &amp;&amp; alpha &gt; 0){
-    alpha -= 1/room_speed;
+    alpha -= 1/(room_speed*3.5);
 } else {
     fade_in = false
 }
 if(fade_out &amp;&amp; alpha &lt; 1){
-    alpha += 1/room_speed;
+    alpha += 1/(room_speed*2);
 } else{
     fade_out = false;
 }
@@ -89,8 +89,18 @@ if(fade_out &amp;&amp; alpha &lt; 1){
     draw_set_alpha(alpha);
     draw_set_colour(c_black);
     draw_rectangle(view_xview[0], view_yview[0], view_xview[0] + view_wview[0], view_yview[0] + view_hview[0], false);
+    if(fade_in){
+        draw_set_font(fn_room);
+        draw_set_colour(c_white);
+        draw_set_halign(fa_center);
+        var text = room_get_name(room);
+        draw_text((view_xview[0] + view_wview[0])/2 , (view_yview[0] + view_hview[0]) /2, text);
+    }
 }
 draw_set_alpha(1);
+draw_set_colour(c_white);
+draw_set_halign(fa_left);
+draw_set_font(-1);
 </string>
           </argument>
         </arguments>
