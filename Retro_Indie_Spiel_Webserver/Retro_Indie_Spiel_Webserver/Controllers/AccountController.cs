@@ -56,9 +56,10 @@ namespace Retro_Indie_Spiel_Webserver.Controllers
             }
         }
 
-        // Get /Account
+        // Post /Account
         // Einloggen und Registrieren eines Users
         [AllowAnonymous]
+        [HttpPost]
         public async Task<ActionResult> Index(AccountIndexViewModel model)
         {
 
