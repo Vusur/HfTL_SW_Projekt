@@ -30,9 +30,8 @@ namespace Retro_Indie_Spiel_Webserver.Controllers
             return Json(list, JsonRequestBehavior.AllowGet);
         }
 
-        // POST: /Highscores
+        // GET: /Highscores
         // Schreibt einen Eintrag in die Highscoreliste
-        [HttpPost]
         public ActionResult Index([Bind(Include = "Name,Score,md5Hash")] HighscoreViewModel highscoreViewModel)
         {
             if (ModelState.IsValid)
