@@ -8,7 +8,7 @@ var i, p, len, item, ch, arrcount, __array;
 len = string_length(tosplit);
 item = "";
 arrcount = 0;
-
+name = "";
 for(p = 0; p <= len; p++){
     ch = string_char_at(tosplit, p);
     if(ch == "_" && string_char_at(tosplit, p+1) != "_"){

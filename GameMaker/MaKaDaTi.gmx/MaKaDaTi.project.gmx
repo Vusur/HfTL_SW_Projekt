@@ -105,6 +105,8 @@
       <script>scripts\scr_gameIni.gml</script>
       <script>scripts\scr_loadini.gml</script>
       <script>scripts\scr_setRes.gml</script>
+      <script>scripts\scr_save.gml</script>
+      <script>scripts\scr_load.gml</script>
     </scripts>
     <script>scripts\scr_destroyPersistent.gml</script>
     <script>scripts\scr_formatRoomName.gml</script>

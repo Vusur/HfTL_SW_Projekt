@@ -32,16 +32,16 @@ subsubentry = 0; //entry for subsubmenu
 image_speed = 0;
 //alpha = 0.7;
 
-startRoom = rm_001_Der_Anfang__TB;
+rm = rm_001_Der_Anfang__TB;
+date = "--"
+
+rmCompute = false;
+nr = "";
+name = ""
 
 selected = false; //toggle entry for the menu and call submenu
 subselected = false; //toogle subentry for subsubentry
 ende = 0;
-
-
-save[0] = "__genSave1.sav" //Save Name 1
-save[1] = "__genSave2.sav" //Save Name 2
-save[2] = "__genSave3.sav" //Save Name 3
 
 tempControls = 0;
 tempSounds = 0;
@@ -89,6 +89,7 @@ if(!selected){
         subselected = false
         subentry = 0;
         scr_loadini();
+        tempBrightness = global.brightness;
     }
     
 } else {//compute selected
@@ -108,31 +109,32 @@ if(!selected){
         }       
         else if(key_enter &amp;&amp; !subselected){ //choose savefile with subentry 0, 1, 2
                     
-
             subselected = true; //toogle submenu for 3rd if statement
             subsubentry = 0;    //set position of Highlight
             
         } else if(key_enter){   //compute subsubentry 0 or 1
             
             if(subsubentry == 2){ //delete save and return
-                if(file_exists(save[subentry])) file_delete(save[subentry]);
+                scr_save(subentry, -1);
+                
             } else if (subsubentry == 1){ //cancle subsubentry
                 subselected = false;
+                
             } else if(subsubentry == 0){ //start and overwrite or load
                 if(entry == 0){ //start and overwrite
-                    if(file_exists(save[subentry])) file_delete(save[subentry]);
-                    startRoom = rm_001_Der_Anfang__TB;
+                    scr_load(subentry)
+                    if(rm == -1){
+                        rm = rm_001_Der_Anfang__TB;
+                    }
+                    
                 } else if(entry == 1){ //load if exist, else start new game
-                    if(file_exists(save[subentry])){
-                       var loadfile = file_text_open_read(save[subentry]);
-                       startRoom = file_text_read_real(loadfile);
-                       file_text_close(loadfile);                       
-                    } else {
-                        startRoom = rm_001_Der_Anfang__TB;
-                    }                  
+                    scr_load(subentry)
+                    if(rm == -1){
+                        rm = rm_001_Der_Anfang__TB;
+                    }
                 }
-                global.save = save[subentry];
-                room_goto(startRoom);
+                global.save = subentry;
+                room_goto(rm);
             }
         }                                                         
     }
@@ -144,7 +146,8 @@ if(!selected){
         var maxsubentry = 6;
         //set option //drawing
         
-        if (subentry == 0){
+        
+        if (subentry == 9){
             // 0 == 768*1024;   1 == 800x600
             // 2 == 1024x768;   3 == 1280x720;   
             // 3 == 1280x800    5 == 1280x1024
@@ -166,9 +169,9 @@ if(!selected){
             else if(tempSounds == 1 &amp;&amp; key_left_s) tempSounds = 0; //off
             
         } else if (subentry == 4){ // brightness           
-            // 0 == hell; 1 == normal; 2 == dunkel; 3 == debug (sehr hell)
-            if(tempBrightness &lt; 3 &amp;&amp; key_right_s) tempBrightness += 1;            
-            if(tempBrightness &gt; 0 &amp;&amp; key_left_s) tempBrightness -= 1;
+            
+            if(global.brightness &lt; 1 &amp;&amp; key_right_s) global.brightness += 0.1;          
+            if(global.brightness &gt; -1 &amp;&amp; key_left_s) global.brightness -= 0.1;
  
         } else if (subentry == 5){ // frames
              if(tempFrames == 0 &amp;&amp; key_right_s) tempFrames = 1; //on          
@@ -181,8 +184,9 @@ if(!selected){
              
              if(key_enter &amp;&amp; ende == 1){
                 selected = false;
+                global.brightness = tempBrightness
              } else if(key_enter &amp;&amp; ende == 0){
-                scr_gameIni(tempControls, tempSounds, tempFullscreen, tempBrightness, tempFrames, tempRes);
+                scr_gameIni(tempControls, tempSounds, tempFullscreen, global.brightness, tempFrames, tempRes);
                 selected = false;
                 //need for resolution
                 room_goto(rm__0__init_Dont_Touch);
@@ -220,8 +224,13 @@ if(!selected){
     }
 }
 
-if(key_esc &amp;&amp; subselected) subselected = false;
-else if(key_esc &amp;&amp; selected) selected = false;
+if(key_esc &amp;&amp; subselected){ 
+    subselected = false;
+    global.brightness = tempBrightness
+} else if(key_esc &amp;&amp; selected){ 
+    selected = false;
+    global.brightness = tempBrightness
+}
 </string>
           </argument>
         </arguments>
@@ -247,7 +256,7 @@ else if(key_esc &amp;&amp; selected) selected = false;
             <string>//create persistent Objects
 instance_create(x, y, obj_pause);
 instance_create(x, y, obj_bgmusic001);
-instance_create(x, y, obj_light_control);
+
 </string>
           </argument>
         </arguments>
@@ -276,6 +285,8 @@ instance_create(x, y, obj_light_control);
 if(instance_exists(obj_pause)) {with(obj_pause) {instance_destroy()};}
 if(instance_exists(obj_light_control)) {with(obj_light_control) {instance_destroy()};}
 if(instance_exists(obj_bgmusic001)) {with(obj_bgmusic001) {instance_destroy()};}
+
+instance_create(x, y, obj_light_control);
 
 
 </string>
@@ -404,19 +415,12 @@ if(selected){ //begin submenu
         draw_text(xbegin, ybegin + 150, text);
         
         //brightness
-        if(tempBrightness == 0)       text = "Hell";
-        else if (tempBrightness == 1) text = "Normal";
-        else if (tempBrightness == 2) text = "Dunkel";
-        else if (tempBrightness == 3) text = "Debug";
+        text = "";
+        if(global.brightness &gt; 0) text = "+"
+        text += string(round(global.brightness * 100)) + "%"
+        
+        if(global.brightness == 0) text = "normal"
         draw_text(xbegin, ybegin + 200, text);
-        if(subentry == 4){
-            if(tempBrightness == 3){
-                info = "Nur für Demozwecke!"
-                scr_informationText(info);
-                draw_set_halign(fa_left);
-                draw_set_alpha(0.5);
-            }
-        }
         
         //frames
         if(tempFrames == 0)         text = "Eingeschaltet";

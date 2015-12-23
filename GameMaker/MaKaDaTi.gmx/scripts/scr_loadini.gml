@@ -1,3 +1,4 @@
+
 var controls = 0;
 var sounds = 0;
 var fullscreen = 1;

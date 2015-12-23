@@ -28,8 +28,15 @@ if(!subselected){
     for(pos = 0; pos < 4; pos ++){
         //choose right Text
         if(pos == 3)    text = "Abbrechen"        
-        else if(file_exists(save[pos])) text = "weiter";  //platzhalter
-        else text = "Neues Spiel";
+        else{
+            scr_load(pos)
+            if(rm == -1){ 
+                text = "["+string(pos+1)+"] Neues Spiel"
+            } else {
+                scr_formatRoomName(room_get_name(rm))
+                text = "["+string(pos+1)+"] " + name;
+            }
+        }
         
         //draw text
         ybegin += 75;
@@ -54,9 +61,15 @@ if(!subselected){
     //Hilfsvariablen         
     var xbegin = (view_xview[0] + view_wview[0]) / 2;  //center of the view x
     var ybegin = ((view_yview[0] + view_hview[0]) / 2)  - 100;                //center of the view y
+       
+    scr_load(subentry)
+    if(rm == -1){ 
+        text = "["+string(subentry+1)+"] Neues Spiel"
+    } else {
+        scr_formatRoomName(room_get_name(rm))
+        text = "["+string(subentry+1)+"] " + name;
+    }
     
-    var text = "Neues Spiel";   
-    if(file_exists(save[subentry])) text = "Weiter +-+"; //platzhalter
     draw_text(xbegin, ybegin, text);
     
     //draw starten & abbrechen
@@ -67,7 +80,8 @@ if(!subselected){
         
     if(subsubentry == 0){
         draw_sprite(spr_indicator, 0, 450, 575+16);
-        if(text == "Neues Spiel") info = "Es wird ein neues Spiel gestartet"
+        if(rm == -1) info = "Es wird ein neues Spiel gestartet"
+        else if(entry == 0) info = "Das Spiel wird überschrieben"
         else info = "Das Spiel wird geladen"
     }
     else if(subsubentry == 1){
@@ -78,7 +92,7 @@ if(!subselected){
     if (entry == 1){ //draw subsubmenu laden
         if(subsubentry==2){
             draw_sprite(spr_del, 1, 1010, 585)
-            if(text == "Neues Spiel") info = "Kein Spielstand zum Löschen vorhanden"
+            if(rm == -1) info = "Kein Spielstand zum Löschen vorhanden"
             else info = "Der Spielstand wird gelöscht"
         }else
             draw_sprite(spr_del, 0, 1010, 585)
