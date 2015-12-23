@@ -53,7 +53,7 @@ ind = 0;
             <string>scr_getInputs(true);
 
 if(instance_exists(obj_player)){
-    if( (round(obj_player.y + (obj_player.sprite_height / 2)) &gt; y) || key_down) mask_index = -1;
+    if( (round(obj_player.y + (obj_player.sprite_height / 2)) &gt; y) || key_fall) mask_index = -1;
     else mask_index = sprSelf;   
 }
 </string>

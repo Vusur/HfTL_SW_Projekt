@@ -88,7 +88,7 @@ alarm[0] = room_speed*1.5;;
 
 if(instance_exists(obj_player)){
     if(ind == 0){
-        if( (round(obj_player.y + (obj_player.sprite_height / 2)) &gt; y) || key_down) mask_index = -1;
+        if( (round(obj_player.y + (obj_player.sprite_height / 2)) &gt; y) || key_fall) mask_index = -1;
         else mask_index = sprSelf;
     } else {
         mask_index = - 1;

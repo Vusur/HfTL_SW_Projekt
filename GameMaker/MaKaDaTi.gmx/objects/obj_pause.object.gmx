@@ -52,6 +52,18 @@ entry = 1;
             <kind>1</kind>
             <string>scr_getInputs(true);
 
+if(key_pause){
+    if(global.pause){
+        global.pause = false;
+        entry = 0;
+    } else {
+        global.pause = true;
+        entry = 1;
+    }
+}
+
+if(!global.pause) exit;
+
 //choose entry
 if(key_down &amp;&amp; entry  &lt; 3){
     entry += 1;
@@ -145,35 +157,6 @@ if(entry == 3 &amp;&amp; key_enter){
         info = "Speichern und zum Hauptmenü zurück"
     }
     scr_informationText(info);
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="27">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(global.pause){
-    global.pause = false;
-    entry = 0;
-} else {
-    global.pause = true;
-    entry = 1;
 }
 </string>
           </argument>

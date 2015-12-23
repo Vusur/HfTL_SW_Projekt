@@ -211,9 +211,9 @@ if(!selected){
             subentry -= 1;
         }
     } else{ //choose entry from subsubmenu
-        if(keyboard_check_pressed(vk_right) &amp;&amp; (subsubentry &lt; maxsubsubentry)){
+        if(key_right_s &amp;&amp; (subsubentry &lt; maxsubsubentry)){
             subsubentry += 1;
-        } else if (keyboard_check_pressed(vk_left) &amp;&amp; (subsubentry &gt; 0)){
+        } else if (key_left_s &amp;&amp; (subsubentry &gt; 0)){
             subsubentry -= 1;
         }
 
@@ -370,6 +370,12 @@ if(selected){ //begin submenu
         else if (tempRes == 8) text = "1600x900";
         else if (tempRes == 9) text = "1920x1080";
         draw_text(xbegin, ybegin, text);
+        if(subentry == 0){
+            info = "16:9 Auflösung empfohlen"
+            scr_informationText(info);
+            draw_set_halign(fa_left);
+            draw_set_alpha(0.5);    
+        }
         
         //fullscreen
         if(tempFullscreen == 0)       text = "Eingeschaltet";
@@ -380,6 +386,14 @@ if(selected){ //begin submenu
         if(tempControls == 0)       text = "Tastatur";
         else if (tempControls == 1) text = "GamePad";
         draw_text(xbegin, ybegin + 100, text);
+        if(subentry == 2){
+            if(!gamepad_is_connected(0)){
+                info = "Kein GamePad angeschlossen"
+                scr_informationText(info);
+                draw_set_halign(fa_left);
+                draw_set_alpha(0.5);
+            }
+        }
         
         //sounds
         if(tempSounds == 0)         text = "Eingeschaltet";

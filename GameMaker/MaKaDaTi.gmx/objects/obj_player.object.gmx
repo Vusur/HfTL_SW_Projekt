@@ -218,7 +218,7 @@ if(vsp &lt; 10) vsp += grav;
 
 //jump
 if(place_meeting(x, y+1, obj_stoneWall)){
-    if(key_up) vsp = -jumpspeed;
+    if(key_jump) vsp = -jumpspeed;
 }
 
 //move
@@ -321,7 +321,7 @@ if(place_meeting(x, y+1, obj_stoneWall)){   //Der Spieler steht auf dem Boden
 //#######################
 //### Throw the stone ###
 //#######################
-if(key_space &amp;&amp; timer){
+if(key_throw &amp;&amp; timer){
     dir = image_xscale;
     instance_create(x, y, obj_stone_colored);
     audio_play_sound(stone_throw001, 5,  false);
