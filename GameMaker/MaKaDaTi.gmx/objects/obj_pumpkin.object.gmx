@@ -190,30 +190,6 @@ if (var_health &lt; 1) instance_destroy();
       </action>
       <action>
         <libid>1</libid>
-        <id>211</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>say_au001</sound>
-          </argument>
-          <argument>
-            <kind>3</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -229,6 +205,8 @@ if (var_health &lt; 1) instance_destroy();
           <argument>
             <kind>1</kind>
             <string>/// reduce Health
+var i = choose(snd_say_grr001, say_au001);
+audio_play_sound(i, 10, false)
 var_health -= 25;
 </string>
           </argument>
