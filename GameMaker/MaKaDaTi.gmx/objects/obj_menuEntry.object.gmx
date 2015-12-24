@@ -119,7 +119,9 @@ tempRes = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_getInputs(true)
+            <string>if(global.logon == 0) exit;
+
+scr_getInputs(true)
 
 
 if(!selected){

@@ -53,6 +53,7 @@
   <instances>
     <instance objName="obj_bg_outside001" x="160" y="672" name="inst_F6042150" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_menuEntry" x="802" y="581" name="inst_D5229766" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_logon" x="64" y="64" name="inst_14085B48" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
