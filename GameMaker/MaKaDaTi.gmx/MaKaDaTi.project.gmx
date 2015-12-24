@@ -86,6 +86,9 @@
       <sprite>sprites\spr_pergament</sprite>
       <sprite>sprites\spr_indicator</sprite>
       <sprite>sprites\spr_del</sprite>
+      <sprites name="spr_menu_optionsIndicator">
+        <sprite>sprites\spr_optionsIndicator</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -107,6 +110,9 @@
       <script>scripts\scr_setRes.gml</script>
       <script>scripts\scr_save.gml</script>
       <script>scripts\scr_load.gml</script>
+      <scripts name="scr_optionsIndicator">
+        <script>scripts\scr_indicator.gml</script>
+      </scripts>
     </scripts>
     <script>scripts\scr_destroyPersistent.gml</script>
     <script>scripts\scr_formatRoomName.gml</script>
@@ -209,7 +215,7 @@
       <room>rooms\rm_020_Kuerbissregen__JG</room>
       <room>rooms\rm_021_Die_Falle_JG</room>
       <room>rooms\rm_022_Die_Suche_nach_dem_Schluessel_JG</room>
-      <room>rooms\rm_023_Grosse_Unruhe</room>
+      <room>rooms\rm_023_Grosse_Unruhe__JG</room>
     </rooms>
     <room>rooms\rm_001sample</room>
     <rooms name="rm_z_TODO_ROOMS">

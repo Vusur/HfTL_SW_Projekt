@@ -16,6 +16,7 @@ if(!subselected){
     //set new font style
     draw_set_font(fn_pause);
     draw_set_colour(c_black);
+    draw_set_halign(fa_left);
     draw_set_alpha(0.7);
             
     //hilfsvariable
@@ -40,11 +41,11 @@ if(!subselected){
         
         //draw text
         ybegin += 75;
-        draw_text(xbegin,  ybegin, text);
+        draw_text(xbegin-300,  ybegin, text);
         
         //draw Highlight
         if(pos == subentry){
-            draw_sprite(spr_indicator, 0, xbegin - 150, ybegin+16);
+            draw_sprite(spr_indicator, 0, xbegin - 325, ybegin+16);
         }
     }
             
@@ -57,10 +58,11 @@ if(!subselected){
     draw_set_font(fn_pause);
     draw_set_colour(c_black);
     draw_set_alpha(0.7);
+    draw_set_halign(fa_center);
     
     //Hilfsvariablen         
     var xbegin = (view_xview[0] + view_wview[0]) / 2;  //center of the view x
-    var ybegin = ((view_yview[0] + view_hview[0]) / 2)  - 100;                //center of the view y
+    var ybegin = ((view_yview[0] + view_hview[0]) / 2)  - 150;                //center of the view y
        
     scr_load(subentry)
     if(rm == -1){ 
@@ -68,6 +70,8 @@ if(!subselected){
     } else {
         scr_formatRoomName(room_get_name(rm))
         text = "["+string(subentry+1)+"] " + name;
+        draw_text(xbegin, ybegin + 50, "Raum " + nr);
+        draw_text(xbegin, ybegin +100, date);
     }
     
     draw_text(xbegin, ybegin, text);

@@ -42,6 +42,8 @@ name = ""
 selected = false; //toggle entry for the menu and call submenu
 subselected = false; //toogle subentry for subsubentry
 ende = 0;
+active[0] = false; //left
+active[1] = false; //right
 
 tempControls = 0;
 tempSounds = 0;
@@ -49,6 +51,52 @@ tempBrightness = 0;
 tempFullscreen = 0;
 tempFrames = 0;
 tempRes = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>active[1] = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>active[0] = false;
 </string>
           </argument>
         </arguments>
@@ -88,6 +136,7 @@ if(!selected){
         selected = true;
         subselected = false
         subentry = 0;
+        subsubentry = 0;
         scr_loadini();
         tempBrightness = global.brightness;
     }
@@ -122,10 +171,9 @@ if(!selected){
                 
             } else if(subsubentry == 0){ //start and overwrite or load
                 if(entry == 0){ //start and overwrite
-                    scr_load(subentry)
-                    if(rm == -1){
-                        rm = rm_001_Der_Anfang__TB;
-                    }
+                    //scr_load(subentry)
+                    
+                    rm=(rm_001_Der_Anfang__TB)
                     
                 } else if(entry == 1){ //load if exist, else start new game
                     scr_load(subentry)
@@ -147,7 +195,7 @@ if(!selected){
         //set option //drawing
         
         
-        if (subentry == 9){
+        if (subentry == 0){
             // 0 == 768*1024;   1 == 800x600
             // 2 == 1024x768;   3 == 1280x720;   
             // 3 == 1280x800    5 == 1280x1024
@@ -350,7 +398,7 @@ if(selected){ //begin submenu
         draw_set_halign(fa_right);
         
 
-        var xbegin = ((view_xview[0] + view_wview[0]) / 2) -50;  //center of the view x
+        var xbegin = ((view_xview[0] + view_wview[0]) / 2) -75;  //center of the view x
         var ybegin = view_yview[0] + 225;      //center of the view y
         
         //Draw entrys
@@ -369,7 +417,7 @@ if(selected){ //begin submenu
         //set new fontstyle
         draw_set_halign(fa_left);
         draw_set_alpha(0.5);
-        xbegin += 25;
+        xbegin += 50;
         var text = ""
         
         //resolution
@@ -428,13 +476,31 @@ if(selected){ //begin submenu
         draw_text(xbegin, ybegin+250, text);
         
         //draw Highlight and info
-        if(subentry == 0) draw_sprite(spr_indicator, 0, xbegin-243, ybegin+16);
-        else if(subentry == 1) draw_sprite(spr_indicator, 0, xbegin-207, ybegin+16+50);
-        else if(subentry == 2) draw_sprite(spr_indicator, 0, xbegin-243, ybegin+16+100);
-        else if(subentry == 3) draw_sprite(spr_indicator, 0, xbegin-157, ybegin+16+150);
-        else if(subentry == 4) draw_sprite(spr_indicator, 0, xbegin-243, ybegin+16+200);
-        else if(subentry == 5) draw_sprite(spr_indicator, 0, xbegin-262, ybegin+16+250);
-        else if(subentry == 6){
+        if(subentry == 0){ 
+            draw_sprite(spr_indicator, 0, xbegin-243, ybegin+16);
+            scr_indicator(0, tempRes, 9, xbegin, ybegin); //draw OptionsIndicator
+                       
+        }else if(subentry == 1){ 
+            draw_sprite(spr_indicator, 0, xbegin-207, ybegin+16+50);
+            scr_indicator(0, tempFullscreen, 1, xbegin, ybegin+50); //draw OptionsIndicator
+            
+        }else if(subentry == 2){ 
+            draw_sprite(spr_indicator, 0, xbegin-243, ybegin+16+100);
+            scr_indicator(0, tempControls, 1, xbegin, ybegin+100); //draw OptionsIndicator
+            
+        }else if(subentry == 3){ 
+            draw_sprite(spr_indicator, 0, xbegin-157, ybegin+16+150);
+            scr_indicator(0, tempSounds, 1, xbegin, ybegin+150); //draw OptionsIndicator
+            
+        }else if(subentry == 4){ 
+            draw_sprite(spr_indicator, 0, xbegin-243, ybegin+16+200);
+            scr_indicator(-1, global.brightness, 1, xbegin, ybegin+200); //draw OptionsIndicator
+            
+        }else if(subentry == 5){ 
+            draw_sprite(spr_indicator, 0, xbegin-262, ybegin+16+250);
+            scr_indicator(0, tempFrames, 1, xbegin, ybegin+250); //draw OptionsIndicator
+            
+        }else if(subentry == 6){
             if(ende==0){     
                 draw_sprite(spr_indicator, 0, 425, 575+16);
                 info = "Einstellungen übernehmen"
