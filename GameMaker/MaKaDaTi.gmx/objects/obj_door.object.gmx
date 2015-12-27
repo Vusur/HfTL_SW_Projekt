@@ -39,6 +39,56 @@ noInput = false;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Highscore
+alarm[1]=room_speed;
+var_highscore_time=0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Highscore
+if (var_highscore_time &lt; var_highscore_max_counted_time){
+    var_highscore_time+=1; // bis 5 minuten Abzug.
+}
+alarm[1]=room_speed;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="2" enumb="0">
       <action>
@@ -57,9 +107,46 @@ noInput = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_destroyPersistent();
+            <string>/// next Room
+scr_destroyPersistent();
 if(tr_next == -1) room_goto_next();
 else room_goto(tr_next);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Highscore
+var_highscore_rooms+=1
+
+// Punkte für Level-Erfolg addieren
+var_highscore_points+= var_highscore_points_per_level;
+//Time-Deduction
+var_highscore_points+= var_highscore_points_per_second*var_highscore_time;
+//Reset-Deduction
+var_highscore_points+= var_highscore_points_per_reset*var_highscore_resets_this_room;
+//Kill-Boni
+var_highscore_points+= var_highscore_kills_this_room*var_highscore_points_per_kill;
+// Werte zurücksetzen
+var_highscore_deduction = 0;
+var_highscore_resets_this_room = 0;
+var_highscore_kills_this_room = 0;
 </string>
           </argument>
         </arguments>
@@ -82,7 +169,7 @@ else room_goto(tr_next);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>/// auto-locking
 if(!instance_exists(obj_key)){
     open = true;
     with(obj_lock){
