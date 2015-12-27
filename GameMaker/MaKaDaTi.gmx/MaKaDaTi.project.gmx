@@ -207,7 +207,6 @@
       <room>rooms\rm_009_1000_Stacheln__DS</room>
       <room>rooms\rm_0091_Hinter_Gittern_JG</room>
       <room>rooms\rm_010_Eine_Ueberraschung__MK</room>
-      <room>rooms\rm_010_Hinter_Gittern_JG</room>
       <room>rooms\rm_011_Durch_die_Wand__MK</room>
       <room>rooms\rm_012_Schalter__MK</room>
       <room>rooms\rm_013_Ein_Labyrinth__MK</room>
@@ -231,12 +230,14 @@
       <room>rooms\rm_028_Der_Umweg__MK</room>
       <room>rooms\rm_029_Die_Erleuchtung__MK</room>
       <room>rooms\rm_030_Die_Stufenwanderung__MK</room>
-      <room>rooms\rm_031_Eine_Ueberraschung__MK</room>
     </rooms>
     <room>rooms\rm_001sample</room>
     <rooms name="rm_z_TODO_ROOMS">
       <room>rooms\rm_008neu</room>
       <room>rooms\rm_011BigButtonWithoutTable</room>
+      <rooms name="doppelte_räume">
+        <room>rooms\rm_031_Eine_Ueberraschung__MK</room>
+      </rooms>
     </rooms>
   </rooms>
   <help>
