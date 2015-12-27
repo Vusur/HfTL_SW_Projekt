@@ -3,8 +3,8 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-100000</depth>
-  <persistent>-1</persistent>
+  <depth>0</depth>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,14 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//initialisiert persistente Objekte
-//catch global variables
+            <string>user = "";
 
-//catch savefile
-global.save = 0;
-global.logon = 0;
+subentry = 0;
+activeBox = 0; // 0 = email[0]
+email[0] = "";
+email[1] = "";
+pw[0] = "";
+pw[1] = "";
 
-scr_loadini();
 
 </string>
           </argument>
@@ -56,12 +57,34 @@ scr_loadini();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.sounds == 0){
-    //sound_global_volume(1);
-    audio_master_gain(1);
-} else {
-    //sound_global_volume(0);
-    audio_master_gain(0);
+            <string>if(global.logon != 0) exit;
+
+scr_getInputs(true);
+
+if(subentry == 0){ //anmelden
+
+} else if(subentry == 1){ //registrieren
+
+} else if(subentry == 2){ //als Gast
+
+} else if(subentry == 3){ //Beenden
+    
+}
+
+
+if(activeBox == 0){ //email
+    email[0] = keyboard_string;
+}else if(activeBox == 1){ //pw
+    pw[0] = keyboard_string;
+}else if(activeBox == 2){
+    email[1] = keyboard_string;
+}else if(activeBox == 3){
+    pw[1] = keyboard_string
+}
+
+
+if(key_enter){
+    global.logon = 1;
 }
 </string>
           </argument>
@@ -85,18 +108,17 @@ scr_loadini();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.frams == 0){
-    draw_set_font(fn_pause);
-    draw_set_colour(c_white);
-    draw_set_alpha(1);
-    draw_set_halign(fa_left);
-    draw_text(view_xview[0] + 50, view_yview[0] + 50, "FPS: " + string(fps));
-}
+            <string>if(global.logon != 0) exit;
 
-draw_set_font(-1);
-draw_set_colour(c_white);
-draw_set_alpha(1);
-draw_set_halign(fa_left);
+scr_base();
+    
+    var xbegin = (view_xview[0] + view_wview[0]) / 2;  //center of the view x
+    var ybegin = (view_yview[0] + view_hview[0]) / 2;      //center of the view y
+    
+    draw_set_halign(fa_left);
+    draw_text_colour(xbegin, ybegin, user, c_black, c_black, c_black, c_black, 0.7)
+    
+    draw_text_colour(xbegin, ybegin+100, "TODO: LOGON \n Enter Drücken", c_black, c_black, c_black, c_black, 0.7)
 </string>
           </argument>
         </arguments>

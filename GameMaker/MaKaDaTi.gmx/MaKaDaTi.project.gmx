@@ -86,6 +86,9 @@
       <sprite>sprites\spr_pergament</sprite>
       <sprite>sprites\spr_indicator</sprite>
       <sprite>sprites\spr_del</sprite>
+      <sprites name="spr_menu_optionsIndicator">
+        <sprite>sprites\spr_optionsIndicator</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -96,8 +99,10 @@
     <path>paths\pt_pumpkin</path>
   </paths>
   <scripts name="scripts">
-    <script>scripts\scr_getInputs.gml</script>
     <script>scripts\scr_debug.gml</script>
+    <script>scripts\scr_destroyPersistent.gml</script>
+    <script>scripts\scr_formatRoomName.gml</script>
+    <script>scripts\scr_getInputs.gml</script>
     <scripts name="scr_menü">
       <script>scripts\scr_base.gml</script>
       <script>scripts\scr_load_start.gml</script>
@@ -107,9 +112,10 @@
       <script>scripts\scr_setRes.gml</script>
       <script>scripts\scr_save.gml</script>
       <script>scripts\scr_load.gml</script>
+      <scripts name="scr_optionsIndicator">
+        <script>scripts\scr_indicator.gml</script>
+      </scripts>
     </scripts>
-    <script>scripts\scr_destroyPersistent.gml</script>
-    <script>scripts\scr_formatRoomName.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fn_pause</font>
@@ -172,6 +178,7 @@
       <object>objects\obj_gameInit</object>
       <object>objects\obj_pause</object>
       <object>objects\obj_menuEntry</object>
+      <object>objects\obj_logon</object>
     </objects>
     <objects name="obj_musics">
       <object>objects\obj_bgmusic001</object>
@@ -209,8 +216,12 @@
       <room>rooms\rm_020_Kuerbissregen__JG</room>
       <room>rooms\rm_021_Die_Falle_JG</room>
       <room>rooms\rm_022_Die_Suche_nach_dem_Schluessel_JG</room>
+<<<<<<< HEAD
       <room>rooms\rm_023_Grosse_Unruhe_JG</room>
       <room>rooms\rm_024_Das_lassen_sie_nicht_zu_JG</room>
+=======
+      <room>rooms\rm_023_Grosse_Unruhe__JG</room>
+>>>>>>> origin/master
     </rooms>
     <room>rooms\rm_001sample</room>
     <rooms name="rm_z_TODO_ROOMS">
