@@ -21,6 +21,7 @@
     <sound>sound\snd_pumpkin_focus001</sound>
     <sound>sound\snd_musicbox001</sound>
     <sound>sound\snd_say_grr001</sound>
+    <sound>sound\snd_gitter001</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="spr_mainBlock">

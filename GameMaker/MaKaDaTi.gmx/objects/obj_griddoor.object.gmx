@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
+var_playedsound = false;
 </string>
           </argument>
         </arguments>
@@ -55,6 +56,10 @@ if(global.pause){
 }
 
 if(trigger.activated){
+    if !var_playedsound{
+        audio_play_sound(snd_gitter001, 10, false);
+        var_playedsound = true;
+    }
     if(image_index &lt; 6){
         image_speed = 0.5;
     } else {
@@ -62,6 +67,7 @@ if(trigger.activated){
     }
     mask_index = spr_window;
 } else {
+    var_playedsound = false;
     if(image_index &gt; 0){
         image_speed = -0.5;
     } else {
