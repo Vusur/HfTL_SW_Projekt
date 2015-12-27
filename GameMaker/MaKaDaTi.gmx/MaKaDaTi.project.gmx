@@ -205,7 +205,7 @@
       <room>rooms\rm_007_Sie_kommen__DS</room>
       <room>rooms\rm_008_Das_warten__DS</room>
       <room>rooms\rm_009_1000_Stacheln__DS</room>
-      <room>rooms\rm_010_Hinter_Gittern_JG</room>
+      <room>rooms\rm_0091_Hinter_Gittern_JG</room>
       <room>rooms\rm_010_Eine_Ueberraschung__MK</room>
       <room>rooms\rm_011_Durch_die_Wand__MK</room>
       <room>rooms\rm_012_Schalter__MK</room>
@@ -224,6 +224,9 @@
       <room>rooms\rm_025_Fliegende_Buecher_JG</room>
       <room>rooms\rm_026_Die_Schluesselmeister_JG</room>
       <room>rooms\rm_027_Zugriff_JG</room>
+      <room>rooms\rm_028_Minenfeld_JG</room>
+      <room>rooms\rm_029_Sinus_JG</room>
+      <room>rooms\rm_030_Cosinus_JG</room>
     </rooms>
     <room>rooms\rm_001sample</room>
     <rooms name="rm_z_TODO_ROOMS">
