@@ -78,7 +78,8 @@ instance_create(x, y, obj_fade);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//is paused?
+            <string>/// Player Death
+//is paused?
 if(global.pause){
     image_speed = 0;
     alarm[2] = room_speed;
@@ -90,6 +91,13 @@ if(place_meeting(x, y, obj_spike)) {
     image_angle = obj_player.image_angle;
     }
 }
+// Highscore
+var_highscore_resets+=1;
+if (var_highscore_resets_this_room &lt; var_highscore_max_counted_resets){
+    var_highscore_resets_this_room+=1;
+}
+// Punkte für Kills abziehen
+var_highscore_kills_this_room=0;
 room_restart();
 </string>
           </argument>

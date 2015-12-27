@@ -189,6 +189,7 @@
       <object>objects\obj_player</object>
       <object>objects\obj_stone_colored</object>
       <object>objects\obj_player_dead</object>
+      <object>objects\obj_highscore</object>
     </objects>
   </objects>
   <rooms name="rooms">
