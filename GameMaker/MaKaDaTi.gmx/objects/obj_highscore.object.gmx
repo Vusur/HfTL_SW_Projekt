@@ -82,8 +82,8 @@ var_highscore_points_per_level=10000;
 //globalvar var_highscore_rooms = 0;
 //globalvar var_highscore_resets = 0;
 //globalvar var_highscore_kills = 0;
-draw_text(x,y,"room: " + string(var_highscore_rooms) + " | resets: " + string(var_highscore_resets) + " | kills: " + string(var_highscore_kills));
-draw_text(x,y+16,"Highscore: " + string(var_highscore_points));
+//draw_text(x,y,"room: " + string(var_highscore_rooms) + " | resets: " + string(var_highscore_resets) + " | kills: " + string(var_highscore_kills));
+draw_text_transformed_colour(x,y+16,"Score: " + string(var_highscore_points), 2, 2, 0, c_orange, c_orange, c_orange, c_orange, 1);
 </string>
           </argument>
         </arguments>
