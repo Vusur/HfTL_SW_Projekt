@@ -205,8 +205,6 @@
       <room>rooms\rm_007_Sie_kommen__DS</room>
       <room>rooms\rm_008_Das_warten__DS</room>
       <room>rooms\rm_009_1000_Stacheln__DS</room>
-      <room>rooms\rm_0091_Hinter_Gittern_JG</room>
-      <room>rooms\rm_010_Hinter_Gittern_JG</room>
       <room>rooms\rm_010_Eine_Ueberraschung__MK</room>
       <room>rooms\rm_011_Durch_die_Wand__MK</room>
       <room>rooms\rm_012_Schalter__MK</room>
@@ -231,13 +229,10 @@
       <room>rooms\rm_031_Der_Umweg__MK</room>
       <room>rooms\rm_032_Die_Erleuchtung__MK</room>
       <room>rooms\rm_033_Die_Stufenwanderung__MK</room>
-      <room>rooms\rm_034_Eine_Ueberraschung__MK</room>
-      <room>rooms\rm_035_Das_grosse_Hin_und_Her__MK</room>
-      <room>rooms\rm_036_Im_Schneckengang__MK</room>
-      <room>rooms\rm_037_Die_Kueche__MK</room>
-      <room>rooms\rm_028_Der_Umweg__MK</room>
-      <room>rooms\rm_029_Die_Erleuchtung__MK</room>
-      <room>rooms\rm_030_Die_Stufenwanderung__MK</room>
+      <room>rooms\rm_034_Das_grosse_Hin_und_Her__MK</room>
+      <room>rooms\rm_035_Im_Schneckengang__MK</room>
+      <room>rooms\rm_036_Die_Kueche__MK</room>
+      <room>rooms\rm_037_Hinter_Gittern_JG</room>
     </rooms>
     <room>rooms\rm_001sample</room>
     <rooms name="rm_z_TODO_ROOMS">
