@@ -259,8 +259,8 @@
     <instance objName="obj_stoneWall" x="288" y="653" name="inst_1BD2652D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_stoneWall" x="352" y="652" name="inst_82854BEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bookShelf" x="672" y="182" name="inst_198CF240" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_griddoor" x="1248" y="736" name="inst_3D3C63CB" locked="0" code="trigger = inst_E572C0AD;&#xA;trigger.needTable = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_switch" x="1024" y="634" name="inst_E572C0AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_griddoor" x="1248" y="736" name="inst_3D3C63CB" locked="0" code="trigger = inst_E572C0AD;&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_switch" x="1024" y="634" name="inst_E572C0AD" locked="0" code="needTable = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shelf" x="896" y="288" name="inst_C8638100" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shelf" x="960" y="288" name="inst_94786EFA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shelf" x="512" y="640" name="inst_65579AAF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
