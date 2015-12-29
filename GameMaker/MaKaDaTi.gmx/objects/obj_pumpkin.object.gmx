@@ -113,9 +113,11 @@
           <argument>
             <kind>1</kind>
             <string>instance_create(x, y-5, obj_pumpkin_destroyed);
-var_highscore_kills_this_room += 1;
-var_highscore_kills+=1;
-var_highscore_points += var_highscore_points_per_kill; // Wird bei reset wieder abgezogen;
+with(obj_score){
+    var_highscore_kills_this_room += 1;
+    var_highscore_kills += 1;
+    score += var_highscore_points_per_kill; // Wird bei reset wieder abgezogen;
+}
     
 </string>
           </argument>

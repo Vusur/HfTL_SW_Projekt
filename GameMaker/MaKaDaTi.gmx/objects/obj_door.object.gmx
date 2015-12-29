@@ -57,7 +57,9 @@ noInput = false;
             <kind>1</kind>
             <string>///Highscore
 alarm[1]=room_speed;
-var_highscore_time=0;
+with(obj_score){
+    var_highscore_time=0;
+}
 </string>
           </argument>
         </arguments>
@@ -81,8 +83,11 @@ var_highscore_time=0;
           <argument>
             <kind>1</kind>
             <string>///Highscore
-if (var_highscore_time &lt; var_highscore_max_counted_time){
-    var_highscore_time+=1; // bis 5 minuten Abzug.
+with(obj_score){
+    if (var_highscore_time &lt; var_highscore_max_counted_time){
+        // Ausnahme Paused
+        var_highscore_time+=1; // bis 5 minuten Abzug.
+    }
 }
 alarm[1]=room_speed;
 </string>
@@ -133,20 +138,23 @@ else room_goto(tr_next);
           <argument>
             <kind>1</kind>
             <string>/// Highscore
-var_highscore_rooms+=1
+with(obj_score){
+    var_highscore_rooms+=1
 
-// Punkte für Level-Erfolg addieren
-var_highscore_points+= var_highscore_points_per_level;
-//Time-Deduction
-var_highscore_points+= var_highscore_points_per_second*var_highscore_time;
-//Reset-Deduction
-var_highscore_points+= var_highscore_points_per_reset*var_highscore_resets_this_room;
-//Kill-Boni
-var_highscore_points+= var_highscore_kills_this_room*var_highscore_points_per_kill;
-// Werte zurücksetzen
-var_highscore_deduction = 0;
-var_highscore_resets_this_room = 0;
-var_highscore_kills_this_room = 0;
+    // Punkte für Level-Erfolg addieren
+    score += var_highscore_points_per_level;
+    //Time-Deduction
+    score += var_highscore_points_per_second*var_highscore_time;
+    //Reset-Deduction
+    score += var_highscore_points_per_reset*var_highscore_resets_this_room;
+    //Kill-Boni
+    // wird in Echtzeit in obj_pumpkin01 addiert
+    //score += var_highscore_kills_this_room*var_highscore_points_per_kill;
+ 
+    // Werte zurücksetzen
+    var_highscore_resets_this_room = 0;
+    var_highscore_kills_this_room = 0;
+}
 </string>
           </argument>
         </arguments>

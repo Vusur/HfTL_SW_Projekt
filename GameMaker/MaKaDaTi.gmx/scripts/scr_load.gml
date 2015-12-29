@@ -9,5 +9,7 @@ if(file_exists(file)){
     ini_open(file);
     rm = ini_read_real("save", "room", -1);
     date = ini_read_string("save", "date", "--");
+    score = ini_read_real("save", "score", 0);
     ini_close();
 }
+

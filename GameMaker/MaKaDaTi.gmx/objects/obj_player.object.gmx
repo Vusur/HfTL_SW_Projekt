@@ -92,12 +92,15 @@ if(place_meeting(x, y, obj_spike)) {
     }
 }
 // Highscore
-var_highscore_resets+=1;
-if (var_highscore_resets_this_room &lt; var_highscore_max_counted_resets){
-    var_highscore_resets_this_room+=1;
+with(obj_score){
+    var_highscore_resets+=1;
+    if (var_highscore_resets_this_room &lt; var_highscore_max_counted_resets){
+        var_highscore_resets_this_room+=1;
+    }
+    // Punkte für Kills abziehen
+    score -= var_highscore_kills_this_room * var_highscore_points_per_kill;
+    var_highscore_kills_this_room=0;
 }
-// Punkte für Kills abziehen
-var_highscore_kills_this_room=0;
 room_restart();
 </string>
           </argument>
