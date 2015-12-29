@@ -197,6 +197,7 @@
     <room>rooms\rm_000menu</room>
     <rooms name="rm_level">
       <room>rooms\rm_001_Der_Anfang__TB</room>
+      <room>rooms\rm_041_Hinterhalt__DS</room>
       <room>rooms\rm_002_Ein_Schluessel_zum_Erfolg__TB</room>
       <room>rooms\rm_003_Ganz_nach_oben__TB</room>
       <room>rooms\rm_004_Stachelige_Angelegenheit__TB</room>
@@ -235,10 +236,10 @@
       <room>rooms\rm_037_Hinter_Gittern_JG</room>
       <room>rooms\rm_038_Und_Schieben__MK</room>
       <room>rooms\rm_039_Vergessener_Schluessel__DS</room>
+      <room>rooms\rm_040_Tutorial_Schalter_Typ_1__DS</room>
     </rooms>
     <room>rooms\rm_001sample</room>
     <rooms name="rm_z_TODO_ROOMS">
-      <room>rooms\rm_011BigButtonWithoutTable</room>
       <rooms name="doppelte_räume">
         <room>rooms\rm_031_Eine_Ueberraschung__MK</room>
       </rooms>
