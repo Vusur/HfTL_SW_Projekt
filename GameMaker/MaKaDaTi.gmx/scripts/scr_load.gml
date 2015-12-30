@@ -13,7 +13,7 @@ if(file_exists(file)){
     score = ini_read_real("save", "score", 0);
     if(instance_exists(obj_score)){
         obj_score.var_highscore_history=score;
-        obj_score.visible=true;
+        obj_score.visible=false;
     }
     ini_close();
 }

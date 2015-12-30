@@ -13,4 +13,4 @@
     draw_set_alpha(0.35);
     draw_rectangle(view_xview[0], view_yview[0], view_xview[0] + view_wview[0], view_yview[0] + view_hview[0], false);
 // Highscore
-if(instance_exists(obj_score))obj_score.visible=false;
+//if(instance_exists(obj_score))obj_score.visible=false;

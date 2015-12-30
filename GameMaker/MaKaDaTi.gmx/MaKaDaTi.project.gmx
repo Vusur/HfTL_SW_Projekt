@@ -191,6 +191,7 @@
       <object>objects\obj_player_dead</object>
       <object>objects\obj_score</object>
       <object>objects\obj_delete_score</object>
+      <object>objects\obj_hide_score</object>
       <object>objects\obj_show_points</object>
     </objects>
   </objects>
