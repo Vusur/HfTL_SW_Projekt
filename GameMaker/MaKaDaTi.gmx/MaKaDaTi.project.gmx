@@ -207,7 +207,7 @@
       <room>rooms\rm_009_1000_Stacheln__DS</room>
       <room>rooms\rm_010_Eine_Ueberraschung__MK</room>
       <room>rooms\rm_011_Durch_die_Wand__MK</room>
-      <room>rooms\rm_012_Schalter__MK</room>
+      <room>rooms\rm_012_Der_Vorratskeller__MK</room>
       <room>rooms\rm_013_Ein_Labyrinth__MK</room>
       <room>rooms\rm_014_Kein_Entrinnen__MK</room>
       <room>rooms\rm_015_Die_Pyramide__MK</room>
@@ -237,6 +237,8 @@
       <room>rooms\rm_039_Vergessener_Schluessel__DS</room>
       <room>rooms\rm_040_Tutorial_Schalter_Typ_1__DS</room>
       <room>rooms\rm_041_Hinterhalt__DS</room>
+      <room>rooms\rm_042_Jump_and_Flee__MK</room>
+      <room>rooms\rm_043_Hier_entlang_bitte__MK</room>
     </rooms>
     <room>rooms\rm_001sample</room>
     <rooms name="rm_z_TODO_ROOMS">
