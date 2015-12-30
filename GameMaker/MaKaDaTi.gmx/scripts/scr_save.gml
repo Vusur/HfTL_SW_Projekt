@@ -13,4 +13,9 @@ if(file_exists(file)) file_delete(file)
 ini_open(file);    
 ini_write_real("save", "room", rm);
 ini_write_string("save", "date", dateText);
+// Kills im aktuellen Raum wieder abziehen, da Raum beim nächsten mal Neu gestartet wird
+with(obj_score){
+    score -= var_highscore_kills_this_room * var_highscore_points_per_kill;
+}
+ini_write_real("save", "score", score);
 ini_close();
