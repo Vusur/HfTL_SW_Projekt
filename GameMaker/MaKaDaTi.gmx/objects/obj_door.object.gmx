@@ -56,10 +56,10 @@ noInput = false;
           <argument>
             <kind>1</kind>
             <string>///Highscore
+obj_score.visible=true;
 alarm[1]=room_speed;
-with(obj_score){
-    var_highscore_time=0;
-}
+obj_score.var_highscore_time=0;
+//obj_score.var_highscore_history=score;
 </string>
           </argument>
         </arguments>
@@ -82,12 +82,10 @@ with(obj_score){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Highscore
-with(obj_score){
-    if (var_highscore_time &lt; var_highscore_max_counted_time){
-        // Ausnahme Paused
-        var_highscore_time+=1; // bis 5 minuten Abzug.
-    }
+            <string>///Highscore Zeitabzug / Pause
+if (obj_score.var_highscore_time &lt; obj_score.var_highscore_max_counted_time){
+    // Ausnahme Paused
+    if (!global.pause) obj_score.var_highscore_time+=1; // bis 5 minuten Abzug.
 }
 alarm[1]=room_speed;
 </string>
@@ -138,23 +136,23 @@ else room_goto(tr_next);
           <argument>
             <kind>1</kind>
             <string>/// Highscore
-with(obj_score){
-    var_highscore_rooms+=1
-
+    obj_score.var_highscore_rooms+=1
+    var_highscore_summe=0
     // Punkte für Level-Erfolg addieren
-    score += var_highscore_points_per_level;
+    var_highscore_summe += obj_score.var_highscore_points_per_level;
     //Time-Deduction
-    score += var_highscore_points_per_second*var_highscore_time;
+    var_highscore_summe += obj_score.var_highscore_points_per_second*obj_score.var_highscore_time;
     //Reset-Deduction
-    score += var_highscore_points_per_reset*var_highscore_resets_this_room;
+    var_highscore_summe += obj_score.var_highscore_points_per_reset*obj_score.var_highscore_resets_this_room;
     //Kill-Boni
     // wird in Echtzeit in obj_pumpkin01 addiert
     //score += var_highscore_kills_this_room*var_highscore_points_per_kill;
- 
+    obj_score.var_highscore_add+=var_highscore_summe;
+    score+=var_highscore_summe;;
     // Werte zurücksetzen
-    var_highscore_resets_this_room = 0;
-    var_highscore_kills_this_room = 0;
-}
+    obj_score.var_highscore_resets_this_room = 0;
+    obj_score.var_highscore_kills_this_room = 0;
+
 </string>
           </argument>
         </arguments>
