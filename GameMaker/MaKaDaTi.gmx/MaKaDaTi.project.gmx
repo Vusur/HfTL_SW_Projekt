@@ -239,6 +239,7 @@
       <room>rooms\rm_041_Hinterhalt__DS</room>
       <room>rooms\rm_042_Jump_and_Flee__MK</room>
       <room>rooms\rm_043_Hier_entlang_bitte__MK</room>
+      <room>rooms\rm_044_Um_die_Ecken__MK</room>
     </rooms>
     <room>rooms\rm_001sample</room>
     <rooms name="rm_z_TODO_ROOMS">
