@@ -51,6 +51,7 @@
         <sprite>sprites\spr_pumpkin_shoot</sprite>
         <sprite>sprites\spr_pumpkin_ammo</sprite>
         <sprite>sprites\spr_pumpkin_destroyed</sprite>
+        <sprite>sprites\spr_pumkin_king</sprite>
       </sprites>
       <sprites name="spr_player">
         <sprite>sprites\spr_player_run</sprite>
@@ -153,8 +154,10 @@
       <object>objects\obj_pumpkin01</object>
       <object>objects\obj_pumpkin_path</object>
       <object>objects\obj_pumpkin_shoot</object>
+      <object>objects\obj_king01</object>
       <object>objects\obj_pumpkin_ammo</object>
       <object>objects\obj_pumpkin_destroyed</object>
+      <object>objects\obj_king_healthbar</object>
     </objects>
     <objects name="obj_hiddenObj">
       <objects name="obj_hidden_light">
@@ -247,6 +250,7 @@
       <room>rooms\rm_046_Verflixt__DS</room>
       <room>rooms\rm_047_It_is_Tricky__DS</room>
       <room>rooms\rm_048_Schalterchaos__DS</room>
+      <room>rooms\rm_050_King_Curcubita_JG</room>
     </rooms>
     <room>rooms\rm_001sample</room>
     <rooms name="rm_z_TODO_ROOMS">
