@@ -200,7 +200,6 @@
     <room>rooms\rm_000menu</room>
     <rooms name="rm_level">
       <room>rooms\rm_001_Der_Anfang__TB</room>
-      <room>rooms\rm_047_It_is_Tricky__DS</room>
       <room>rooms\rm_002_Ein_Schluessel_zum_Erfolg__TB</room>
       <room>rooms\rm_003_Ganz_nach_oben__TB</room>
       <room>rooms\rm_004_Stachelige_Angelegenheit__TB</room>
@@ -246,6 +245,8 @@
       <room>rooms\rm_044_Um_die_Ecken__MK</room>
       <room>rooms\rm_045_Inseln_JG</room>
       <room>rooms\rm_046_Verflixt__DS</room>
+      <room>rooms\rm_047_It_is_Tricky__DS</room>
+      <room>rooms\rm_048_Schalterchaos__DS</room>
     </rooms>
     <room>rooms\rm_001sample</room>
     <rooms name="rm_z_TODO_ROOMS">
