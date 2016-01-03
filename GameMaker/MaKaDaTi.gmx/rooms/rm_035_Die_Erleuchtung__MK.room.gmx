@@ -277,7 +277,6 @@
     <instance objName="obj_torch" x="1056" y="736" name="inst_09355F4A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_torch" x="1376" y="736" name="inst_0B257537" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_torch" x="1298" y="384" name="inst_88586F66" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_pumpkin01" x="797" y="780" name="inst_5419375B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pumpkin01" x="768" y="364" name="inst_8C3C9A8B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pumpkin01" x="1248" y="204" name="inst_D38C0031" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pumpkin_shoot" x="1024" y="555" name="inst_1CEEEF48" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

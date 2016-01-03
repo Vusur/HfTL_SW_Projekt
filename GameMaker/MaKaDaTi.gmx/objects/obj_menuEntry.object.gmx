@@ -246,7 +246,9 @@ if(!selected){
     
     //credits
     if(entry == 3){
-    
+        subentry=0;
+        maxsubentry=0;
+        if(key_enter)selected=false;
     }
     
     //spiel beenden

@@ -205,10 +205,10 @@
       <room>rooms\rm_001_Der_Anfang__TB</room>
       <room>rooms\rm_002_Ein_Schluessel_zum_Erfolg__TUT</room>
       <room>rooms\rm_003_Ganz_nach_oben__TUT</room>
-      <room>rooms\rm_004_Wiedersehen_mit_einem_Freund_JG</room>
-      <room>rooms\rm_005_Mechanik_mit_Schwaechen__TUT</room>
+      <room>rooms\rm_004_Mechanik_mit_Schwaechen__TUT</room>
+      <room>rooms\rm_005_Ein_starker_Junge_TUT</room>
       <room>rooms\rm_006_Verschlossen_JG</room>
-      <room>rooms\rm_007_Ein_starker_Junge_TUT</room>
+      <room>rooms\rm_007_Wiedersehen_mit_einem_Freund_JG</room>
       <room>rooms\rm_008_Die_Suche_nach_dem_Schluessel_JG</room>
       <room>rooms\rm_009_Vergessener_Schluessel__DS</room>
       <room>rooms\rm_010_Stachelige_Angelegenheit__TUT</room>
@@ -251,7 +251,7 @@
       <room>rooms\rm_047_It_is_Tricky__DS</room>
       <room>rooms\rm_048_Schalterchaos__DS</room>
       <room>rooms\rm_049_Gefaehrliches_Unterfangen__DS</room>
-      <room>rooms\rm_050_King_Curcubita_JG</room>
+      <room>rooms\rm_050_King_Cucurbita_JG</room>
     </rooms>
     <room>rooms\rm_001sample</room>
     <rooms name="rm_z_TODO_ROOMS">

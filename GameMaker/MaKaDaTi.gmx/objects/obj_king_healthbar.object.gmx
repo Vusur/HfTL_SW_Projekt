@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text_colour(x,y,"King Curcubita: ",c_red,c_red,c_red,c_red,1);
+            <string>draw_text_colour(x,y,"King Cucurbita: ",c_red,c_red,c_red,c_red,1);
 if(instance_exists(obj_king01))draw_rectangle_colour(x+128,y,x+128+(obj_king01.var_health/25),y+10,c_red,c_red,c_red,c_red,0);
 </string>
           </argument>

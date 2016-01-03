@@ -296,7 +296,6 @@
     <instance objName="obj_shelf" x="128" y="512" name="inst_96B8E7E8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shelf" x="128" y="256" name="inst_66C55A77" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shelf" x="96" y="384" name="inst_01439908" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_pumpkin01" x="485" y="780" name="inst_92C3A1CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pumpkin01" x="1376" y="779" name="inst_758547C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pumpkin01" x="1196" y="140" name="inst_F23D91B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pumpkin_shoot" x="288" y="142" name="inst_1FB9412E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

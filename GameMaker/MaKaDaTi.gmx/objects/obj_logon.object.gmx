@@ -33,7 +33,7 @@ email[0] = "";
 email[1] = "";
 pw[0] = "";
 pw[1] = "";
-
+var_story="Wir schreiben den 31. Oktober im Jahre 2015, es ist Halloween... Kein Tag wie jeder andere, jedenfalls nicht fuer Martin, denn er liebt diesen Abend vor Allerheiligen. Martin, das ist ein kleiner Junge, der mit seinen Eltern in einem beschaulichen Haeuschen lebt. Sein bester Freund ist eine Kuerbis-Plueschfigur namens Cuci. Zusammen mit Cuci ist er bereits durch dick und duenn gegangen und hat sein Zimmer in einen wahren Kuerbistraum verwandelt: Es wimmelt nur so von Kuerbisfiguren und Dekoration in Kuerbisformen und –farben. Doch als Martin an diesem Abend mit seinem Kuerbisfreund Cuci zum Abendessen gerufen wird, aendert sich sein Leben schlagartig... Es gibt Kuerbissuppe! Wie konnten seine Eltern bloss seine geliebten Kuerbisse zu Brei verarbeiten? Martin isst seinen Teller Suppe aus Hoeflichkeit auf, doch als er die Kuerbisreste auf der Kuechenanrichte sehen liegt, springt er auf und rennt in sein Zimmer. Dort angekommen vergraebt Martin sich mit Cuci unter seiner Bettdecke, um das Grauen vom Abendessen zu vergessen. Doch als er einschlaeft, nimmt der Alptraum erst so richtig seinen Lauf..."
 
 </string>
           </argument>
@@ -116,9 +116,10 @@ scr_base();
     var ybegin = (view_yview[0] + view_hview[0]) / 2;      //center of the view y
     
     draw_set_halign(fa_left);
-    draw_text_colour(xbegin, ybegin, user, c_black, c_black, c_black, c_black, 0.7)
-    draw_text_ext_colour(xbegin-300, ybegin-300, "Es ist der 31. Oktober. Martins Eltern wollen ihm eine Ueberraschung machen. Martin, das ist ein kleiner Junge. Sein einzig bester Freund ist sein Kuerbis Cuci. Zusammen mit Cuci hat er noch ganz viele andere Kuscheltiere, Figuren und Sticker in Kuerbisform in seinem Zimmer. Als er zum Abendessen gerufen wird, sieht er womit seine Eltern ihn ueberraschen wollten: Kürbissuppe. Aus Hoeflichkeit und elterlichem Zwang isst er die Suppe auf. In der Kueche sieht er noch die uebriggebliebenen Kuerbis-Eingeweide. Eine grausame Vorstellung plagt ihn. Er geht schlafen und versucht zu vergessen, was seine Eltern seinen Freunden angetan haben. Doch da beginnt der Alptraum erst...",20,600, c_black, c_black, c_black, c_black, 0.7)    
-    draw_text_colour(xbegin, ybegin+100, "TODO: LOGON \n Enter Drücken", c_black, c_black, c_black, c_black, 0.7)
+    draw_text_colour(xbegin, ybegin, user, c_black, c_black, c_black, c_black, 0.7);
+    draw_text_ext_colour(xbegin-300, ybegin-300, var_story,20,600, c_black, c_black, c_black, c_black, 0.7);  
+    draw_text_colour(xbegin-150, ybegin+100, "//TODO: LOGON", c_black, c_black, c_black, c_black, 0.7);
+    draw_text_colour(xbegin-150, ybegin+120, "Druecke ENTER, um zu beginnen.", c_black, c_black, c_black, c_black, 0.7)
 </string>
           </argument>
         </arguments>
