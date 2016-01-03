@@ -9,24 +9,31 @@ using System.Text;
 
 namespace Retro_Indie_Spiel_Webserver.Models
 {
-    // Sie können Profildaten für den Benutzer durch Hinzufügen weiterer Eigenschaften zur ApplicationUser-Klasse hinzufügen. Weitere Informationen finden Sie unter "http://go.microsoft.com/fwlink/?LinkID=317594".
+    /// <summary>
+    /// Model des Users, welches vom IdentityUser erbt, hier wird noch das HighscoreModel verzahnt.
+    /// </summary>
     public class ApplicationUser : IdentityUser
     {
         public List<HighscoreModel> Highscores { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
-            // Beachten Sie, dass der "authenticationType" mit dem in "CookieAuthenticationOptions.AuthenticationType" definierten Typ übereinstimmen muss.
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
-            // Benutzerdefinierte Benutzeransprüche hier hinzufügen
             return userIdentity;
         }
     }
 
+    /// <summary>
+    /// Datenbankcontext, hier werden die einzelnen Tabellen und deren zusammenhang definiert,
+    /// erbt von dem IdentityDbContext mit dem ApplicationUser.
+    /// </summary>
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<HighscoreModel> Highscores { get; set; }
 
+        /// <summary>
+        /// md5HashKey für das Verhashen der Werte.
+        /// </summary>
         public static string md5HashKey = "$%)TVJUFQ§evwio$%34sgg94kre";
 
         public ApplicationDbContext()
@@ -34,7 +41,10 @@ namespace Retro_Indie_Spiel_Webserver.Models
         {
         }
 
-
+        /// <summary>
+        /// Wenn das Model erstellt wird, wird dies aufgerufen.
+        /// </summary>
+        /// <param name="modelBuilder">Ein DbModelBuilder.</param>
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -50,25 +60,22 @@ namespace Retro_Indie_Spiel_Webserver.Models
             return new ApplicationDbContext();
         }
 
-
+        /// <summary>
+        /// Erstellt einen md5Hash aus einem String.
+        /// </summary>
+        /// <param name="md5Hash">MD5 aus dem der Hash gezogen wird.</param>
+        /// <param name="input">String der gehasht werden soll.</param>
+        /// <returns>Den md5Hash als String.</returns>
         public static string GetMd5Hash(MD5 md5Hash, string input)
         {
-
-            // Convert the input string to a byte array and compute the hash.
             byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
 
-            // Create a new Stringbuilder to collect the bytes
-            // and create a string.
             StringBuilder sBuilder = new StringBuilder();
-
-            // Loop through each byte of the hashed data 
-            // and format each one as a hexadecimal string.
             for (int i = 0; i < data.Length; i++)
             {
                 sBuilder.Append(data[i].ToString("x2"));
             }
 
-            // Return the hexadecimal string.
             return sBuilder.ToString();
         }
     }

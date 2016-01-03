@@ -3,6 +3,9 @@ using System.Web.Optimization;
 
 namespace Retro_Indie_Spiel_Webserver
 {
+    /// <summary>
+    /// Bundles für die Verwendung in der View werden hier Konfiguriert.
+    /// </summary>
     public class BundleConfig
     {
         // Weitere Informationen zu Bundling finden Sie unter "http://go.microsoft.com/fwlink/?LinkId=301862"

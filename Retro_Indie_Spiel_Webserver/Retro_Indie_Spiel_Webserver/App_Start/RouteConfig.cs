@@ -7,8 +7,15 @@ using System.Web.Routing;
 
 namespace Retro_Indie_Spiel_Webserver
 {
+    /// <summary>
+    /// Für die Konfigurierung der REST-Route.
+    /// </summary>
     public class RouteConfig
     {
+        /// <summary>
+        /// Standardmäßige REST-Route.
+        /// </summary>
+        /// <param name="routes"></param>
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");

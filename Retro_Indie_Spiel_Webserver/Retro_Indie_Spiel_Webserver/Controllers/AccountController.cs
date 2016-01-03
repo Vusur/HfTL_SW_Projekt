@@ -15,23 +15,36 @@ using System.Collections.Generic;
 
 namespace Retro_Indie_Spiel_Webserver.Controllers
 {
-    [Authorize]
+    /// <summary>
+    /// Controller für die Verwaltung der Accounts.
+    /// </summary>
     public class AccountController : Controller
     {
 
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
+        /// <summary>
+        /// Leerer Konstruktor.
+        /// </summary>
         public AccountController()
         {
         }
 
+        /// <summary>
+        /// Konstruktor mit userManager und signInManager.
+        /// </summary>
+        /// <param name="userManager">ApplicationUserManager</param>
+        /// <param name="signInManager">ApplicationSignInManager</param>
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
         }
 
+        /// <summary>
+        /// Wenn SignInManager bei get leer ist liefert es einen aus dem Context zurück.
+        /// </summary>
         public ApplicationSignInManager SignInManager
         {
             get
@@ -44,6 +57,9 @@ namespace Retro_Indie_Spiel_Webserver.Controllers
             }
         }
 
+        /// <summary>
+        /// Wenn UserManager bei get leer ist liefert es einen aus dem Context zurück.
+        /// </summary>
         public ApplicationUserManager UserManager
         {
             get
@@ -56,24 +72,33 @@ namespace Retro_Indie_Spiel_Webserver.Controllers
             }
         }
 
-        // Get /Account
-        // Einloggen und Registrieren eines Users
-        [AllowAnonymous]
+        /// <summary>
+        /// Get: /Account
+        /// Einloggen und Registrieren eines Users.
+        /// </summary>
+        /// <param name="model">AccountIndexViewModel bestehend aus Email, Name, Password, confirmPassword und md5Hash.</param>
+        /// <returns>Ob der Benutzer registriert oder eingeloggt wurde und mögliche Fehler.</returns>
         public async Task<ActionResult> Index(AccountIndexViewModel model)
         {
-
+            // Überprüfen ob das übergebende Model den Anforderungen entspricht die im 
+            // AccountIndexViewModel in den Annotations und in den IdentityConfig.cs definiert wurden.
             if (ModelState.IsValid)
             {
+
+                // md5Hash überprüfen.
                 string source = model.Email + model.Name + model.Password + ApplicationDbContext.md5HashKey;
                 string hash = ApplicationDbContext.GetMd5Hash(MD5.Create(), source);
                 if (hash != model.md5Hash)
                 {
                     return Content("401 Wrong Hash");
                 }
+
+                // Überprüfen ob der Name oder die Email schon vorhanden sind.
                 var users = UserManager.Users.Where(u => u.Email == model.Email && u.UserName == model.Name);
                 ApplicationUser user;
                 if (users.Count() == 0)
                 {
+                    // Wenn der User noch nicht vorhanden ist einen neuen User registrieren.
                     user = new ApplicationUser { UserName = model.Name, Email = model.Email };
                     var result = await UserManager.CreateAsync(user, model.Password);
                     if (result.Succeeded)
@@ -82,10 +107,12 @@ namespace Retro_Indie_Spiel_Webserver.Controllers
                         
                         return Content("ok Register");
                     }
+                    // Wenn Fehler aufgetreten sind diese dem Model hinzufügen.
                     AddErrors(result);
                 }
                 else
                 {
+                    // Wenn der User vorhanden ist, versuchen diesen einzuloggen.
                     user = users.First();
                     var result = await SignInManager.PasswordSignInAsync(model.Name, model.Password, false, shouldLockout: false);
                     switch (result)
@@ -99,6 +126,8 @@ namespace Retro_Indie_Spiel_Webserver.Controllers
                     }
                 }
             }
+
+            // Fehler zurückgeben
             string errorList = "";
             foreach (ModelState modelState in ViewData.ModelState.Values)
             {
@@ -108,9 +137,12 @@ namespace Retro_Indie_Spiel_Webserver.Controllers
                 }
             }
             return Content("Error: " + errorList);
-        }      
-      
+        }
 
+        /// <summary>
+        /// Methode für das Löschen des Controllers.
+        /// </summary>
+        /// <param name="disposing">Boolean ob der UserManager und SignInManager gelöscht werden soll.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -131,7 +163,10 @@ namespace Retro_Indie_Spiel_Webserver.Controllers
             base.Dispose(disposing);
         }
             
-
+        /// <summary>
+        /// Aus dem Result die Error dem Model hinzufügen.
+        /// </summary>
+        /// <param name="result">Ergebnis eines Register versuches.</param>
         private void AddErrors(IdentityResult result)
         {
             foreach (var error in result.Errors)

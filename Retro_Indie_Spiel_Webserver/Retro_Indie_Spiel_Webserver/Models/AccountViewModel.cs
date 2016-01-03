@@ -2,7 +2,10 @@
 using System.ComponentModel.DataAnnotations;
 
 namespace Retro_Indie_Spiel_Webserver.Models
-{     
+{
+    /// <summary>
+    /// Model für das Einloggen und Registrieren eines Benutzers.
+    /// </summary>             
     public class AccountIndexViewModel
     {
         [Required]

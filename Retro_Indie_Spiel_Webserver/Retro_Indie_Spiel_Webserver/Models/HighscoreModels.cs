@@ -7,6 +7,9 @@ using System.Web;
 
 namespace Retro_Indie_Spiel_Webserver.Models
 {
+    /// <summary>
+    /// Model für das Entity Framework für die Datenbanktabelle.
+    /// </summary>
     [Table("Highscore")]
     public class HighscoreModel
     {
@@ -25,6 +28,9 @@ namespace Retro_Indie_Spiel_Webserver.Models
 
     }
 
+    /// <summary>
+    /// Model für das schreiben eines Highscoreeintrages.
+    /// </summary>
     public class HighscoreViewModel
     {
 
@@ -38,6 +44,9 @@ namespace Retro_Indie_Spiel_Webserver.Models
         public string md5Hash { get; set; }
     }
 
+    /// <summary>
+    /// Model für die JSon List zum anzeigen auf der Homepage.
+    /// </summary>
     public class HighscoreListViewModel
     {
         public static HighscoreListViewModel build(HighscoreModel model, int position)
