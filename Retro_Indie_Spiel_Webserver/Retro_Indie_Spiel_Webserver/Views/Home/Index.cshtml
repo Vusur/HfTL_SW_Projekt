@@ -5,6 +5,11 @@
 
 <div><label class="kuerbis"></label><h1 style="display:inline;">Cucurbita's Castle</h1><label class="kuerbis"></label></div>
 
+<video id="video" class="textBox" style="width:70%;margin-top:50px;"  controls>
+    <source src="~/Video/SampleVideo_1080x720_1mb.mp4" type="video/mp4">
+    Dein Browser unterstützt das Video Tag nicht, bitte nutze einen Browser der HTML5 unterstützt (neuste Version von Chrome, Internet Explorer, Firefox oder Safari).
+</video>
+
 <div class="textBox" style="margin-left:auto;margin-right:auto;width: 75%;padding: 4px;margin-top: 50px;">
     <div style="padding: 0px 5px 5px 5px;border: 3px ridge #AC9528;border-radius: 2px;">
         <h3 style="margin-bottom: 10px;margin-top: 10px;">TOP 10 Highscores</h3>
@@ -25,9 +30,9 @@
     <img src="~/Pictures/Kronleuchter_Bild3.png" style="width:200px;margin-top:50px;margin-bottom: 20px;" title="Pumpkin Nightmare Download" alt="Kronleuchter" /><br />
 </a>
 <a class="textBox" href="~/Pictures/Bücherregal_rundlich mit Büchern.png" download="Pumpkin_Nightmare" style="margin-top:25px;padding: 10px;color: #337ab7;position: relative;bottom: 67px;">
-   Spiel Download
+    Spiel Download
 </a>
-<br/>
+<br />
 
 <table align="center" style="border:none;margin-top:50px;">
     <tr>
@@ -44,37 +49,46 @@
     </tr>
 </table>
 
-<a onclick="$('#carouselContainer').show();" download="Pumpkin_Nightmare">
+<a id="fensterLink" onclick="showScreenshots()">
     <img src="~/Pictures/Fenster_MitVorhang (2).png" style="width:200px;margin-top:50px;margin-bottom: 20px;" title="Für Screenshots anklicken" alt="Gruseliges Fenster" /><br />
+    <div class="textBox" style="color: #337ab7;margin-left: auto;margin-right: auto;width:14em;position: relative;bottom: 39px;">Eindrücke aus dem Spiel (Screenhots)</div>
 </a>
-<div id="carouselContainer" style="height:200px;background:black;margin-left: auto;margin-right: auto;display:none;">
+<div id="carouselContainer"  style="display:none;margin-top:50px;" class="textBox">
     <div id="carousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carousel" data-slide-to="0" class="active"></li>
             <li data-target="#carousel" data-slide-to="1"></li>
             <li data-target="#carousel" data-slide-to="2"></li>
+            <li data-target="#carousel" data-slide-to="3"></li>
         </ol>
 
-        <div class="carousel-inner" role="listbox">
+        <div class="carousel-inner" role="listbox" onclick="hideScreenshots()">
             <div class="item active">
-                <img src="~/Pictures/Bücherregal_rundlich mit Büchern.png" class="screenshots" alt="">
+                <img src="~/Pictures/Screenshot Startbildschirm.png" class="screenshots">
                 <div class="carousel-caption">
-                    <h3>Bild1</h3>
-                    <p>...</p>
+                    <h3>Free To Play</h3>
+                    <p>Savegames, Optionen und vieles mehr ist möglich!</p>
                 </div>
             </div>
             <div class="item">
-                <img src="~/Pictures/Gemälde.png" class="screenshots" alt="...">
+                <img src="~/Pictures/Screenshot Level2.png" class="screenshots">
                 <div class="carousel-caption">
-                    <h3>...</h3>
-                    <p>...</p>
+                    <h3>Mehrere Levels</h3>
+                    <p>Mit unterschiedlichen Schwierigkeitsgraden</p>
                 </div>
             </div>
             <div class="item">
-                <img src="~/Pictures/Kürbis_kocht_Suppe_Bild1_dunkel (2).png" class="screenshots" alt="...">
+                <img src="~/Pictures/Screenshot Tot.png" class="screenshots">
                 <div class="carousel-caption">
-                    <h3>...</h3>
-                    <p>...</p>
+                    <h3>Auch das Scheitern gehört dazu</h3>
+                    <p>Das Sterben durch Stacheln, Kürbise und anderen gegner ist möglich.</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="~/Pictures/Screenshot KürbisKill.png" class="screenshots">
+                <div class="carousel-caption">
+                    <h3>Kämpfen ist erlaubt</h3>
+                    <p>Man kann sich aber auch gegen die Gegner wehren.</p>
                 </div>
             </div>
         </div>
@@ -87,14 +101,29 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+    <a style="color: #337ab7;" onclick="hideScreenshots()">Schließen</a>
 </div>
 
-<p class="textBox subline" style="width: 6em;margin-top: 30px;">
+<p class="textBox subline" style="width: 6em;margin-top: 50px;">
     <a href="/Home/Impressum">Impressum</a>
 </p>
 
 <script>
+    function showScreenshots() {
+        $('#carouselContainer').show();
+        $('#fensterLink').hide();
+    }
+
+    function hideScreenshots() {
+        $('#carouselContainer').hide();
+        $('#fensterLink').show();
+    }
+
     $(function () {
+        // Video abspielen
+        document.getElementById("video").play();
+        $("video").prop('muted', true);
+
         // Ajax abfrage für die Highscore Liste
         $.ajax({
             type: "GET",

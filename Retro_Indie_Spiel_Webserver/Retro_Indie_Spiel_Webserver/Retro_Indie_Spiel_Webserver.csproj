@@ -208,7 +208,6 @@
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Pictures\Junge_schiebt.png" />
     <Content Include="Pictures\Baustein.jpg" />
-    <Content Include="Pictures\Bewegung2.png" />
     <Content Include="Pictures\Bücherregal_rundlich mit Büchern.png" />
     <Content Include="Pictures\Fenster_MitVorhang %282%29.png" />
     <Content Include="Pictures\Gemälde.png" />
@@ -216,18 +215,18 @@
     <Content Include="Pictures\Kürbis_kocht_Suppe_Bild1_dunkel %282%29.png" />
     <Content Include="Pictures\Kürbis_MitGesicht.png" />
     <Content Include="Pictures\Kürbis_OhneGesicht.png" />
-    <Content Include="Pictures\Menübild.png" />
+    <Content Include="Pictures\Screenshot KürbisKill.png" />
+    <Content Include="Pictures\Screenshot Level2.png" />
+    <Content Include="Pictures\Screenshot Startbildschirm.png" />
+    <Content Include="Pictures\Screenshot Tot.png" />
     <Content Include="Pictures\stacheln.png" />
-    <Content Include="Pictures\Wandfackeln1.png" />
-    <Content Include="Pictures\Wandfackeln2.png" />
-    <Content Include="Pictures\Wandfackeln3.png" />
-    <Content Include="Pictures\Wandfackeln4.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Video\SampleVideo_1080x720_1mb.mp4" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
