@@ -205,43 +205,43 @@
       <room>rooms\rm_001_Der_Anfang__TB</room>
       <room>rooms\rm_002_Ein_Schluessel_zum_Erfolg__TUT</room>
       <room>rooms\rm_003_Ganz_nach_oben__TUT</room>
-      <room>rooms\rm_004_Stachelige_Angelegenheit__TUT</room>
-      <room>rooms\rm_005_Wiedersehen_mit_einem_Freund_JG</room>
-      <room>rooms\rm_006_Die_Rache_des_Kuerbiss_JG</room>
-      <room>rooms\rm_007_Sie_kommen__DS</room>
-      <room>rooms\rm_008_Das_warten__DS</room>
-      <room>rooms\rm_009_1000_Stacheln__DS</room>
-      <room>rooms\rm_019_Ein_starker_Junge_TUT</room>
-      <room>rooms\rm_037_Verschlossen_JG</room>
-      <room>rooms\rm_010_Eine_Ueberraschung__MK</room>
-      <room>rooms\rm_029_Sinus_JG</room>
-      <room>rooms\rm_030_Cosinus_JG</room>
-      <room>rooms\rm_025_Fliegende_Buecher_JG</room>
-      <room>rooms\rm_011_Durch_die_Wand__MK</room>
-      <room>rooms\rm_040_Mechanik_mit_Schwaechen__TUT</room>
-      <room>rooms\rm_012_Der_Vorratskeller__MK</room>
-      <room>rooms\rm_013_Ein_Labyrinth__MK</room>
-      <room>rooms\rm_014_Kein_Entrinnen__MK</room>
+      <room>rooms\rm_004_Wiedersehen_mit_einem_Freund_JG</room>
+      <room>rooms\rm_005_Mechanik_mit_Schwaechen__TUT</room>
+      <room>rooms\rm_006_Verschlossen_JG</room>
+      <room>rooms\rm_007_Ein_starker_Junge_TUT</room>
+      <room>rooms\rm_008_Die_Suche_nach_dem_Schluessel_JG</room>
+      <room>rooms\rm_009_Vergessener_Schluessel__DS</room>
+      <room>rooms\rm_010_Stachelige_Angelegenheit__TUT</room>
+      <room>rooms\rm_011_Das_warten__DS</room>
+      <room>rooms\rm_012_Sie_kommen__DS</room>
+      <room>rooms\rm_013_Die_Rache_des_Kuerbiss_JG</room>
+      <room>rooms\rm_014_Eine_Ueberraschung__MK</room>
       <room>rooms\rm_015_Die_Pyramide__MK</room>
-      <room>rooms\rm_016_Schalter_Wahnsinn__MK</room>
-      <room>rooms\rm_017_Viele_Wege__MK</room>
-      <room>rooms\rm_018_Buecherfahrstuhl__MK</room>
-      <room>rooms\rm_020_Kuerbissregen__JG</room>
-      <room>rooms\rm_021_Die_Falle_JG</room>
-      <room>rooms\rm_022_Die_Suche_nach_dem_Schluessel_JG</room>
-      <room>rooms\rm_023_Grosse_Unruhe_JG</room>
-      <room>rooms\rm_024_Das_lassen_sie_nicht_zu_JG</room>
-      <room>rooms\rm_026_Die_Schluesselmeister_JG</room>
-      <room>rooms\rm_027_Zugriff_JG</room>
-      <room>rooms\rm_028_Minenfeld_JG</room>
-      <room>rooms\rm_031_Der_Umweg__MK</room>
-      <room>rooms\rm_032_Die_Erleuchtung__MK</room>
-      <room>rooms\rm_033_Die_Stufenwanderung__MK</room>
-      <room>rooms\rm_034_Das_grosse_Hin_und_Her__MK</room>
-      <room>rooms\rm_035_Im_Schneckengang__MK</room>
-      <room>rooms\rm_036_Die_Kueche__MK</room>
-      <room>rooms\rm_038_Und_Schieben__MK</room>
-      <room>rooms\rm_039_Vergessener_Schluessel__DS</room>
+      <room>rooms\rm_016_Sinus_JG</room>
+      <room>rooms\rm_017_Cosinus_JG</room>
+      <room>rooms\rm_018_Fliegende_Buecher_JG</room>
+      <room>rooms\rm_019_1000_Stacheln__DS</room>
+      <room>rooms\rm_020_Durch_die_Wand__MK</room>
+      <room>rooms\rm_021_Der_Vorratskeller__MK</room>
+      <room>rooms\rm_022_Die_Falle_JG</room>
+      <room>rooms\rm_023_Ein_Labyrinth__MK</room>
+      <room>rooms\rm_024_Kein_Entrinnen__MK</room>
+      <room>rooms\rm_025_Schalter_Wahnsinn__MK</room>
+      <room>rooms\rm_026_Viele_Wege__MK</room>
+      <room>rooms\rm_027_Buecherfahrstuhl__MK</room>
+      <room>rooms\rm_028_Kuerbissregen__JG</room>
+      <room>rooms\rm_029_Grosse_Unruhe_JG</room>
+      <room>rooms\rm_030_Das_lassen_sie_nicht_zu_JG</room>
+      <room>rooms\rm_031_Die_Schluesselmeister_JG</room>
+      <room>rooms\rm_032_Zugriff_JG</room>
+      <room>rooms\rm_033_Minenfeld_JG</room>
+      <room>rooms\rm_034_Der_Umweg__MK</room>
+      <room>rooms\rm_035_Die_Erleuchtung__MK</room>
+      <room>rooms\rm_036_Die_Stufenwanderung__MK</room>
+      <room>rooms\rm_037_Das_grosse_Hin_und_Her__MK</room>
+      <room>rooms\rm_038_Im_Schneckengang__MK</room>
+      <room>rooms\rm_039_Die_Kueche__MK</room>
+      <room>rooms\rm_040_Und_Schieben__MK</room>
       <room>rooms\rm_041_Hinterhalt__DS</room>
       <room>rooms\rm_042_Jump_and_Flee__MK</room>
       <room>rooms\rm_043_Hier_entlang_bitte__MK</room>
