@@ -194,6 +194,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\CucurbitasCastle_1_0_0_1.exe" />
+    <Content Include="Content\Video\Trailer_CC_converted.mp4" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -227,7 +228,6 @@
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Content\Video\SampleVideo_1080x720_1mb.mp4" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
