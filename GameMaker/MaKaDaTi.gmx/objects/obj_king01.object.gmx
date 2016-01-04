@@ -182,7 +182,7 @@ with(obj_score){
         <functionname>action_effect</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
-        <relative>0</relative>
+        <relative>-1</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
@@ -208,6 +208,26 @@ with(obj_score){
           <argument>
             <kind>4</kind>
             <string>1</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -325,7 +345,12 @@ if(shoot){
         } else {
             var_projektiel=obj_pumpkin_ammo;
         }
-        instance_create(x, y, var_projektiel);
+        if(var_projektiel==obj_pumpkin_ammo){
+            var_y=choose(y, y+64, y+96);
+        } else { 
+            var_y=y;
+        }
+        instance_create(x, var_y, var_projektiel);
         audio_play_sound(snd_pumpkin_focus001, 10, false);
         
     } else { //stop
